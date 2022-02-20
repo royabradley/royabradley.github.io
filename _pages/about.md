@@ -19,7 +19,9 @@ social: true  # includes social icons at the bottom of the page
 
 ***
 
-Hello, and welcome. This site is mostly for me--a place to process and document things I find important--but I would be delighted if you happen to discover something here that is helpful. May this work glorify the Triune God—Father, Son, and Holy Spirit—one God, world without end. Amen.
+Hello, and welcome. This site is mostly for me--a place to process and document things I find important--but I would be delighted if you happen to discover something here that is helpful.
+
+May the work done here glorify the Triune God—Father, Son, and Holy Spirit—one God, world without end. Amen.
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
