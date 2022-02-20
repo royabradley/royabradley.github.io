@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <blockquote> It may be that when we no longer know which way to go that we have come to our real journey. The mind that is not baffled is not employed. The impeded stream is the one that sings. — Wendell Berry, <em>Our Real Work</em> </blockquote> <figcaption>—Wendell Berry, <em>Our Real Work</em></figcaption> #a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: <blockquote> It may be that when we no longer know which way to go that we have come to our real journey. The mind that is not baffled is not employed. The impeded stream is the one that sings.</blockquote><figcaption align="right">— Wendell Berry, <em>Our Real Work</em></figcaption> #a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 
 # profile:
 #   align: center #right
@@ -17,7 +17,9 @@ selected_papers: false #true # includes a list of papers marked as "selected={tr
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hello, and welcome. This site is mostly for me to process and document things I find important, but you might discover something here that is helpful. May the work done here glorify the Triune God—Father, Son, and Holy Spirit—as it was in the beginning is now and ever shall be, world without end. Amen.
+***
+
+Hello, and welcome. This site is mostly for me--a place to process and document things I find important--but I would be delighted if you happen to discover something here that is helpful. May this work glorify the Triune God—Father, Son, and Holy Spirit—one God, world without end. Amen.
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
