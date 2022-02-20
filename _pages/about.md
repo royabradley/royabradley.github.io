@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <blockquote> It may be that when we no longer know which way to go that we have come to our real journey. The mind that is not baffled is not employed. The impeded stream is the one that sings. — Wendell Berry, <em>Our Real Work</em> </blockquote> #a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: <blockquote> It may be that when we no longer know which way to go that we have come to our real journey. The mind that is not baffled is not employed. The impeded stream is the one that sings. — Wendell Berry, <em>Our Real Work</em> </blockquote> <figcaption>—Wendell Berry, <em>Our Real Work</em></figcaption> #a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 
 # profile:
 #   align: center #right
