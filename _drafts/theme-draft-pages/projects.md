@@ -1,10 +1,10 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
 subtitle: Hello
 description:
-nav: true
+nav: false
 display_categories: [work, fun]
 horizontal: false
 ---
