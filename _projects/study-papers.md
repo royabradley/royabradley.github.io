@@ -2,7 +2,7 @@
 layout: page
 title: study papers
 description: unpublished theology papers
-img: trinity-shield.jpg
+img: assets/img/trinity-shield.jpg
 importance: 4
 category: work
 years: [2021]
