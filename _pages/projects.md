@@ -5,7 +5,7 @@ permalink: /projects/
 subtitle: Hello
 description:
 nav: true
-display_categories: [work, fun]
+display_categories: [work]
 horizontal: false
 ---
 

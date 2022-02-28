@@ -3,10 +3,9 @@ layout: page
 title: study papers
 description: unpublished theology papers
 img: assets/img/trinity-shield.jpg
-importance: 4
+importance: 
 category: work
-years: [2021]
-nav: false
+years: [2022, 2021]
 ---
 
 <!-- _pages/publications.md -->
