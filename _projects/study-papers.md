@@ -1,11 +1,11 @@
 ---
 layout: page
 title: Study papers
-description: Biblical studies and theology
+description: On diverse topics in biblical studies and theology
 img: assets/img/trinity-shield.jpg
 importance: 
 category: work
-years: [2022, 2021, 2008]
+years: [2022, 2021, 2017, 2009, 2008]
 ---
 
 <!-- _pages/publications.md -->
