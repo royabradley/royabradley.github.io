@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Study papers
-description: On diverse topics in biblical studies and theology
+description: Biblical studies, church history, and theology
 img: assets/img/trinity-shield.jpg
 importance: 
 category: work
