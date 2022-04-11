@@ -86,7 +86,7 @@ panelbear_analytics:  # panelbear analytics site ID (format: XXXXXXXXX)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: # The Oaks of Mamre # your blog must have a name for it to show up in the nav bar
+blog_name: The Oaks of Mamre # your blog must have a name for it to show up in the nav bar
 blog_description: <blockquote align="left">So Abram moved his tent and came and settled by the oaks of Mamre, which are at Hebron, and there he built an altar to the LORD.<figcaption align="right">- <em>Genesis</em> 13:18</figcaption></blockquote>
 permalink: /blog/:year/:title/
 
