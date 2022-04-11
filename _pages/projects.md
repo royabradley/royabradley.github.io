@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-subtitle: Hello
+subtitle: 
 description:
 nav: true
 display_categories: [work]
