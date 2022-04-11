@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Sermons
-description:  
-img: assets/img/berry-at-work.jpg
-importance: 
+description: "[under construction]"
+img: assets/img/pulpit.jpg
+importance: 1
 category: work
 years: 
 ---

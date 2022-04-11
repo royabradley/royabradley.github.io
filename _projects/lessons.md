@@ -1,9 +1,9 @@
 ---
 layout: page
 title: lessons
-description:  
-img: assets/img/berry-at-work.jpg
-importance: 
+description: "[under construction]"
+img: assets/img/chalkboard.jpg
+importance: 2
 category: work
 years: 
 ---

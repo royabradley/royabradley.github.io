@@ -2,7 +2,7 @@
 layout: post
 title: "Wendell Berry: 'To My Mother'"
 categories: quote
-tags: motherhood poetry
+tags: motherhood, poetry
 ---
 
 I was your rebellious son,  
