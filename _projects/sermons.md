@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Sermons
+title: sermons
 description: "[under construction]"
 img: assets/img/pulpit.jpg
 importance: 1
-category: work
+category: church
 years: 
 ---
 

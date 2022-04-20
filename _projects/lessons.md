@@ -4,7 +4,7 @@ title: lessons
 description: "[under construction]"
 img: assets/img/chalkboard.jpg
 importance: 2
-category: work
+category: church
 years: 
 ---
 
