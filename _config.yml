@@ -121,7 +121,9 @@ news_limit: 5
 # Markdown and syntax highlight
 markdown: kramdown
 highlighter: rouge
-highlight_theme: github  # https://github.com/jwarby/jekyll-pygments-themes
+highlight_theme_light: github  # https://github.com/jwarby/jekyll-pygments-themes
+highlight_theme_dark: native  # https://github.com/jwarby/jekyll-pygments-themes
+
 kramdown:
   input: GFM
   syntax_highlighter_opts:
@@ -162,9 +164,9 @@ plugins:
 # Sitemap settings
 defaults:
   - scope:
-      path:            "assets/**/*.*"
+      path: "assets/**/*.*"
     values:
-      sitemap:         false
+      sitemap: false
 # Extras
 github: [metadata]
 
@@ -175,10 +177,12 @@ github: [metadata]
 # HTML remove comments (<!-- .... -->)
 remove_HTML_comments: false
 
-# HTML beautifier (_plugins/beautify.rb) / https://github.com/threedaymonk/htmlbeautifier
+# HTML beautifier (_plugins/beautify.rb).
+# Source: https://github.com/threedaymonk/htmlbeautifier
 beautify: false # This function has conflict with the code snippets, they can be displayed incorrectly
 
-# HTML minify (_plugins/minify.rb) Thanks to: https://www.ffbit.com/blog/2021/03/17/html-minification-in-jekyll.html
+# HTML minify (_plugins/minify.rb).
+# Source: https://www.ffbit.com/blog/2021/03/17/html-minification-in-jekyll.html
 minify: false
 
 # CSS/SASS minify
