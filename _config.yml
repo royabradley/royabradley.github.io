@@ -17,7 +17,7 @@ footer_text: >
 keywords:  # add your own keywords or leave empty
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: 🔥 # the emoji used as the favicon
+icon: ⚛️  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 url: https://royabradley.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
 last_updated: true # set to true if you want to display last updated in the footer
@@ -97,6 +97,12 @@ pagination:
 # Comments
 disqus_shortname: # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+# External sources.
+# If you have blog posts published on medium.com or other exteranl sources,
+# you can display them in your blog by adding a link to the RSS feed.
+external_sources:
+  - name: medium.com
+    rss_url: https://medium.com/@al-folio/feed
 
 # -----------------------------------------------------------------------------
 # Collections
