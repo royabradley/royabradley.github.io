@@ -5,7 +5,7 @@ permalink: /projects/
 subtitle: 
 description:
 nav: true
-display_categories: [church,academic]
+display_categories: [classroom,academic]
 horizontal: false
 ---
 
