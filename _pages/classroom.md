@@ -1,19 +1,13 @@
 ---
 layout: page
-title: projects
-permalink: /projects/
+title: classroom
+permalink: /classroom/
 subtitle: 
 description:
 nav: true
-display_categories: [academic]
+display_categories: [Biblical studies]
 horizontal: false
 ---
-
-<blockquote>
-    <p align="left">Good human work honors God's work. Good work uses no thing without respect, both for what it is in itself and for its origin. It uses neither tool nor material that it does not respect and that it does not love.... To work without pleasure or affection, to make a product that is not both useful and beautiful, is to dishonor God, nature, the thing that is made, and whomever it is made for. This is blasphemy: to make shoddy work of the work of God.</p>
-    <figcaption align="right">— Wendell Berry, <em>Our Real Work</em></figcaption>
-</blockquote>
-
 
 <!-- pages/projects.md -->
 <div class="projects">
