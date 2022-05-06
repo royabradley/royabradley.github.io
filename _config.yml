@@ -216,10 +216,10 @@ jekyll-archives:
 
 scholar:
 
-  last_name: Einstein
-  first_name: [Albert, A.]
+  last_name: Bradley
+  first_name: [Roy, A.]
 
-  style: apa
+  style: chicago-note-bibliography # apa
   locale: en
 
   source: /_bibliography/
