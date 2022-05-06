@@ -582,3 +582,77 @@ html.transition *:after {
       }
 }
 }
+
+// custom buttons (https://codepen.io/ondrejsvestka/pen/NjxgVR)
+
+.btn-assign {
+color: var(--global-text-color);
+          border: 1px solid var(--global-text-color);
+          padding-left: 1rem;
+          padding-right: 1rem;
+          padding-top: 0.25rem;
+          padding-bottom: 0.25rem;
+          &:hover {
+            color: var(--global-theme-color);
+            border-color: var(--global-theme-color);
+          }
+        }   
+
+
+.btn-outline {
+  color: #4fbfa8;
+  background-color: #ffffff;
+  border-color: #4fbfa8;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.btn-outline {
+  color: #4fbfa8;
+  background-color: #ffffff;
+  border-color: #4fbfa8;
+  font-weight: bold;
+  border-radius: 0;
+}
+
+.btn-outline:hover,
+.btn-outline:active,
+.btn-outline:focus,
+.btn-outline.active {
+  background: #4fbfa8;
+  color: #ffffff;
+  border-color: #4fbfa8;
+  
+}
+
+
+.btn-colour-1 {
+  color: #fff;
+  background-color: #004E64;
+  border-color: #004E64;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  border-radius: 0;
+}
+
+.btn-colour-1:hover,
+.btn-colour-1:active,
+.btn-colour-1:focus,
+.btn-colour-1.active {
+  /* let's darken #004E64 a bit for hover effect */
+  background: #003D4F;
+  color: #ffffff;
+  border-color: #003D4F;
+}
+
+
+// custom badges (https://getbootstrap.com/docs/4.0/components/badge/; https://toruskit.com/docs/components/badges/)
+
+.badge-module {
+    color: var(--global-text-color);
+    background-color: var(--global-theme-color);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
