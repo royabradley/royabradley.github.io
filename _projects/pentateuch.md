@@ -29,11 +29,13 @@ This course of study, in general, intends to orient the student to the nuanced, 
 &nbsp;
 ## Structure and content
 
+<!-- Phase I -->
 <div class="card">
-	<div class="card-header">Phase I</div>
+	<div class="card-header">Phase I (Summer 2022) </div>
 	<div class="card-body" style="font-weight:200">
 
-  <div class="row">
+  <!-- Module 1 -->
+  <div class="row"> 
     <div class="col-sm-2">
       <span class="badge badge-module">Module 1</span>
     </div>
@@ -49,7 +51,7 @@ This course of study, in general, intends to orient the student to the nuanced, 
   </div>
 
 &nbsp;
-
+  <!-- Module 2 -->
   <div class="row">
     <div class="col-sm-2">
       <span class="badge badge-module">Module 2</span>
@@ -66,7 +68,7 @@ This course of study, in general, intends to orient the student to the nuanced, 
   </div>
 
 &nbsp;
-
+  <!-- Module 3 -->
   <div class="row">
     <div class="col-sm-2">
       <span class="badge badge-module">Module 3</span>
@@ -78,38 +80,15 @@ This course of study, in general, intends to orient the student to the nuanced, 
 	</ul>
     </div>
     <div class="col-sm">
-      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M2 Assignments</a>
-    </div>
-  </div>
-</div>
-</div>
-
-&nbsp;
-
-<div class="card">
-	<div class="card-header">Phase II</div>
-	<div class="card-body" style="font-weight:200">
-
-  <div class="row">
-    <div class="col-sm-2">
-      <span class="badge badge-module">Module 1</span>
-    </div>
-    <div class="col-sm-6">
-	  <ul>
-  		<li>Pentateuchal criticism I</li>
-  		<li>Interpreting the Pentateuch I</li>
-	</ul>  
-    </div>
-    <div class="col-sm">
-      <a href="/pentateuch-resources/pent-m1assign" class="btn btn-assign shadow-none">M1 Assignments</a>
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M3 Assignments</a>
     </div>
   </div>
 
-&nbsp;
-
+  &nbsp;
+  <!-- Module 4 -->
   <div class="row">
     <div class="col-sm-2">
-      <span class="badge badge-module">Module 2</span>
+      <span class="badge badge-module">Module 4</span>
     </div>
     <div class="col-sm-6">
       <ul>
@@ -118,7 +97,218 @@ This course of study, in general, intends to orient the student to the nuanced, 
 	</ul>
     </div>
     <div class="col-sm">
-      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M2 Assignments</a>
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M4 Assignments</a>
+    </div>
+  </div>
+
+  &nbsp;
+  <!-- Module 5 -->
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 5</span>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+  		<li>Pentateuchal criticism II</li>
+  		<li>Interpreting the Pentateuch II</li>
+	</ul>
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M5 Assignments</a>
+    </div>
+  </div>
+
+  &nbsp;
+  <!-- Module 6 -->
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 6</span>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+  		<li>Pentateuchal criticism II</li>
+  		<li>Interpreting the Pentateuch II</li>
+	</ul>
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M6 Assignments</a>
+    </div>
+  </div>
+
+  &nbsp;
+  <!-- Module 7 -->
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 7</span>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+  		<li>Pentateuchal criticism II</li>
+  		<li>Interpreting the Pentateuch II</li>
+	</ul>
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M7 Assignments</a>
+    </div>
+  </div>
+
+  &nbsp;
+  <!-- Module 8 -->
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 8</span>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+  		<li>Pentateuchal criticism II</li>
+  		<li>Interpreting the Pentateuch II</li>
+	</ul>
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M8 Assignments</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+&nbsp;
+<!-- Phase II -->
+<div class="card">
+	<div class="card-header">Phase II (Late Fall 2022)</div>
+	<div class="card-body" style="font-weight:200">
+  <!-- Module 9 -->
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 9</span>
+    </div>
+    <div class="col-sm-6">
+	  <ul>
+  		<li>Pentateuchal criticism I</li>
+  		<li>Interpreting the Pentateuch I</li>
+	</ul>  
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m1assign" class="btn btn-assign shadow-none">M9 Assignments</a>
+    </div>
+  </div>
+
+&nbsp;
+  <!-- Module 10 -->
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 10</span>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+  		<li>Pentateuchal criticism II</li>
+  		<li>Interpreting the Pentateuch II</li>
+	</ul>
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M10 Assignments</a>
+    </div>
+  </div>
+
+  &nbsp;
+  <!-- Module 11 -->
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 11</span>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+  		<li>Pentateuchal criticism II</li>
+  		<li>Interpreting the Pentateuch II</li>
+	</ul>
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M11 Assignments</a>
+    </div>
+  </div>
+
+  &nbsp;
+  <!-- Module 12 -->
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 12</span>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+  		<li>Pentateuchal criticism II</li>
+  		<li>Interpreting the Pentateuch II</li>
+	</ul>
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M12 Assignments</a>
+    </div>
+  </div>
+
+  &nbsp;
+  <!-- Module 13 -->
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 13</span>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+  		<li>Pentateuchal criticism II</li>
+  		<li>Interpreting the Pentateuch II</li>
+	</ul>
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M13 Assignments</a>
+    </div>
+  </div>
+
+   &nbsp;
+  <!-- Module 14 -->
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 14</span>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+  		<li>Pentateuchal criticism II</li>
+  		<li>Interpreting the Pentateuch II</li>
+	</ul>
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M14 Assignments</a>
+    </div>
+  </div>
+
+   &nbsp;
+  <!-- Module 15 -->
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 15</span>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+  		<li>Pentateuchal criticism II</li>
+  		<li>Interpreting the Pentateuch II</li>
+	</ul>
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M15 Assignments</a>
+    </div>
+  </div>
+
+   &nbsp;
+  <!-- Module 16 -->
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 16</span>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+  		<li>Pentateuchal criticism II</li>
+  		<li>Interpreting the Pentateuch II</li>
+	</ul>
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M16 Assignments</a>
     </div>
   </div>
 </div>
@@ -127,6 +317,8 @@ This course of study, in general, intends to orient the student to the nuanced, 
 
 &nbsp;
 ## Schedule
+
+[Put calendar here.]
 
 ***
 
