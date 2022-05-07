@@ -10,7 +10,6 @@ years: []
 
 ***
 
-&nbsp;
 ## Overview and purpose
 
 The Pentateuch[^1] is the literary and theological foundation upon which all subsequent biblical revelation rests. To miss the message of the Pentateuch is to miss the message of Christian scripture and the Gospel of Jesus Messiah to which it attests. This course proceeds from the conviction that the Pentateuch was originally composed as a single book, and therefore, it "hangs together" as a unified whole and should be studied as such.
@@ -29,9 +28,11 @@ This course of study, in general, intends to orient the student to the nuanced, 
 
 &nbsp;
 ## Structure and content
-&nbsp;
 
-<div class="container">
+<div class="card">
+	<div class="card-header">Phase I</div>
+	<div class="card-body" style="font-weight:200">
+
   <div class="row">
     <div class="col-sm-2">
       <span class="badge badge-module">Module 1</span>
@@ -42,12 +43,70 @@ This course of study, in general, intends to orient the student to the nuanced, 
   		<li>Interpreting the Pentateuch I</li>
 	</ul>  
     </div>
-    <div class="col">
+    <div class="col-sm">
       <a href="/pentateuch-resources/pent-m1assign" class="btn btn-assign shadow-none">M1 Assignments</a>
-
     </div>
   </div>
+
 &nbsp;
+
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 2</span>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+  		<li>Pentateuchal criticism II</li>
+  		<li>Interpreting the Pentateuch II</li>
+	</ul>
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M2 Assignments</a>
+    </div>
+  </div>
+
+&nbsp;
+
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 3</span>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+  		<li>Pentateuchal criticism II</li>
+  		<li>Interpreting the Pentateuch II</li>
+	</ul>
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M2 Assignments</a>
+    </div>
+  </div>
+</div>
+</div>
+
+&nbsp;
+
+<div class="card">
+	<div class="card-header">Phase II</div>
+	<div class="card-body" style="font-weight:200">
+
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="badge badge-module">Module 1</span>
+    </div>
+    <div class="col-sm-6">
+	  <ul>
+  		<li>Pentateuchal criticism I</li>
+  		<li>Interpreting the Pentateuch I</li>
+	</ul>  
+    </div>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m1assign" class="btn btn-assign shadow-none">M1 Assignments</a>
+    </div>
+  </div>
+
+&nbsp;
+
   <div class="row">
     <div class="col-sm-2">
       <span class="badge badge-module">Module 2</span>
@@ -63,6 +122,8 @@ This course of study, in general, intends to orient the student to the nuanced, 
     </div>
   </div>
 </div>
+</div>
+
 
 &nbsp;
 ## Schedule
