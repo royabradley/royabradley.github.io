@@ -33,33 +33,33 @@ This course of study, in general, intends to orient the student to the nuanced, 
 
 <div class="container">
   <div class="row">
-    <div class="col-2">
+    <div class="col-sm-2">
       <span class="badge badge-module">Module 1</span>
     </div>
-    <div class="col-6">
+    <div class="col-sm-6">
 	  <ul>
   		<li>Pentateuchal criticism I</li>
   		<li>Interpreting the Pentateuch I</li>
 	</ul>  
     </div>
     <div class="col">
-      <a href="https://gcov.org" class="btn btn-assign shadow-none">M1 Assignments</a>
+      <a href="/pentateuch-resources/pent-m1assign" class="btn btn-assign shadow-none">M1 Assignments</a>
 
     </div>
   </div>
 &nbsp;
   <div class="row">
-    <div class="col-2">
+    <div class="col-sm-2">
       <span class="badge badge-module">Module 2</span>
     </div>
-    <div class="col-6">
+    <div class="col-sm-6">
       <ul>
   		<li>Pentateuchal criticism II</li>
   		<li>Interpreting the Pentateuch II</li>
 	</ul>
     </div>
-    <div class="col">
-      <a href="https://gcov.org" class="btn btn-assign shadow-none">M2 Assignments</a>
+    <div class="col-sm">
+      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M2 Assignments</a>
     </div>
   </div>
 </div>
