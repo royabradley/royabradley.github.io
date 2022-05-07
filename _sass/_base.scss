@@ -651,6 +651,8 @@ color: var(--global-text-color);
 .badge-module {
     color: var(--global-text-color);
     background-color: var(--global-theme-color);
+    display: inline-block;
+    margin-bottom: 1.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.25rem;
