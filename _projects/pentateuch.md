@@ -16,7 +16,6 @@ The Pentateuch[^1] is the literary and theological foundation upon which all sub
 
 This course of study, in general, intends to orient the student to the nuanced, artistic nature of Hebrew narrative as exemplified in the Pentatuech, and to discover how its literary design functions to convey theological truth. We will explore major literary themes and attempt to ascertain their theological import. In particular, we want to become more intimately familiar with the literary design, rhetorical strategy, and theology of the Pentateuch, ultimately so that we can more deeply appreciate how Jesus is the fulfillment of what is revealed here. In so doing, we want to promote and model the ethos of a patient, humble, and careful approach to reading scripture.[^2] 
 
-&nbsp;
 ## Texts
 
 <!-- _pages/publications.md -->

@@ -585,6 +585,7 @@ html.transition *:after {
 
 // custom buttons (https://codepen.io/ondrejsvestka/pen/NjxgVR)
 
+// assignment links for courses
 .btn-assign {
 color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
@@ -592,6 +593,7 @@ color: var(--global-text-color);
           padding-right: 1rem;
           padding-top: 0.25rem;
           padding-bottom: 0.25rem;
+          font-size: 0.7em;
           &:hover {
             color: var(--global-theme-color);
             border-color: var(--global-theme-color);
@@ -648,6 +650,7 @@ color: var(--global-text-color);
 
 // custom badges (https://getbootstrap.com/docs/4.0/components/badge/; https://toruskit.com/docs/components/badges/)
 
+// for course modules
 .badge-module {
     color: var(--global-text-color);
     background-color: var(--global-theme-color);
@@ -657,5 +660,5 @@ color: var(--global-text-color);
     padding-right: 1rem;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
-    font-size: 1.1em;
+    font-size: 0.9em;
   }
