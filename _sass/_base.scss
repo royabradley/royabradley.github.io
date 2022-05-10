@@ -628,7 +628,6 @@ color: var(--global-text-color);
   
 }
 
-
 .btn-colour-1 {
   color: #fff;
   background-color: #004E64;
@@ -674,10 +673,11 @@ color: var(--global-text-color);
   padding-right: 1rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
-// for embedding pdf
+
+// for embedding pdf as image
 .embed-responsive {
   position: relative;
   display: block;
