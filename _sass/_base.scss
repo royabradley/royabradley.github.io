@@ -589,6 +589,7 @@ html.transition *:after {
 .btn-assign {
 color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
+          margin-bottom: 1.2rem; // helps vertical spacing when compressed on small screens
           padding-left: 1rem;
           padding-right: 1rem;
           padding-top: 0.25rem;
@@ -655,10 +656,23 @@ color: var(--global-text-color);
     color: var(--global-text-color);
     background-color: var(--global-theme-color);
     display: inline-block;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem; // helps vertical spacing when compressed on small screens
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
     font-size: 0.9em;
   }
+
+  // for course assignments
+.badge-assign {
+  color: var(--global-text-color);
+  background-color: $green-color-dark;
+  display: inline-block;
+  margin-bottom: 1.2rem; // helps vertical spacing when compressed on small screens
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 0.9em;
+}
