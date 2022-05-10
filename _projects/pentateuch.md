@@ -20,10 +20,9 @@ This course of study intends to orient the student to the nuanced, artistic natu
 
 <!-- _pages/publications.md -->
 <div class="publications">
-
 {% bibliography -f pentateuch.bib %}
-
 </div>
+
 
 &nbsp;
 ## Structure and content
@@ -176,15 +175,15 @@ This course of study intends to orient the student to the nuanced, artistic natu
 
 &nbsp;
 ## Schedule
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/pentateuch-calendar.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-[Put calendar here.]
+<style>
+.fill {object-fit: fill;}
+.contain {object-fit: contain;}
+.cover {object-fit: cover;}
+.scale-down {object-fit: scale-down;}
+.none {object-fit: none;}
+</style>
+
+<img class="contain" src="/assets/pdf/pent-cal.pdf" alt="Paris" style="width:100%;height:100%">
 
 ***
 
