@@ -1,8 +1,7 @@
 ---
 layout: page
 title: Module 1 Assignments
-permalink: /pent
--resources/pent-m1assign
+permalink: /pent-resources/pent-m1assign
 description:
 nav: false
 ---

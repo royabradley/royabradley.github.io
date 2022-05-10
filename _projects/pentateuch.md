@@ -43,7 +43,7 @@ This course of study intends to orient the student to the nature of Hebrew narra
 	    </ul> 
     </div>
     <div class="col-sm">
-      <a href="/pentateuch-resources/pent-m1assign" class="btn btn-assign shadow-none">M1 Assignments</a>
+      <a href="/pent-resources/pent-m1assign" class="btn btn-assign shadow-none">M1 Assignments</a>
     </div>
   </div>
 &nbsp;
@@ -60,7 +60,7 @@ This course of study intends to orient the student to the nature of Hebrew narra
 	    </ul>
     </div>
     <div class="col-sm">
-      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M2 Assignments</a>
+      <a href="/pent-resources/pent-m2assign" class="btn btn-assign shadow-none">M2 Assignments</a>
     </div>
   </div>
 &nbsp;
@@ -77,7 +77,7 @@ This course of study intends to orient the student to the nature of Hebrew narra
 	    </ul>
     </div>
     <div class="col-sm">
-      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M3 Assignments</a>
+      <a href="/pent-resources/pent-m3assign" class="btn btn-assign shadow-none">M3 Assignments</a>
     </div>
   </div>
   &nbsp;
@@ -94,7 +94,7 @@ This course of study intends to orient the student to the nature of Hebrew narra
 	    </ul>
     </div>
     <div class="col-sm">
-      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M4 Assignments</a>
+      <a href="/pent-resources/pent-m4assign" class="btn btn-assign shadow-none">M4 Assignments</a>
     </div>
   </div>
   &nbsp;
@@ -111,7 +111,7 @@ This course of study intends to orient the student to the nature of Hebrew narra
 	    </ul>
     </div>
     <div class="col-sm">
-      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M5 Assignments</a>
+      <a href="/pent-resources/pent-m5assign" class="btn btn-assign shadow-none">M5 Assignments</a>
     </div>
   </div>
   &nbsp;
@@ -128,7 +128,7 @@ This course of study intends to orient the student to the nature of Hebrew narra
 	    </ul>
     </div>
     <div class="col-sm">
-      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M6 Assignments</a>
+      <a href="/pent-resources/pent-m6assign" class="btn btn-assign shadow-none">M6 Assignments</a>
     </div>
   </div>
   &nbsp;
@@ -145,7 +145,7 @@ This course of study intends to orient the student to the nature of Hebrew narra
 	    </ul>
     </div>
     <div class="col-sm">
-      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M7 Assignments</a>
+      <a href="/pent-resources/pent-m7assign" class="btn btn-assign shadow-none">M7 Assignments</a>
     </div>
   </div>
   &nbsp;
@@ -157,17 +157,18 @@ This course of study intends to orient the student to the nature of Hebrew narra
     <div class="col-sm-6">
       <ul>
   		  <li>Why Israel?</li>
-  		  <li>The Pentateuch and the Biblical Metanarrative</li>
+  		  <li>The pent and the Biblical Metanarrative</li>
 	    </ul>
     </div>
     <div class="col-sm">
-      <a href="/pentateuch-resources/pent-m2assign" class="btn btn-assign shadow-none">M8 Assignments</a>
+      <a href="/pent-resources/pent-m8assign" class="btn btn-assign shadow-none">M8 Assignments</a>
    </div>
   </div>
 
-
 &nbsp;
 ## Schedule
+
+<!-- settings for responsive behavior (could also use the bootstrap card class w/ image?)-->
 <style>
 .fill {object-fit: fill;}
 .contain {object-fit: contain;}

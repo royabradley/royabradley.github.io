@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Module 2 Assignments
+title: Module 7 Assignments
 permalink: /pent-resources/pent-m7assign
 description: 
 nav: false
