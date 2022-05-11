@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "The Pentateuch: <br> A Literary-Theological Study"
-description:
+description: Grace Covenant Presbyterian Church | Summer 2022
 img: assets/img/the-crossing-of-the-red-sea-jacques-courtois.jpg
 importance: 1
 category: Biblical studies
@@ -14,7 +14,7 @@ years: []
 
 The Pentateuch[^1] is the literary and theological foundation upon which all subsequent biblical revelation rests. To miss the message of the Pentateuch is to miss the message of Christian scripture and the Gospel of Jesus Messiah to which it attests. This course proceeds from the conviction that the Pentateuch was originally composed as a single book, and therefore, it "hangs together" as a unified whole and should be studied as such.
 
-This course of study intends to orient the student to the nature of Hebrew narrative as exemplified in the Pentatuech, and to discover how its literary design functions to convey theological truth. We will explore major literary themes and attempt to ascertain their theological import. In particular, we want to become more intimately familiar with the literary nuances, rhetorical strategy, and theological contribution of the Pentateuch so that we may more deeply appreciate how Jesus is the embodiment and fulfillment of what is revealed here. In so doing, we want to promote and model the ethos of a patient, humble, and careful approach to reading scripture,[^2] to delight in the artistic beauty of the Bible, and to glory in the Triune God whom it reveals.
+This course of study intends to orient the student to the nature of Hebrew narrative as exemplified in the Pentatuech, and to discover how its literary design functions to convey theological truth. We will explore major literary themes and attempt to ascertain their theological import. In particular, we want to become more intimately familiar with the literary nuances, rhetorical strategy, and theological contribution of the Pentateuch so that we may more deeply appreciate how Jesus is the embodiment and fulfillment of what is revealed here. In so doing, we want to promote and model the ethos of a patient, humble, and careful approach to reading scripture,[^2] to delight in the artistic beauty of the Bible, to glory in the Triune God whom it reveals, and to mature in our sanctification.
 
 ## Texts
 <!-- _pages/publications.md -->
@@ -167,6 +167,7 @@ This course of study intends to orient the student to the nature of Hebrew narra
 
 &nbsp;
 ## Schedule
+There are eight scheduled meetings (Mondays, 7-9 p.m.) from June to August 2022 where we will come together for guided discussion and enjoy Christian fellowship with one another.
 
 <!-- settings for responsive behavior (could also use the bootstrap card class w/ image?)-->
 <style>
@@ -177,9 +178,13 @@ This course of study intends to orient the student to the nature of Hebrew narra
 .none {object-fit: none;}
 </style>
 
-<img class="contain" src="/assets/pdf/pent-cal.pdf" alt="Paris" style="width:100%;height:100%">
+<img class="contain" src="/assets/pdf/pent-cal.pdf" alt="schedule" style="width:100%;height:100%">
 
 &nbsp;
+## Sign Up
+The target audience for this course is adult men. However, if wives would like to join their husbands, they are welcome to do so.
+
+<iframe class="embed-responsive-item" src="https://docs.google.com/forms/d/e/1FAIpQLSf8jqmBaZLVG-b_VSmI8q-60Htciu5n34Kp8YjTCeqNxifrvA/viewform?embedded=true" width="640" height="1143" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
 ***
 

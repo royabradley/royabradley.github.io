@@ -1,14 +1,11 @@
 # Fdb version 3
-["pdflatex"] 1652183287 "/Users/Roy/github/royabradley.github.io/_tex/pent-cal/pent-cal.tex" "pent-cal.pdf" "pent-cal" 1652183313
-  "/Users/Roy/github/royabradley.github.io/_tex/pent-cal/pent-cal.tex" 1652183312 3882 3545c45a4d188d335fdc4a38dbd0d5ba ""
-  "/dev/null" 1652183295 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1652283496 "/Users/Roy/github/royabradley.github.io/_tex/pent-cal/pent-cal.tex" "pent-cal.pdf" "pent-cal" 1652283497
+  "/Users/Roy/github/royabradley.github.io/_tex/pent-cal/pent-cal.tex" 1652283495 3884 6fff4be0c04f0e34ac29ba47de6c6442 ""
+  "/dev/null" 1652283458 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
-  "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
-  "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1136768653 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
-  "/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb" 1248133631 33993 9b89b85fd2d9df0482bd47194d1d3bf3 ""
@@ -111,9 +108,9 @@
   "/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1624824276 5184918 edc7760058d1085fc27d2bf72f6d6bd9 ""
   "/usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1624824363 2816152 0b00c1ed78d82d9b0f40282f5978d623 ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
-  "pent-cal.aux" 1652183289 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "pent-cal.tex" 1652183312 3882 3545c45a4d188d335fdc4a38dbd0d5ba ""
+  "pent-cal.aux" 1652283497 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "pent-cal.tex" 1652283495 3884 6fff4be0c04f0e34ac29ba47de6c6442 ""
   (generated)
-  "pent-cal.pdf"
-  "pent-cal.aux"
   "pent-cal.log"
+  "pent-cal.aux"
+  "pent-cal.pdf"
