@@ -585,8 +585,21 @@ html.transition *:after {
 
 // custom buttons (https://codepen.io/ondrejsvestka/pen/NjxgVR)
 
+// course sign up button
+.btn-sign-up {
+  color: white;
+  background-color: var(--global-theme-color);
+  display: inline-block;
+  margin-bottom: 1.2rem; // helps vertical spacing when compressed on small screens
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+}
+
 // assignment links for courses
-.btn-assign {
+.btn-assign { 
 color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
           margin-bottom: 1.2rem; // helps vertical spacing when compressed on small screens
@@ -602,6 +615,7 @@ color: var(--global-text-color);
         }   
 
 
+// button samples
 .btn-outline {
   color: #4fbfa8;
   background-color: #ffffff;
