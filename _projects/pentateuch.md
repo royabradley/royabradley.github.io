@@ -30,7 +30,7 @@ This course of study intends to orient the student to the nature of Hebrew narra
   </div>
   <div class="col-sm">
     Alexander, T. Desmond. <b><em>From Paradise to the Promise Land: An Introduction to the Pentateuch.</em></b> 4th ed. Grand Rapids, MI: Baker Academic, 2022. <br>
-    <a href="/pent-resources/pent-m3assign" class="btn btn-assign shadow-none" style="font-size:0.7rem">Purchase   <i class="fab fa-amazon" aria-hidden="true"></i></a>
+    <a href="https://www.amazon.com/Paradise-Promised-Land-Introduction-Pentateuch/dp/1540963403/" class="btn btn-assign shadow-none" style="font-size:0.7rem">Purchase   <i class="fab fa-amazon" aria-hidden="true"></i></a>
   </div>
 </div> 
 &nbsp;
@@ -40,7 +40,7 @@ This course of study intends to orient the student to the nature of Hebrew narra
   </div>
   <div class="col-sm">
     Sailhamer, John H. <b><em>The Pentateuch as Narrative: A Biblical-Theological Commentary.</em></b> Library of Biblical Interpretation. Grand Rapids, MI: Zondervan, 1992. <br>
-    <a href="/pent-resources/pent-m3assign" class="btn btn-assign shadow-none" style="font-size:0.7rem">Purchase   <i class="fab fa-amazon" aria-hidden="true"></i></a>
+    <a href="https://www.amazon.com/Pentateuch-Narrative-Biblical-Theological-Commentary/dp/0310574218/" class="btn btn-assign shadow-none" style="font-size:0.7rem">Purchase   <i class="fab fa-amazon" aria-hidden="true"></i></a>
   </div>
 </div>
 &nbsp;
@@ -50,10 +50,9 @@ This course of study intends to orient the student to the nature of Hebrew narra
   </div>
   <div class="col-sm">
     Alter, Robert. <b><em>The Art of Biblical Narrative.</em></b> New York: Basic Books, 2011. <br>
-    <a href="/pent-resources/pent-m3assign" class="btn btn-assign shadow-none" style="font-size:0.7rem">Purchase   <i class="fab fa-amazon" aria-hidden="true"></i></a>
+    <a href="https://www.amazon.com/Art-Biblical-Narrative-Robert-Alter/dp/0465022553/" class="btn btn-assign shadow-none" style="font-size:0.7rem">Purchase   <i class="fab fa-amazon" aria-hidden="true"></i></a>
   </div>
 </div> 
-
 
 &nbsp;
 ## Structure and content
