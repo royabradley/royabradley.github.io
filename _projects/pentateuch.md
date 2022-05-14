@@ -24,14 +24,39 @@ The Pentateuch[^1] is the literary and theological foundation upon which all sub
 This course of study intends to orient the student to the nature of Hebrew narrative as exemplified in the Pentatuech, and to discover how its literary design functions to convey theological truth. We will explore major literary themes and attempt to ascertain their theological import. In particular, we want to become more intimately familiar with the literary nuances, rhetorical strategy, and theological contribution of the Pentateuch so that we may more deeply appreciate how Jesus is the embodiment and fulfillment of what is revealed here. In so doing, we want to promote and model the ethos of a patient, humble, and careful approach to reading scripture,[^2] to delight in the artistic beauty of the Bible, to glory in the Triune God whom it reveals, and to mature in our sanctification.
 
 ## Texts
-<!-- _pages/publications.md -->
-<div class="publications">
-{% bibliography -f pentateuch.bib %}
+<div class="row"> 
+  <div class="col-sm-2">
+    <span class="badge badge-danger">Required</span>
+  </div>
+  <div class="col-sm">
+    Alexander, T. Desmond. <b><em>From Paradise to the Promise Land: An Introduction to the Pentateuch.</em></b> 4th ed. Grand Rapids, MI: Baker Academic, 2022. <br>
+    <a href="/pent-resources/pent-m3assign" class="btn btn-assign shadow-none" style="font-size:0.7rem">Purchase   <i class="fab fa-amazon" aria-hidden="true"></i></a>
+  </div>
+</div> 
+&nbsp;
+<div class="row"> 
+  <div class="col-sm-2">
+    <span class="badge badge-warning">Optional</span>
+  </div>
+  <div class="col-sm">
+    Sailhamer, John H. <b><em>The Pentateuch as Narrative: A Biblical-Theological Commentary.</em></b> Library of Biblical Interpretation. Grand Rapids, MI: Zondervan, 1992. <br>
+    <a href="/pent-resources/pent-m3assign" class="btn btn-assign shadow-none" style="font-size:0.7rem">Purchase   <i class="fab fa-amazon" aria-hidden="true"></i></a>
+  </div>
 </div>
+&nbsp;
+<div class="row"> 
+  <div class="col-sm-2">
+    <span class="badge badge-warning">Optional</span>
+  </div>
+  <div class="col-sm">
+    Alter, Robert. <b><em>The Art of Biblical Narrative.</em></b> New York: Basic Books, 2011. <br>
+    <a href="/pent-resources/pent-m3assign" class="btn btn-assign shadow-none" style="font-size:0.7rem">Purchase   <i class="fab fa-amazon" aria-hidden="true"></i></a>
+  </div>
+</div> 
+
 
 &nbsp;
 ## Structure and content
-&nbsp;
 <!-- Module 1 -->
   <div class="row"> 
     <div class="col-sm-2">
