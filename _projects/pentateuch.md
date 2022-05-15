@@ -17,6 +17,12 @@ The spiritual life of the church would be greatly enriched by kindling a love of
 </figcaption>
 </blockquote>
 
+<blockquote>
+...[T]he cryptic conciseness of biblical narrative is a reflection of profound art, not primitiveness.
+<figcaption align="right">— Robert Alter, <em>The Art of Biblical Narrative,</em> p. 18
+</figcaption>
+</blockquote>
+
 ## Overview and purpose
 
 The Pentateuch[^1] is the literary and theological foundation upon which all subsequent biblical revelation rests. To miss the message of the Pentateuch is to, in a certain sense, miss the message of Christian scripture and the Gospel of Jesus Messiah to which it attests. This course proceeds from the conviction that the Pentateuch was originally composed as a single book, and therefore, it "hangs together" as a unified whole, and should be studied as such.
@@ -43,16 +49,6 @@ This course of study intends to orient the student to the nature of Hebrew narra
     <a href="https://www.amazon.com/Pentateuch-Narrative-Biblical-Theological-Commentary/dp/0310574218/" class="btn btn-assign shadow-none" style="font-size:0.7rem">Purchase   <i class="fab fa-amazon" aria-hidden="true"></i></a>
   </div>
 </div>
-&nbsp;
-<div class="row"> 
-  <div class="col-sm-2">
-    <span class="badge badge-warning">Optional</span>
-  </div>
-  <div class="col-sm">
-    Alter, Robert. <b><em>The Art of Biblical Narrative.</em></b> New York: Basic Books, 2011. <br>
-    <a href="https://www.amazon.com/Art-Biblical-Narrative-Robert-Alter/dp/0465022553/" class="btn btn-assign shadow-none" style="font-size:0.7rem">Purchase   <i class="fab fa-amazon" aria-hidden="true"></i></a>
-  </div>
-</div> 
 
 &nbsp;
 ## Structure and content
