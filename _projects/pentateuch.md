@@ -7,7 +7,7 @@ importance: 1
 category: Biblical studies
 years: []
 ---
-<a href="https://forms.gle/APtuADcA7aZ9vVTS7" class="btn btn-sign-up btn-large">Sign up!</a>
+<a href="https://forms.gle/APtuADcA7aZ9vVTS7" class="btn btn-sign-up">Sign up!</a> or <a href="https://forms.gle/APtuADcA7aZ9vVTS7" class="btn btn-sign-up btn-small">Contact Roy</a>
 
 ***
 
