@@ -9,17 +9,19 @@ years: []
 ---
 <a href="https://forms.gle/APtuADcA7aZ9vVTS7" class="btn btn-sign-up btn-large">Sign up!</a>
 
+If you have any questions, please contact Roy Bradley. <a href="mailto:roy@gcog.org" title="email"><i class="fas fa-envelope"></i></a>
+
 ***
 
 <blockquote>
 The spiritual life of the church would be greatly enriched by kindling a love of the Old Testament through <em>a more thorough program of adult Christian education.</em>
-<figcaption align="right">— Bruce K. Waltke, <em>An Old Testament Theology,</em> p. 16
+<figcaption class="blockquote-footer" align="right">Bruce K. Waltke, <cite>An Old Testament Theology,</cite> p. 16
 </figcaption>
 </blockquote>
 
 <blockquote>
 ...[T]he cryptic conciseness of biblical narrative is a reflection of profound art, not primitiveness.
-<figcaption align="right">— Robert Alter, <em>The Art of Biblical Narrative,</em> p. 18
+<figcaption class="blockquote-footer" align="right">Robert Alter, <cite>The Art of Biblical Narrative,</cite> p. 18
 </figcaption>
 </blockquote>
 
