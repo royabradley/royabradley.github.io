@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "The Pentateuch: <br> A Literary-Theological Introduction"
+title: "The Pentateuch: A Literary-Theological Introduction"
 description: Grace Covenant Presbyterian Church | Summer 2022
 img: assets/img/the-crossing-of-the-red-sea-jacques-courtois.jpg
 importance: 1
@@ -9,7 +9,7 @@ years: []
 ---
 <a href="https://forms.gle/APtuADcA7aZ9vVTS7" class="btn btn-sign-up btn-large">Sign up!</a>
 
-If you have any questions, please contact Roy Bradley. <a href="mailto:roy@gcog.org" title="email"><i class="fas fa-envelope"></i></a>
+<div style="font-size:0.8rem">If you have any questions, contact Roy Bradley. <a href="mailto:roy@gcov.org" title="email"><i class="fas fa-envelope" style="font-size:1rem"></i></a></div>
 
 ***
 

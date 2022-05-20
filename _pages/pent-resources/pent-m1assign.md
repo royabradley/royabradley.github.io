@@ -36,7 +36,6 @@ font-size:16px !important;
     </div>
     <div class="col-sm">
       <ul>
-        <li> Have you ever read a book about the Pentateuch (as a whole)? Have you every read a book about any one of the "books" of the Pentateuch?</li>
         <li> Describe in your own words what the term "Biblical criticism" means. Do you think it is important to know about this as a Christian and student of the Bible? Explain.</li>
         <li>  Consider this passage:
                   <blockquote>
