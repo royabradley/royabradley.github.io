@@ -51,6 +51,16 @@ This course of study intends to orient the student to the nature of Hebrew narra
     <a href="https://www.amazon.com/Pentateuch-Narrative-Biblical-Theological-Commentary/dp/0310574218/" class="btn btn-assign shadow-none" style="font-size:0.7rem">Purchase   <i class="fab fa-amazon" aria-hidden="true"></i></a>
   </div>
 </div>
+  &nbsp;
+<div class="row"> 
+  <div class="col-sm-2">
+    <span class="badge badge-warning">Optional</span>
+  </div>
+  <div class="col-sm">
+    Dorsey, David A. <b><em>The Literary Structure of the Old Testament.</em></b> Grand Rapids, MI: Baker Academic, 1999.<br>
+    <a href="https://www.amazon.com/Literary-Structure-Old-Testament-Genesis-Malachi/dp/0801027934/" class="btn btn-assign shadow-none" style="font-size:0.7rem">Purchase   <i class="fab fa-amazon" aria-hidden="true"></i></a>
+  </div>
+</div>
 
 &nbsp;
 ## Structure and content
