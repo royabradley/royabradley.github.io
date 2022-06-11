@@ -24,6 +24,12 @@ font-size:16px !important;
           <li> Creation, the Patriarchs, and Babylon (1:1-11:26) </li>
           <li> The account of Abraham (11:27-25:10)</li>
         </ul>
+        <br>
+        <li> Alexander, <em>From Paradise to the Promised Land</em> </li>
+        <ul>
+          <li> "An Overview of the Pentateuch," pp. 3-8 </li>
+          <li> "Introduction to Pentateuchal Criticism," pp. 229-232 </li>
+        </ul>
       </ul> 
     </div>
 </div>
