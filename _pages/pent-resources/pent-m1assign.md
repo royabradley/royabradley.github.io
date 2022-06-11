@@ -52,7 +52,7 @@ font-size:16px !important;
               Does this position seem consistent with what you have read so far in Alexander's book? Is this the way you have understood the relationship of the "books" within the Pentateuch? If not, how so? What factors are in play that may hinder such an approach/attitude toward understanding the Pentateuch, indeed, the entire Bible?
         </li>
         <br>
-        <li> Can the Bible be described as divine literary art? How does this characterization strike you? E.M. Good pleads for a deepening of our appreciation for the literary value of Scripture: "We have been so eager to <em>interpret</em> the Bible that we have sometimes forgotten to <em>read</em> it, to read it in the same way we read <em>The Divine Comedy</em> (Dante), for example, or <em>Othello</em> (Shakespeare), or <em>The Waste Land</em> (T.S. Elliot)." Stephen Dempster contents that "ignorance of [the Bible's] literary features impedes understanding." Is something missing along these lines in our approach to Scripture?
+        <li> Can the Bible be described as divine literary art? How does this characterization strike you? E.M. Good pleads for a deepening of our appreciation for the literary value of Scripture: "We have been so eager to <em>interpret</em> the Bible that we have sometimes forgotten to <em>read</em> it, to read it in the same way we read <em>The Divine Comedy</em> (Dante), for example, or <em>Othello</em> (Shakespeare), or <em>The Waste Land</em> (T.S. Elliot)." Stephen Dempster contends that "ignorance of [the Bible's] literary features impedes understanding." Is something missing along these lines in our approach to Scripture?
         </li>
 	    </ul>
     </div>
