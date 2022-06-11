@@ -20,12 +20,11 @@ font-size:16px !important;
     <div class="col-sm">
       <ul>
         <li> Genesis 1-25:10 (Creation through the account of Abraham) </li>
-        <li> Alexander, <em>From Paradise to the Promised Land</em></li>
         <ul>
-          <li> "An Overview of the Pentateuch," pp. 3-8 </li>
-          <li> "Introduction to Pentateuchal Criticism," pp. 229-232 </li>
-        </ul>  
-      </ul>  
+          <li> Creation, the Patriarchs, and Babylon (1:1-11:26) </li>
+          <li> The account of Abraham (11:27-25:10)</li>
+        </ul>
+      </ul> 
     </div>
 </div>
 &nbsp;
