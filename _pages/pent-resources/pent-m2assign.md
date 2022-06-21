@@ -26,6 +26,7 @@ nav: false
           <li> "God's Temple-City," pp. 9-24 </li>
           <li> "The Royal Lineage in Genesis," pp. 25-38 </li>
           <li> "The Blessing of the Nations," pp. 39-54 </li>
+          <li> "The Rise of the Documentary Hypothesis," pp. 233-258</li>
         </ul>  
       </ul>
     </div>
@@ -38,8 +39,10 @@ nav: false
     </div>
     <div class="col-sm">
       <ul>
-        <li> </li>
-        <li> </li>
+        <li> Reflect on the idea that the cosmos is God's temple. What do you think about this? What theological insights does this idea communicate?</li>
+        <li> Why do you think geneology is such an important matter for the biblical authors?</li>
+        <li> How do the New Testament authors understand God's promises in the Pentateuch to "bless the nations"?</li>
+        <li> Distinguish the various phases of the Documentary Hypothesis (DH) and the models of explaining the composition of the Pentateuch that arise from them.</li>
 	  </ul>
     </div>
 </div>
