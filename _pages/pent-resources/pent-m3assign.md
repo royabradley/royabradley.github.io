@@ -13,7 +13,7 @@ nav: false
     </div>
     <div class="col-sm">
       <ul>
-        <li> Exodus 1:1-18:27 </li>
+        <li> Exodus 1:1-24:18 </li>
         <ul>
           <li> The oppression of the Israelites (1:1-22) </li>
           <li> The Preparation of a deliverer---Moses (2:1-25)</li>
