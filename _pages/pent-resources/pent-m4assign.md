@@ -18,7 +18,7 @@ nav: false
           <li> The Tabernacle (25:1-31:18) </li>
           <li> The Golden Calf (32:1-35)</li>
           <li> The restoration of Israel (33:1-34:35) </li>
-          <li> The Construction of the Tabernacle (35:1-40:38) </li>z
+          <li> The Construction of the Tabernacle (35:1-40:38) </li>
         </ul>
         <br>
         <li> Alexander, <em>From Paradise to the Promised Land</em></li>
