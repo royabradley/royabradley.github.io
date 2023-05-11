@@ -1,0 +1,12 @@
+---
+layout: post
+title: "The Sweet Olive Blossom"
+categories: 
+tags: 
+---
+
+One of my favorite scents in nature is that of the sweet olive blossom. It blooms in the late fall and spring, and only lasts for a short time, but when it comes...
+
+We are Christians, and that means that we are a people of the Word. The living Word of God is both incarnate (in Jesus, himself) and inscripturated (in the Bible, a book). These two dimensions, though distinguishable, are inseparable—an allegiance and devotion to one requires allegiance and devotion to the other. So we commit ourselves anew to reading and interpreting and applying the truths of this ancient, divinely inspired Text. Yes, this is difficult (particularly in the case of a book like Isaiah) but so are most meaningful endeavors in life. I am learning more and more that many portions of Scripture bear their fruit slowly, but that means that after the long period of cultivation and care, when the harvest is ripe, the taste is bliss. We reap what we sow in our labors in the Scriptures.
+
+One of my favorite scents in nature is that of the sweet olive blossom (a close second would have to be the wild sage brush that grows around the Teton mountains in Jackson, WY). The sweet olive blooms in late fall and spring, and it only lasts for a short time, but when it comes, it is exquisitely delightful and worth the wait. It is usually found in older, established gardens because it is very slow-growing. We have one in our back yard that was planted decades ago by former owners. There is another, healthier one just across my neighbor’s fence. When it is in bloom, I love to set up a chair right under its canopy and take in the scent. It is difficult for hurried people like us to justify in our landscaping plans a shrub that we won’t be able to enjoy for several years into the future. We are impatient. We want to smell and taste it now. We want to have our cake and to eat it, too. We want the promise of delight and its fulfillment simultaneously, like Edmond and his Turkish delights. We want both promise and fulfillment in a single package, with free, two-day Prime shipping. We have lost the art of waiting, of longing for God to make things right. It is often in this time of waiting that we finally begin to mature—to grow in faith and to wrestle with the riddles of life with perseverance and trust.
