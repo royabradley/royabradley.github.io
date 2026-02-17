@@ -72,7 +72,117 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "books-the-godfather",
+            },{id: "post-quot-the-gospel-of-the-kingdom-quot",
+        
+          title: "&quot;The Gospel of the Kingdom&quot;",
+        
+        description: "an example of a distill-style blog post and main elements",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/the-gospel-of-the-kingdom/";
+          
+        },
+      },{id: "post-the-quot-fear-of-the-lord-quot",
+        
+          title: "The &quot;Fear of the Lord&quot;",
+        
+        description: "An exegetical approach to understanding this proverbial phrase",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/the-fear-of-the-lord/";
+          
+        },
+      },{id: "post-the-illusion-of-pragmatism",
+        
+          title: "The illusion of pragmatism",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/illusion-of-pragmatism/";
+          
+        },
+      },{id: "post-the-impeded-stream",
+        
+          title: "The impeded stream",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/the-impeded-stream-copy-2/";
+          
+        },
+      },{id: "post-a-healthy-christian-culture",
+        
+          title: "A healthy Christian culture",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/a-healthy-christian-culture/";
+          
+        },
+      },{id: "post-a-true-theologian",
+        
+          title: "A true theologian",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/a-true-theologian/";
+          
+        },
+      },{id: "post-j-c-ryle-on-preaching",
+        
+          title: "J.C. Ryle on Preaching",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/ryle-preaching/";
+          
+        },
+      },{id: "post-quot-to-my-mother-quot",
+        
+          title: "&quot;To My Mother&quot;",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/berry-mother/";
+          
+        },
+      },{id: "post-divorce-in-biblical-perspective",
+        
+          title: "Divorce in Biblical Perspective",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/divorce/";
+          
+        },
+      },{id: "post-get-to-work-principles-from-the-life-of-gary-north",
+        
+          title: "Get to work: principles from the life of Gary North",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/north-advice/";
+          
+        },
+      },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
           section: "Books",handler: () => {
