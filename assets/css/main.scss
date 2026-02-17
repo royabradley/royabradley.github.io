@@ -37,3 +37,10 @@
 @use "font-awesome/brands";
 @use "font-awesome/solid";
 @use "font-awesome/regular";
+
+/* Fix casing for both the standard post list and the featured news/cards */
+.post-list h3 a, 
+.news table tr td a, 
+.card-title {
+    text-transform: none !important;
+}
