@@ -27,6 +27,17 @@ ninja.data = [{
             window.location.href = "/blog/2026/the-gospel-of-the-kingdom/";
           
         },
+      },{id: "post-quot-slow-down-you-crazy-child-quot",
+        
+          title: "&quot;Slow Down You Crazy Child&quot;",
+        
+        description: "Remarks to the students at the Yellow House Ministry on the SFA campus",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/crazy-child/";
+          
+        },
       },{id: "post-the-quot-fear-of-the-lord-quot",
         
           title: "The &quot;Fear of the Lord&quot;",
