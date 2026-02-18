@@ -134,12 +134,3 @@ blockquote {
     }
   }
 }
-
-/* The 'Brute Force' Readability Fix */
-html {
-  font-size: 18px !important; /* This bumps the entire site's base scale */
-}
-
-body {
-  line-height: 1.7 !important; /* Adds breathing room between lines */
-}
