@@ -2,7 +2,7 @@
 layout: cv
 permalink: /cv/
 title: CV
-nav: true
+nav: false
 nav_order: 3
 cv_pdf: assets/rendercv/rendercv_output/Roy_A._Bradley_CV.pdf #/assets/pdf/example_pdf.pdf, you can also use external links here
 cv_format: rendercv # options: rendercv, jsonresume
