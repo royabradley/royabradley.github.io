@@ -1,0 +1,93 @@
+---
+layout: post
+title: '"Slow Down You Crazy Child"'
+date: 2026-02-05 10:14:00-0400
+description: Remarks to the students at the Yellow House Ministry on the SFA campus
+tags: anxiety contentment time
+categories: remarks
+giscus_comments: false
+related_posts: false
+#toc:
+#  sidebar: left
+---
+
+<blockquote align="center">“Do not worry about your life…" <figcaption align="right">— Matthew 6:25</figcaption></blockquote>
+
+<blockquote align="center">“…godliness with contentment is great gain…” <figcaption align="right">— 1 Timothy 6:6</figcaption></blockquote>
+
+I’m getting old. My daughter frequently reminds of about my gray hair and bald spots. But I still remember, very clearly, being where you are in life right now—a young adult making my way through the college years—the college “experience”—back in the early 2000s, with so much of my life still ahead of me. I had grand visions and goals, and plenty of drive and idealism. And, in fact, it was in a campus ministry setting at just like this, at Sam Houston State, that my wife and I spent a lot of our time with friends, and were nurtured in our faith. And like you, we had a devoted campus minister who cared for us, and local pastors who would occasionally come and share their wisdom with us about life and faith. It was a formative time for us, and this is a formative time for you. Your in a good place here, and I hope that you sense that, and appreciate it. And I hope you have fostered the habit of honoring those who serve you and care for your souls. This is a natural implication of the Fifth Commandment. Don’t forget to tell Scotty “thank you” for the ways he cares for you here. I have been reminiscing on that time of my life when I was where you are now, and wondering about the things I needed to hear. One of those things is simply this: Don’t miss what is right in front of you. Be present in the moment—for better or worse, this is your life; today. 
+
+When you’re young, your view of life is primarily directed at what is out ahead of you in time, your future, defined by all the potentialities and possibilities that lay ahead—graduation, career opportunities, marriage, family, financial stability, “passion projects,” “bucket lists,” all the things. And if you’re really grounded, and if you are a serious Christian, you are also interested in maturity, in serving the church, in growing in your faith, character development, and deeper devotion—all good things, but still often relegated to a future time, right? I’ll get to those things after I graduate; after I get a job; after I get married; after I have children. 
+
+On the opposite end of life, in the final stages, life is mostly lived in memory of what has already been, or regret about what could have have been. That’s why, when you spend time with, say, your grandparents or other elderly folk, they frequently tell stories of their past; they don’t so much talk about what their going to be doing in five years from now like you. Most of their life has already been lived, so they look back to that. But from where you stand, you’re looking forward to a life yet lived, but you need the wisdom that comes from those who have gone before you and have lived that life; and you need the wisdom that comes from that perspective; it balances you. The phrase used to be “You can’t Google experience” (Joel Salatin); I guess we should translate it now as, “A.I. cannot do your living for you,” or something like that (though it doesn’t have the same ring).
+
+What can happen as you enter adulthood and begin making your own way through life is that you can easily fall prey to discontentment, never able to feel fully satisfied in the moment, in what your life is today, in this present stage of life. The rhetoric goes something like this: “Oh, you’re in high school? Just wait for college, because that’s when school and your social life really ramp up. Oh, college? Wait until you get into the “real world,” a desolate wasteland of responsibility, stress, and taxes. Your single? Just wait until you get married and all the craziness that your spouse is going to bring into your life. Then buy a house; have kids; be an empty-nester; have grandkids, on an on until you die (assuming you live an average lifespan, which isn’t guaranteed to any of us, is it?). Every stage can bring a kind of restlessness with it. I have lived this experience, myself; I know what this feels like.
+
+Each new stage of life—each path a person takes—leads to its own complications, desires, arrogances, regrets, and all other sorts of stuff. All these stages of life also bring wonderful blessings, so you’re told—and there is a lot of truth to that. But the danger is that you can miss seeing the blessings that are right before you today, in the present moment, because you, being young and looking forward, are distracted by the future, by what you don’t yet have.  And so life can seem to be comprised of a series of sequential stages, and in each stage you feel you’re just living for the next stage, and not this stage, that stage you’re in right now. By always focusing on what’s next, we embrace the general outlook, that wherever you are in your life now, you or it will never be enough. You’ve got to perform, and prove yourself to the world, you’ve got to accomplish the next best thing. This doesn’t mean you shouldn’t be working hard and pursuing goals, of course. Some of you are overachievers, and some of you are too lazy, and the rest are somewhere in-between. But all of us are susceptible to discontentment with our life and circumstances in the here and now, being distracted by what we don’t have or haven’t experienced yet.
+
+There is a strange irony in this: in trying not to miss out on life, to live it to the fullest, we end up never really being present for it. Your life right now is all you actually have to take pleasure in; you don’t have the future yet; you have right now. Are you content with that?
+
+Are there any Billy Joel fans in here? “Piano Man,” anyone? I’ve been a Billy Joel fan since I was a teenager, and the older I get, the more I appreciate the poetic depth of his music. He’s not just another “pop” artist; he’s in a class of truly remarkable singer-songwriters, who are also great poets and philosophers (not to mention excellent technical musicians). I think his music really captures this theme of the loss of contentment with one’s present situation. It’s a theme that echoes across his musical career, from his hit title track “Piano Man” (which he wrote when he was not much older than most of you—featuring the bartender John, who wishes he could be a movie star if he could only “get out of this place”), to “It’s Still Rock and Roll to Me” (a song that rejects criticism for living life in the present on his terms: “What’s the matter with the car I’m driving, can’t you tell that it’s out of style?”). There are songs like “The Entertainer,” “Summer, Highland Falls,” “Pressure,” and “I Go to Extremes”—they all explore in some way or another this same feeling further. Billy Joel is what we call an "album artist"; to fully appreciate him, you have to listen to complete albums, start to finish, in order, and explore how the different songs interplay with one another in terms of musical and poetic themes. Unlike so many "pop" music icons, his music can sustain that kind of listening. Even after his songwriting days had ended, he still emphasized the struggle for contentment in his life. In a 2008 article in the New York Times, he said, “I seek contentment. I wish I was [sic.; “were,” subjunctive mood] less discontent.”—and that from a man who had risen to the very heights of super-stardom and recognition, made all the money, married a supermodel, and won all the awards. But we all wish we were "less discontent," right? And how are we to deal with this problem that projects itself throughout every stage of life we face?
+
+I think the college years, in particular, can be a pressure cooker for this kind of fear and the temptation to forget that this is your life right now—it’s not just another phase that gets you to the next phase or catapults you into the “real world.”
+
+I think Billy Joel’s song, Vienna, in particular, speaks into the anxiety in all this with a surprising tenderness.
+
+<blockquote>
+Slow down, you crazy child<br>
+You’re so ambitious for a juvenile<br>
+But then if you’re so smart<br>
+Tell me why are you still so afraid?<br>
+<br>
+Where’s the fire, what’s the hurry about?<br>
+You’d better cool it off before you burn it out<br>
+You’ve got so much to do and only<br>
+So many hours in a day.<br>
+<br>
+But you know that when the truth is told<br>
+That you can get what you want<br>
+Or you can just get old<br>
+You’re gonna kick off before you even get halfway through.<br>
+<br>
+When will you realize<br>
+Vienna waits for you?<br>
+<br>
+Slow down, you’re doing fine<br>
+You can’t be everything you want to be<br>
+Before your time<br>
+Although it’s so romantic on the borderline tonight<br>
+<br>
+Too bad but it’s the life you lead<br>
+You’re so ahead of yourself<br>
+That you forgot what you need<br>
+Though you can see when you’re wrong<br>
+You know you can’t always see when you’re right<br>
+<br>
+You got your passion, you got your pride<br>
+But don’t you know that only fools are satisfied?<br>
+Dream on, but don’t imagine they’ll all come true<br>
+<br>
+When will you realize<br>
+Vienna waits for you?<br>
+<br>
+Slow down, you crazy child<br>
+And take the phone off the hook<br>
+And disappear for a while<br>
+It’s alright, you can afford to lose a day or two<br>
+<br>
+Why don’t you realize<br>
+Vienna waits for you?
+</blockquote>
+
+Most of you are Gen Z-ers, correct? You are the first generation who has never known life without smartphones and social media. One of the things that the Gen Z experiement has shown is that for all the hype about the wonders of technology and its ability to somehow make us better humans and usher in a better world, what we actually see is an incredible rise in a host of destabilizing trends: depression, anxiety, cyber-bullying, and all the rest. I hope that you all have put your own boundaries in place to protect yourselves from some of these things, because it’s all over the place.
+
+Jesus says: “Do not worry[=be anxious] about your life…” The word Jesus uses here for worry/anxiety is a word that essentially means to be double-minded. Notice that Jesus does not talk about anxiety as a *feeling*, but rather, foremost, as a state of mind, a way of seeing the world. This is why the Bible’s diagnosis of anxiety is so sharp and cutting. One part of you says, “I trust God and His wisdom, and His word, and His purposes for my life.” But at the same time, you think that everything depends on your performance in life and your future accomplishments. One part of you receives your life now as a gift, while the other part frantically tires to justify it’s existence. Anxiety is like trying to live in two worlds at once: the world of grace and the world of self-salvation. We don’t have time to tease all this out right now, but in the letter of James, he teaches that this kind of divided life is unstable and presumptuous—not because you’re weak, but because you are torn and do not possess the kind of wholeness or unity of soul that the Spirit brings.
+
+Christian faith doesn’t say, “Slow down and live in the moment because nothing is at stake, nothing matters.” No, it says, “You can slow down because the most important thing has already been settled.” Jesus Christ, the God-Man, born into the world as a child, yet a King, has come. His kingdom reign has been established; in his death and resurrection he has conquered sin and death, and chartered a New Humanity, the Church, the Body of Christ in the world, to redeem it and bring Heaven to Earth. If you are in Christ, the value of your life is not suspended somewhere in the future. It is not awaiting your performance. It’s already a "given" (pun intended). This is the good news of the gospel. This doesn’t negate the need for ambition and diligence, but, rather, it redeems these dispositions and longings to their proper place, not as worried striving, but as a response of gratitude to a gift and a reality that has already been established.
+
+So slow down, you crazy child; your life is *now*; be fully present in it. Don’t miss what God is doing right now. Don’t be anxious, don’t be double-minded, torn within yourself. Be settled because Christ has come, has suffered and bled for the redemption of this world; he has conquered death, and has paved the way to Resurrection life, and now reigns as King forever. 
+
+Some of you may be anxious and unsettled today because you do not know the grace of Jesus Christ in your life, or haven’t submitted fully to his Lordship. If that’s you, I pray that this would lead to a deep desire to know Him and the peace and purpose that he brings because of his love for sinners like us. Let’s pray.
+
+<u>Prayer</u>: Heavenly Father, help us all to see afresh that the life we have right before us in the now is a gift from you to be enjoyed, to be fully present in, as we seek to honor you by following the way of Your Son, Our Lord, Jesus Christ. He is the full embodiment of life at its best, and we ask that by your Spirit’s work, that we may “attain to the unity of the faith and of the knowledge of the Son of God, to mature manhood, to the measure of the stature of the fullness of Christ,” who is our all in all, and who reigns with you and the Holy Spirit, one God, forever and ever. Amen.
+
