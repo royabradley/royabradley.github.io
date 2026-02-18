@@ -11,9 +11,9 @@ related_posts: false
 #  sidebar: left
 ---
 
-<blockquote align="center">“Do not worry about your life…" <figcaption align="right">— Matthew 6:25</figcaption></blockquote>
+<blockquote align="left">“Do not worry about your life…" <figcaption align="right">— Matthew 6:25</figcaption></blockquote>
 
-<blockquote align="center">“…godliness with contentment is great gain…” <figcaption align="right">— 1 Timothy 6:6</figcaption></blockquote>
+<blockquote align="left">“…godliness with contentment is great gain…” <figcaption align="right">— 1 Timothy 6:6</figcaption></blockquote>
 
 I’m getting old. My daughter frequently reminds of about my gray hair and bald spots. But I still remember, very clearly, being where you are in life right now—a young adult making my way through the college years—the college “experience”—back in the early 2000s, with so much of my life still ahead of me. I had grand visions and goals, and plenty of drive and idealism. And, in fact, it was in a campus ministry setting at just like this, at Sam Houston State, that my wife and I spent a lot of our time with friends, and were nurtured in our faith. And like you, we had a devoted campus minister who cared for us, and local pastors who would occasionally come and share their wisdom with us about life and faith. It was a formative time for us, and this is a formative time for you. Your in a good place here, and I hope that you sense that, and appreciate it. And I hope you have fostered the habit of honoring those who serve you and care for your souls. This is a natural implication of the Fifth Commandment. Don’t forget to tell Scotty “thank you” for the ways he cares for you here. I have been reminiscing on that time of my life when I was where you are now, and wondering about the things I needed to hear. One of those things is simply this: Don’t miss what is right in front of you. Be present in the moment—for better or worse, this is your life; today. 
 
