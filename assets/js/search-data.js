@@ -115,17 +115,6 @@ ninja.data = [{
             window.location.href = "/blog/2025/berry-mother/";
           
         },
-      },{id: "post-divorce-in-biblical-perspective",
-        
-          title: "Divorce in Biblical Perspective",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/divorce/";
-          
-        },
       },{id: "post-get-to-work-principles-from-the-life-of-gary-north",
         
           title: "Get to work: principles from the life of Gary North",
