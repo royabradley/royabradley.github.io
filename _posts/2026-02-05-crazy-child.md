@@ -1,19 +1,30 @@
 ---
-layout: post
-title: '"Slow Down You Crazy Child"'
+layout: distill
+title: '"Slow Down, You Crazy Child"'
 date: 2026-02-05 10:14:00-0400
 description: Remarks to the students at the Yellow House Ministry on the SFA campus
 tags: anxiety contentment time
 categories: remarks
+featured: true
 giscus_comments: false
 related_posts: false
 #toc:
 #  sidebar: left
 ---
 
-<blockquote align="left">“Do not worry about your life…" <figcaption align="right">— Matthew 6:25</figcaption></blockquote>
+<blockquote>
+  "Do not worry about your life..."
+  <footer class="blockquote-footer" style="text-align: right;">
+    Matthew 6:25
+  </footer>
+</blockquote>
 
-<blockquote align="left">“…godliness with contentment is great gain…” <figcaption align="right">— 1 Timothy 6:6</figcaption></blockquote>
+<blockquote>
+  “…godliness with contentment is great gain…”
+  <footer class="blockquote-footer" style="text-align: right;">
+    1 Timothy 6:6
+  </footer>
+</blockquote>
 
 I’m getting old. My daughter frequently reminds of about my gray hair and bald spots. But I still remember, very clearly, being where you are in life right now—a young adult making my way through the college years—the college “experience”—back in the early 2000s, with so much of my life still ahead of me. I had grand visions and goals, and plenty of drive and idealism. And, in fact, it was in a campus ministry setting at just like this, at Sam Houston State, that my wife and I spent a lot of our time with friends, and were nurtured in our faith. And like you, we had a devoted campus minister who cared for us, and local pastors who would occasionally come and share their wisdom with us about life and faith. It was a formative time for us, and this is a formative time for you. Your in a good place here, and I hope that you sense that, and appreciate it. And I hope you have fostered the habit of honoring those who serve you and care for your souls. This is a natural implication of the Fifth Commandment. Don’t forget to tell Scotty “thank you” for the ways he cares for you here. I have been reminiscing on that time of my life when I was where you are now, and wondering about the things I needed to hear. One of those things is simply this: Don’t miss what is right in front of you. Be present in the moment—for better or worse, this is your life; today. 
 
@@ -89,5 +100,6 @@ So slow down, you crazy child; your life is *now*; be fully present in it. Don�
 
 Some of you may be anxious and unsettled today because you do not know the grace of Jesus Christ in your life, or haven’t submitted fully to his Lordship. If that’s you, I pray that this would lead to a deep desire to know Him and the peace and purpose that he brings because of his love for sinners like us. Let’s pray.
 
-<u>Prayer</u>: Heavenly Father, help us all to see afresh that the life we have right before us in the now is a gift from you to be enjoyed, to be fully present in, as we seek to honor you by following the way of Your Son, Our Lord, Jesus Christ. He is the full embodiment of life at its best, and we ask that by your Spirit’s work, that we may “attain to the unity of the faith and of the knowledge of the Son of God, to mature manhood, to the measure of the stature of the fullness of Christ,” who is our all in all, and who reigns with you and the Holy Spirit, one God, forever and ever. Amen.
+## Prayer
+Heavenly Father, help us all to see afresh that the life we have right before us in the now is a gift from you to be enjoyed, to be fully present in, as we seek to honor you by following the way of Your Son, Our Lord, Jesus Christ. He is the full embodiment of life at its best, and we ask that by your Spirit’s work, that we may “attain to the unity of the faith and of the knowledge of the Son of God, to mature manhood, to the measure of the stature of the fullness of Christ,” who is our all in all, and who reigns with you and the Holy Spirit, one God, forever and ever. Amen.
 
