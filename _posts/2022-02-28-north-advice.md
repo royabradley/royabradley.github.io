@@ -4,7 +4,7 @@ title: "Get to work: principles from the life of Gary North"
 date: 2022-02-28 16:40:16
 description: 
 tags: work productivity
-categories: #sample-posts
+categories: quote #sample-posts
 ---
 
 Reflecting on the recent passing of Gary North (prolific Christian economist and theologian), Craig Bulkeley takes the opportunity to [chronicle](https://www.garynorth.com/public/23334.cfm?fbclid=IwAR2hNff2ePu204_p4ax9u-lP1JmprLoiWgUOnQeaZzYreVWo1884siOJqh8) Dr. North's life and work in broad detail as a way of honoring his influence and contribution to the church, economic theory, theology, and ethics. Bulkeley concludes his article with "advice for the future," outlining "some important principles that enabled [North] to stick to his knitting, stay out of trouble, and be as productive as he was." "These," says Bulkeley, "are applicable to everyone."
