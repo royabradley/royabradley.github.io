@@ -29,7 +29,7 @@ ninja.data = [{
         },
       },{id: "post-quot-slow-down-you-crazy-child-quot",
         
-          title: "&quot;Slow Down You Crazy Child&quot;",
+          title: "&quot;Slow Down, You Crazy Child&quot;",
         
         description: "Remarks to the students at the Yellow House Ministry on the SFA campus",
         section: "Posts",
@@ -62,7 +62,7 @@ ninja.data = [{
         },
       },{id: "post-the-impeded-stream",
         
-          title: "The impeded stream",
+          title: "The Impeded Stream",
         
         description: "",
         section: "Posts",
