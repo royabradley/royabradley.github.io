@@ -134,3 +134,23 @@ blockquote {
     }
   }
 }
+
+/* Seamless Distill blockquotes for Dark Mode */
+[data-theme='dark'] .distill blockquote {
+  color: var(--global-text-color) !important;
+  background-color: transparent !important; /* Removes the "box" look */
+  border-left: 3px solid var(--global-theme-color); /* Kept for a nice professional accent */
+  padding: 5px 20px;
+  margin: 1.5rem 0;
+}
+
+/* Ensure the text inside is visible */
+[data-theme='dark'] .distill blockquote p {
+  color: var(--global-text-color) !important;
+}
+
+/* Ensure citations inside the blockquote also flip color */
+[data-theme='dark'] .distill blockquote footer,
+[data-theme='dark'] .distill blockquote .blockquote-footer {
+  color: var(--global-text-color-light) !important;
+}
