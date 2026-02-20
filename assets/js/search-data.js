@@ -16,7 +16,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-quot-the-gospel-of-the-kingdom-quot",
+        },{id: "post-the-impeded-stream",
+        
+          title: "The Impeded Stream",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/the-impeded-stream/";
+          
+        },
+      },{id: "post-quot-the-gospel-of-the-kingdom-quot",
         
           title: "&quot;The Gospel of the Kingdom&quot;",
         
@@ -31,7 +42,7 @@ ninja.data = [{
         
           title: "&quot;Slow Down, You Crazy Child&quot;",
         
-        description: "Remarks to the students at the Yellow House Ministry on the SFA campus",
+        description: "Remarks to the students at the Yellow House ministry at Stephen F. Austin State University in Nacogdoches, Texas on 5 February 2026.",
         section: "Posts",
         handler: () => {
           
@@ -60,15 +71,15 @@ ninja.data = [{
             window.location.href = "/blog/2025/illusion-of-pragmatism/";
           
         },
-      },{id: "post-the-impeded-stream",
+      },{id: "post-spiritual-pride",
         
-          title: "The Impeded Stream",
+          title: "Spiritual Pride",
         
         description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/the-impeded-stream-copy-2/";
+            window.location.href = "/blog/2025/edwards-pride/";
           
         },
       },{id: "post-a-healthy-christian-culture",
