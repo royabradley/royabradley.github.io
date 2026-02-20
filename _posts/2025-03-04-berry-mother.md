@@ -6,35 +6,38 @@ tags: Berry, motherhood, poetry
 featured: false
 ---
 
-I was your rebellious son,  
-do you remember? Sometimes  
-I wonder if you do remember,  
-so complete has your forgiveness been.  
-
-So complete has your forgiveness been  
-I wonder sometimes if it did not  
-precede my wrong, and I erred,  
-safe found, within your love,  
-
-prepared ahead of me, the way home,  
-or my bed at night, so that almost  
-I should forgive you, who perhaps  
-foresaw the worst that I might do,  
-
-and forgave before I could act,  
-causing me to smile now, looking back,  
-to see how paltry was my worst,  
-compared to your forgiveness of it  
-
-already given. And this, then,  
-is the vision of that Heaven of which  
-we have heard, where those who love  
-each other have forgiven each other,  
-
-where, for that, the leaves are green,  
-the light a music in the air,  
-and all is unentangled, 
+<blockquote>
+I was your rebellious son,<br>  
+do you remember? Sometimes<br>  
+I wonder if you do remember,<br>  
+so complete has your forgiveness been.<br>  
+<br>
+So complete has your forgiveness been<br>  
+I wonder sometimes if it did not<br>  
+precede my wrong, and I erred,<br>  
+safe found, within your love,<br>  
+<br>
+prepared ahead of me, the way home,<br>  
+or my bed at night, so that almost<br>  
+I should forgive you, who perhaps<br>  
+foresaw the worst that I might do,<br>  
+<br>
+and forgave before I could act,<br>  
+causing me to smile now, looking back,<br>  
+to see how paltry was my worst,<br>  
+compared to your forgiveness of it<br>  
+<br>
+already given. And this, then,<br>  
+is the vision of that Heaven of which<br>  
+we have heard, where those who love<br>  
+each other have forgiven each other,<br>  
+<br>
+where, for that, the leaves are green,<br>  
+the light a music in the air,<br>  
+and all is unentangled,<br> 
 and all is undismayed.  
+</blockquote>
 
-<br/>
-<figcaption align="left">— Wendell Berry, <em>Poetry Magazine</em>, October/November 1987, p. 14</figcaption>
+<footer class="blockquote-footer" style="text-align: right;">
+    Wendell Berry, <i>Poetry Magazine</i>, October/November 1987, p. 14
+  </footer>

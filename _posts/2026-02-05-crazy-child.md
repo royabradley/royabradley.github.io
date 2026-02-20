@@ -2,7 +2,7 @@
 layout: distill
 title: '"Slow Down, You Crazy Child"'
 date: 2026-02-05 10:14:00-0400
-description: Remarks to the students at the Yellow House Ministry on the SFA campus
+description: Remarks to the students at the Yellow House ministry at Stephen F. Austin State University in Nacogdoches, Texas on 5 February 2026.
 tags: anxiety contentment time
 categories: remarks
 featured: true
@@ -16,13 +16,6 @@ related_posts: false
   "Do not worry about your life..."
   <footer class="blockquote-footer" style="text-align: right;">
     Matthew 6:25
-  </footer>
-</blockquote>
-
-<blockquote>
-  “…godliness with contentment is great gain…”
-  <footer class="blockquote-footer" style="text-align: right;">
-    1 Timothy 6:6
   </footer>
 </blockquote>
 
