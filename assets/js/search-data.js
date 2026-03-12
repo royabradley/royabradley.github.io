@@ -198,6 +198,26 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-lessons",
+          title: 'lessons',
+          description: "[under construction]",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/lessons/";
+            },},{id: "projects-the-pentateuch-a-literary-theological-introduction",
+          title: 'The Pentateuch: A Literary-Theological Introduction',
+          description: "Grace Covenant Presbyterian Church | Summer 2022",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/pentateuch/";
+            },},{id: "projects-sermons",
+          title: 'sermons',
+          description: "[under construction]",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/sermons/";
+            },},{id: "projects-study-papers",
+          title: 'study papers',
+          description: "Biblical studies, theology, church history",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/study-papers/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
