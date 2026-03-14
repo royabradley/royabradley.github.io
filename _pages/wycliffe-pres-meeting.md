@@ -39,7 +39,11 @@ nav_order: 0
 
 <hr style="border: none; border-top: 0.2px solid #ccc; margin: 2rem 0;" />
 
-This year marks the 1700th anniversary of the Council of Nicea. To celebrate and commemorate this event, GCPC is hosting a time of learning and fellowship led by Rev. Dr. Robbie Crouse, who will be teaching on the place and importance of confessions, traditions, and the past, and then honing in on the Nicene Creed as a case study, with application to the Christian life. This is a rich opportunity to learn and grow. All are invited and encouraged to attend.
+<div class="text-center my-4">
+  <div class="alert alert-danger d-inline-block mb-0" role="alert text-left">
+    Please submit only ONE registration form per church.
+  </div>
+</div>
 
 <br/>
 
@@ -149,91 +153,14 @@ This year marks the 1700th anniversary of the Council of Nicea. To celebrate and
   form.addEventListener("submit", handleSubmit);
 </script>
 
-<style>
-.day-friday {
-  background-color: #2698ba !important;
-  color: #ffffff;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.day-saturday {
-  background-color: #2ca58d !important;
-  color: #ffffff;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.day-sunday {
-  background-color: #d9822b !important;
-  color: #ffffff;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.row-alt {
-  background-color: #f0f2f4;
-}
-@media (prefers-color-scheme: dark) {
-  .row-alt {
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-}
-</style>
+<br>
 
-<h2>Event Schedule</h2>
-<div class="table-responsive">
-  <table class="table">
-    <tbody>
-      <tr>
-        <td rowspan="2" class="day-friday">Friday</td>
-        <td>
-          <div>Session 1</div>
-          <small class="text-muted">7:00 PM – 7:50 PM</small>
-        </td>
-        <td>Why Church History?</td>
-      </tr>
-      <tr class="row-alt">
-        <td>
-          <div>Session 2</div>
-          <small class="text-muted">8:00 PM – 9:00 PM</small>
-        </td>
-        <td>Why Creeds &amp; Confessions?</td>
-      </tr>
-      <tr>
-        <td rowspan="3" class="day-saturday">Saturday</td>
-        <td>
-          <div>Fellowship</div>
-          <small class="text-muted">8:00 AM – 8:30 AM</small>
-        </td>
-        <td>Coffee / light breakfast</td>
-      </tr>
-      <tr class="row-alt">
-        <td>
-          <div>Session 3</div>
-          <small class="text-muted">8:30 AM – 9:45 AM</small>
-        </td>
-        <td>Why the Nicene Creed?: A Case Study</td>
-      </tr>
-      <tr>
-        <td>
-          <div>Session 4</div>
-          <small class="text-muted">10:00 AM – 11:30 AM</small>
-        </td>
-        <td>Why "begotten, not made"?: The Christological Claim</td>
-      </tr>
-      <tr class="row-alt">
-        <td rowspan="2" class="day-sunday">Sunday</td>
-        <td>
-          <div>Sunday School</div>
-          <small class="text-muted">9:45 AM – 10:30 AM</small>
-        </td>
-        <td>Why "one holy, catholic, and apostolic church"?: The Ecclesiological Claim</td>
-      </tr>
-      <tr>
-        <td>
-          <div>Sermon</div>
-          <small class="text-muted"></small>
-        </td>
-        <td><i>Confessing the Faith</i>—Deuteronomy 26:1-11</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="map-container mb-5 shadow-sm rounded mx-auto overflow-hidden" style="position: relative; padding-bottom: 50%; height: 0; max-width: 800px;">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3398.414075003699!2d-94.61994632350161!3d31.595111774179856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8637897356100fed%3A0x92d67bb6f348b072!2sGrace%20Covenant%20Presbyterian%20Church!5e0!3m2!1sen!2sus!4v1773499279250!5m2!1sen!2sus" 
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
 </div>
