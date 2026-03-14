@@ -43,6 +43,112 @@ This year marks the 1700th anniversary of the Council of Nicea. To celebrate and
 
 <br/>
 
+<form id="rsvpForm" 
+      class="p-4 rounded shadow-sm mx-auto" 
+      style="max-width: 400px; background-color: var(--bs-body-bg);">
+  <h3 style="text-align:center; color:#2698ba; margin-bottom:1rem;">Event Registration</h3>
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Your name</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone number</label>
+    <input type="tel" class="form-control" id="phone" name="phone" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="church" class="form-label">Name of your church</label>
+    <input type="text" class="form-control" id="church" name="church" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="location" class="form-label">Location (City, State)</label>
+    <input type="text" class="form-control" id="location" name="location" placeholder="e.g., Nacogdoches, TX" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="attendees" class="form-label">Number of attendees (delegates + wives/visitors)</label>
+    <input type="number" class="form-control" id="attendees" name="attendees" min="1" required>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn px-4" id="submitBtn"
+      style="background-color:#2698ba; border:none; color:white;">Submit</button>
+  </div>
+</form>
+
+<div id="thankYou" class="text-center p-4 mx-auto" 
+     style="display:none; opacity:0; transition:opacity 0.6s ease, transform 0.6s ease;
+            background-color: rgba(38, 152, 186, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: scale(0.95);
+            max-width: 500px;
+            width: 100%;">
+  <h5 style="color:#2698ba;">Thank you for your registration!</h5>
+  <p>Your details have been recorded.</p>
+</div>
+
+<script>
+  const form = document.getElementById("rsvpForm");
+  const thankYou = document.getElementById("thankYou");
+  const submitBtn = document.getElementById("submitBtn");
+
+  if (localStorage.getItem("rsvpSubmitted_delegates") === "true") {
+    form.style.display = "none";
+    thankYou.style.display = "block";
+    thankYou.style.opacity = 1;
+    thankYou.style.transform = "scale(1)";
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Submitting...";
+
+    const formData = new FormData(form);
+
+    // IMPORTANT: Replace this URL with your NEW Google Apps Script Web App URL
+    fetch("https://script.google.com/macros/s/AKfycbyBKQOvT4O4uxn6hs6yzzOX3M9scfRH85Vt6EQgFVMJo5Wqv25U19TdIED6HWtN4F0yDw/exec", {
+      method: "POST",
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+        localStorage.setItem("rsvpSubmitted_delegates", "true"); 
+        form.style.display = "none";
+        thankYou.style.display = "block";
+        setTimeout(() => {
+          thankYou.style.opacity = 1;
+          thankYou.style.transform = "scale(1)";
+        }, 50);
+
+        form.removeEventListener("submit", handleSubmit);
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit";
+        alert("There was a problem submitting your RSVP. Please try again.");
+      }
+    })
+    .catch(error => {
+      console.error("Error!", error.message);
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Submit";
+      alert("Network error. Please try again.");
+    });
+  }
+
+  form.addEventListener("submit", handleSubmit);
+</script>
+
 <style>
 .day-friday {
   background-color: #2698ba !important;
@@ -131,104 +237,3 @@ This year marks the 1700th anniversary of the Council of Nicea. To celebrate and
     </tbody>
   </table>
 </div>
-
-<br/>
-
- <h3>About the Speaker</h3>
- Dr. Crouse is Professor of Systematic Theology at Knox Theological Seminary in Ft. Lauderdale, Florida. His passion is connecting biblical interpretation with the historic legacy of Christian doctrine. The goal is to see the church renewed for its calling of worship and discipleship. Born and raised in Dallas, Texas, Dr. Crouse attended Hillsdale College for history and classics and Beeson Divinity School for ministerial training. At Wheaton College, he completed his PhD in Biblical and Theological Studies, with an emphasis in historical and systematic theology. He is an ordained minister of the gospel in the Presbyterian Church in America (PCA) and has served in church ministry in a number of capacities, including as an interim pastor (in a sister CREC church). His interests in teaching and study are in the theology of the Protestant Reformation, the history and theology of worship and the sacraments, and the relationship between the Old and New Testaments. Dr. Crouse also serves as the Stated Clerk for the South Florida Presbytery of the PCA. He is married to Becky; they have three daughters and are expecting their fourth child this fall.
-
-<form id="rsvpForm" 
-      class="p-4 rounded shadow-sm mx-auto" 
-      style="max-width: 400px; background-color: var(--bs-body-bg);">
-  <h3 style="text-align:center; color:#2698ba; margin-bottom:1rem;">RSVP</h3>
-
-  <!-- Name -->
-  <div class="mb-3">
-    <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control" id="name" name="name" required>
-  </div>
-
-  <!-- Number of Attendees -->
-  <div class="mb-3">
-    <label for="attendees" class="form-label">Number of Attendees</label>
-    <input type="number" class="form-control" id="attendees" name="attendees" required>
-  </div>
-
-  <!-- Number of Children Needing Childcare -->
-  <div class="mb-3">
-    <label for="children" class="form-label">Number of Children Needing Childcare</label>
-    <input type="number" class="form-control" id="children" name="children" required>
-  </div>
-
-  <!-- Submit Button -->
-  <div class="text-center">
-    <button type="submit" class="btn px-4" id="submitBtn"
-      style="background-color:#2698ba; border:none; color:white;">Submit</button>
-  </div>
-</form>
-
-<!-- Thank You Message -->
-<div id="thankYou" class="text-center p-4 mx-auto" 
-     style="display:none; opacity:0; transition:opacity 0.6s ease, transform 0.6s ease;
-            background-color: rgba(38, 152, 186, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transform: scale(0.95);
-            max-width: 500px;
-            width: 100%;">
-  <h5 style="color:#2698ba;">Thank you for your response!</h5>
-  <p>Your RSVP has been recorded.</p>
-</div>
-
-<script>
-  const form = document.getElementById("rsvpForm");
-  const thankYou = document.getElementById("thankYou");
-  const submitBtn = document.getElementById("submitBtn");
-
-  // Check if already submitted in this browser
-  if (localStorage.getItem("rsvpSubmitted") === "true") {
-    form.style.display = "none";
-    thankYou.style.display = "block";
-    thankYou.style.opacity = 1;
-    thankYou.style.transform = "scale(1)";
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    submitBtn.disabled = true;
-    submitBtn.innerText = "Submitting...";
-
-    const formData = new FormData(form);
-
-    fetch("https://script.google.com/macros/s/AKfycbxOET432hty9avmloFpLYDC_Y5YYXYQ2zOo8XOpqrPn4M_AIWPbFUROM3l5791meqQZ/exec", {
-      method: "POST",
-      body: formData
-    })
-    .then(response => {
-      if (response.ok) {
-        localStorage.setItem("rsvpSubmitted", "true"); // Save lock
-        form.style.display = "none";
-        thankYou.style.display = "block";
-        setTimeout(() => {
-          thankYou.style.opacity = 1;
-          thankYou.style.transform = "scale(1)";
-        }, 50);
-
-        form.removeEventListener("submit", handleSubmit);
-      } else {
-        submitBtn.disabled = false;
-        submitBtn.innerText = "Submit";
-        alert("There was a problem submitting your RSVP. Please try again.");
-      }
-    })
-    .catch(error => {
-      console.error("Error!", error.message);
-      submitBtn.disabled = false;
-      submitBtn.innerText = "Submit";
-      alert("Network error. Please try again.");
-    });
-  }
-
-  form.addEventListener("submit", handleSubmit);
-</script>
