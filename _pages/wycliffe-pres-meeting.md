@@ -84,7 +84,7 @@ nav_order: 0
 
   <div class="mb-3">
     <label for="notes" class="form-label">Notes</label>
-    <textarea class="form-control" id="additional_info" name="additional_info" rows="4" placeholder="Include any additional information you would like us to know (e.g., names of attendees, etc.)."></textarea>
+    <textarea class="form-control" id="additional_info" name="notes" rows="4" placeholder="Include any additional information you would like us to know (e.g., names of attendees, etc.)."></textarea>
   </div>
 
   <div class="text-center">
