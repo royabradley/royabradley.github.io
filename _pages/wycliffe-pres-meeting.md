@@ -19,7 +19,7 @@ nav_order: 0
       </p>
       <br>
       <p>
-        20-21 April 2026<br>
+        20-21 April<br>
         <em><a href="https://gcov.org">Grace Covenant Presbyterian Church</a></em><br>
         Nacogdoches, Texas
       </p>
@@ -39,14 +39,14 @@ nav_order: 0
 
 <hr style="border: none; border-top: 0.2px solid #ccc; margin: 2rem 0;" />
 
+<!-- Alert -->
 <div class="text-center my-4">
   <div class="alert alert-danger d-inline-block mb-0" role="alert text-left">
     Please submit only ONE registration form per church.
   </div>
 </div>
 
-<br/>
-
+<!-- Form -->
 <form id="rsvpForm" 
       class="p-4 rounded shadow-sm mx-auto" 
       style="max-width: 400px; background-color: var(--bs-body-bg);">
@@ -74,12 +74,17 @@ nav_order: 0
 
   <div class="mb-3">
     <label for="location" class="form-label">Location (City, State)</label>
-    <input type="text" class="form-control" id="location" name="location" placeholder="e.g., Nacogdoches, TX" required>
+    <input type="text" class="form-control" id="location" name="location" placeholder="e.g., Nacogdoches, Texas" required>
   </div>
 
   <div class="mb-3">
-    <label for="attendees" class="form-label">Number of attendees (delegates + wives/visitors)</label>
+    <label for="attendees" class="form-label">Total number of attendees (delegates + wives/visitors)</label>
     <input type="number" class="form-control" id="attendees" name="attendees" min="1" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="notes" class="form-label">Notes</label>
+    <textarea class="form-control" id="additional_info" name="additional_info" rows="4" placeholder="Include any additional information you would like us to know (e.g., names of attendees, etc.)."></textarea>
   </div>
 
   <div class="text-center">
