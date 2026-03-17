@@ -159,7 +159,7 @@ nav_order: 0
 </script>
 
 <br>
-
+<!-- Map -->
 <div class="map-container mb-5 shadow-sm rounded mx-auto overflow-hidden" style="position: relative; padding-bottom: 50%; height: 0; max-width: 800px;">
   <iframe 
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3398.414075003699!2d-94.61994632350161!3d31.595111774179856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8637897356100fed%3A0x92d67bb6f348b072!2sGrace%20Covenant%20Presbyterian%20Church!5e0!3m2!1sen!2sus!4v1773499279250!5m2!1sen!2sus" 
@@ -169,3 +169,4 @@ nav_order: 0
     referrerpolicy="no-referrer-when-downgrade">
   </iframe>
 </div>
+
