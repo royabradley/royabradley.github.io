@@ -9,7 +9,18 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "post-the-impeded-stream",
+  },{id: "post-the-consolation-of-god-39-s-providence",
+        
+          title: "The Consolation of God&#39;s Providence",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/irony-authority/";
+          
+        },
+      },{id: "post-the-impeded-stream",
         
           title: "The Impeded Stream",
         
