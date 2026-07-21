@@ -32,14 +32,17 @@ latest_posts:
 
 This site is primarily a place for me to process and document my interests and projects, which reflect my work as a Christian minister in the classical Reformed, evangelical tradition. I currently serve as the associate pastor at <a href="https://gcov.org">Grace Covenant Presbyterian Church</a> (a member of the <a href="https://crecchurches.org">Communion of Reformed Evangelical Churches)</a> in Nacogdoches, Texas. The views and opinions expressed on this site are solely those of the proprietor and do not necessarily reflect the views of his employer or any affiliated organizations.
 
-<div class="d-flex flex-column flex-md-row align-items-center gap-3">
-  <img src="{{ '/assets/img/trinity-shield.webp' | relative_url }}" alt="Trinity Shield" width="125" class="mb-3 mb-md-0">
-  
-  <div>
-    <p>
-      Glory be to the Triune God—Father, Son, and Holy Spirit—one God, world without end. Amen.
-    </p>
-  </div>
+<div class="my-3">
+  <img
+    src="{{ '/assets/img/glass-trinity.png' | relative_url }}"
+    alt="Glass Trinity"
+    width="125"
+    class="d-block mx-auto mb-3"
+  >
+
+  <p>
+    Glory be to the Triune God—Father, Son, and Holy Spirit—one God, world without end. Amen.
+  </p>
 </div>
 
 <!-- 
