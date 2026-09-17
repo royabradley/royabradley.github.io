@@ -2,7 +2,7 @@
 
 A quiet, typography-first Astro theme for writers. Good type, generous measure, nothing else in the way.
 
-[Live demo](https://pilcrow.ondelva.com) · [Docs](https://pilcrow.ondelva.com/docs/) · [Pro version](https://pilcrow.ondelva.com)
+[Live demo](https://pilcrow.ondelva.com) · [Docs](https://pilcrow.ondelva.com/docs/) · [Pro version](https://buy.polar.sh/polar_cl_8dCt7ufpdKweXNgPSp3DH73SlxkMoirMTbBuF3WJooD)
 
 ![screenshot](docs/screenshots/home-light.png)
 
@@ -46,7 +46,7 @@ See [docs/deploy.md](docs/deploy.md).
 | Color presets | 1                               | 4                                                       |
 | Support       | GitHub Issues                   | Email (im@ondelva.com), 2 business days                 |
 
-[Get Pro →](https://pilcrow.ondelva.com)
+[Get Pro →](https://buy.polar.sh/polar_cl_8dCt7ufpdKweXNgPSp3DH73SlxkMoirMTbBuF3WJooD)
 
 ## License
 
