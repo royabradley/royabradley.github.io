@@ -1,0 +1,132 @@
+---
+import type { MarkdownHeading } from 'astro';
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import AuthorCard from '../components/blog/AuthorCard.astro';
+import Comments from '../components/blog/Comments.astro';
+import CopyCode from '../components/mdx/CopyCode.astro';
+import PostList from '../components/blog/PostList.astro';
+import SeriesNav from '../components/blog/SeriesNav.astro';
+import Sidenotes from '../components/blog/Sidenotes.astro';
+import TableOfContents from '../components/blog/TableOfContents.astro';
+import TagList from '../components/blog/TagList.astro';
+import { blog, site } from '../config';
+import { useT } from '../i18n/t';
+import { localePath } from '../utils/i18n';
+import { ogImage } from '../utils/og';
+import { authorHref, formatDate, postLocale, readingTime, type Post } from '../utils/posts';
+
+const t = useT(Astro.currentLocale);
+
+interface Props {
+  post: Post;
+  // pro-only from here. Computed and passed by the page (blog/[slug].astro)
+  headings?: MarkdownHeading[];
+  author?: CollectionEntry<'authors'>;
+  series?: Post[];
+  related?: Post[];
+}
+const { post, headings = [], author, series = [], related = [] } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroAlt, tags } = post.data;
+const url = new URL(Astro.url.pathname, Astro.site).href;
+const abs = (path: string) => new URL(path, Astro.site).href;
+const locale = postLocale(post);
+const blogHref = localePath(locale, '/blog/');
+const image = heroImage ?? ogImage(post) ?? site.defaultOgImage;
+
+const jsonLd = [
+  {
+    '@type': 'BlogPosting',
+    headline: title,
+    description,
+    datePublished: pubDate.toISOString(),
+    dateModified: (updatedDate ?? pubDate).toISOString(),
+    author: {
+      '@type': 'Person',
+      name: author?.data.name ?? site.author,
+      url: author ? abs(authorHref(author.id)) : undefined,
+    },
+    image: abs(image.src),
+    mainEntityOfPage: url,
+    inLanguage: locale,
+    keywords: tags.join(', ') || undefined,
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { name: t.home, item: abs('/') },
+      { name: t.blog, item: abs(blogHref) },
+      { name: title, item: url },
+    ].map((crumb, i) => ({ '@type': 'ListItem', position: i + 1, ...crumb })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} image={image} type="article" jsonLd={jsonLd}>
+  <article data-pagefind-body class="mx-auto max-w-prose px-4 py-12 sm:py-16">
+    <header>
+      <p class="text-muted font-sans text-sm">
+        <time datetime={pubDate.toISOString()}>{formatDate(pubDate, Astro.currentLocale)}</time>
+        {updatedDate && (
+          <>
+            {' · '}
+            {t.updated}{' '}
+            <time datetime={updatedDate.toISOString()}>
+              {formatDate(updatedDate, Astro.currentLocale)}
+            </time>
+          </>
+        )}
+        {blog.showReadingTime && (
+          <>
+            {' · '}
+            {t.minRead.replace('{n}', String(readingTime(post)))}
+          </>
+        )}
+      </p>
+      <h1 class="mt-3 text-4xl font-light tracking-tight sm:text-5xl">{title}</h1>
+      <p class="text-muted mt-4 text-xl">{description}</p>
+      {author && (
+        <p class="mt-4 font-sans text-sm">
+          <a href={authorHref(author.id)} class="text-foreground hover:text-primary no-underline">
+            {author.data.name}
+          </a>
+        </p>
+      )}
+    </header>
+    {heroImage && (
+      <Image
+        src={heroImage}
+        alt={heroAlt ?? ''}
+        widths={[720, 1440]}
+        sizes="(min-width: 720px) 720px, 100vw"
+        loading="eager"
+        fetchpriority="high"
+        class="mt-10 w-full rounded"
+      />
+    )}
+    <SeriesNav post={post} posts={series} />
+    <TableOfContents headings={headings} />
+    <div class:list={['prose mt-12', blog.dropCap && 'drop-cap']}>
+      <slot />
+    </div>
+    <CopyCode />
+    {blog.sidenotes && <Sidenotes />}
+    <footer data-pagefind-ignore class="border-border mt-16 space-y-6 border-t pt-8">
+      <TagList tags={tags} />
+      {author && <AuthorCard author={author} />}
+      <p class="font-sans text-sm">
+        <a href={blogHref}>← {t.backToBlog}</a>
+      </p>
+    </footer>
+  </article>
+  <Comments locale={locale} />
+  {related.length > 0 && (
+    <aside aria-labelledby="related-heading" class="mx-auto max-w-5xl px-4 pb-16">
+      <h2 id="related-heading" class="mb-8 text-3xl tracking-tight">
+        {t.relatedPosts}
+      </h2>
+      <PostList posts={related} headingLevel="h3" />
+    </aside>
+  )}
+</BaseLayout>

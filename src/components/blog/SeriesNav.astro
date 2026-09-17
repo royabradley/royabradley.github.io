@@ -1,0 +1,43 @@
+---
+// pro-only. Series contents. The current post is marked with aria-current instead of a link.
+import { useT } from '../../i18n/t';
+import { postHref, type Post } from '../../utils/posts';
+
+const t = useT(Astro.currentLocale);
+
+interface Props {
+  post: Post;
+  posts: Post[]; // result of seriesPosts()
+}
+const { post, posts } = Astro.props;
+const n = posts.findIndex((p) => p.id === post.id) + 1;
+---
+
+{posts.length > 1 && (
+  <nav
+    data-pagefind-ignore
+    aria-label={t.series}
+    class="border-border mt-10 border-l-2 pl-5 font-sans text-sm"
+  >
+    <p class="section-label">{t.series}</p>
+    <p class="mt-1 font-serif text-lg">{post.data.series}</p>
+    <p class="text-muted">
+      {t.partOf.replace('{n}', String(n)).replace('{total}', String(posts.length))}
+    </p>
+    <ol class="mt-3 list-decimal space-y-1 pl-5">
+      {posts.map((p) => (
+        <li>
+          {p.id === post.id ? (
+            <span aria-current="page" class="text-primary">
+              {p.data.title}
+            </span>
+          ) : (
+            <a href={postHref(p)} class="text-muted hover:text-foreground no-underline">
+              {p.data.title}
+            </a>
+          )}
+        </li>
+      ))}
+    </ol>
+  </nav>
+)}

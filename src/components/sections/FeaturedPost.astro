@@ -1,0 +1,40 @@
+---
+// pro-only. One post, set large.
+import { useT } from '../../i18n/t';
+import { formatDate, postHref, type Post } from '../../utils/posts';
+import TagList from '../blog/TagList.astro';
+
+const t = useT(Astro.currentLocale);
+
+interface Props {
+  title: string;
+  post: Post;
+}
+const { title, post } = Astro.props;
+---
+
+<section class="hang mx-auto max-w-5xl px-4 pt-6 pb-16">
+  <h2 class="section-label lg:pt-8">{title}</h2>
+  <article class="border-foreground border-t-2 pt-8">
+    <time datetime={post.data.pubDate.toISOString()} class="text-muted font-sans text-sm">
+      {formatDate(post.data.pubDate, Astro.currentLocale)}
+    </time>
+    <h3 class="mt-2 max-w-3xl text-4xl font-light tracking-tight sm:text-5xl">
+      <a href={postHref(post)} class="text-foreground hover:text-primary no-underline">
+        {post.data.title}
+      </a>
+    </h3>
+    <p class="text-muted mt-4 max-w-prose text-xl">{post.data.description}</p>
+    <div class="mt-4">
+      <TagList tags={post.data.tags} />
+    </div>
+    <a
+      href={postHref(post)}
+      class="mt-6 inline-block font-sans text-sm"
+      aria-hidden="true"
+      tabindex="-1"
+    >
+      {t.readMore} →
+    </a>
+  </article>
+</section>

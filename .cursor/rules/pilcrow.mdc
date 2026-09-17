@@ -1,0 +1,10 @@
+---
+description: Pilcrow theme conventions
+alwaysApply: true
+---
+
+Read `AGENTS.md` at the repo root before editing. It maps each change to the file that owns it,
+lists what not to do, and sets the theme conventions. Follow it as written.
+
+After any change, run `pnpm check && pnpm build`. For visual changes, also check the page at 360px and desktop, light and dark.
+Task walkthroughs (new post, new section, new color preset) are in `.claude/skills/*/SKILL.md`.

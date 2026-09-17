@@ -1,0 +1,20 @@
+---
+// pro-only
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+import { getWork } from '../../utils/work';
+
+export const getStaticPaths = (async () =>
+  (await getWork()).map((item) => ({
+    params: { slug: item.id },
+    props: { item },
+  }))) satisfies GetStaticPaths;
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+---
+
+<CaseStudyLayout item={item}>
+  <Content />
+</CaseStudyLayout>

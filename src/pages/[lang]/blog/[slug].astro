@@ -1,0 +1,36 @@
+---
+// pro-only. /<locale>/blog/<slug> from src/content/blog/<locale>/<slug>.mdx. The default language uses blog/[slug].astro
+import type { GetStaticPaths } from 'astro';
+import Callout from '../../../components/mdx/Callout.astro';
+import { getEntry, render } from 'astro:content';
+import PostLayout from '../../../layouts/PostLayout.astro';
+import { blog, features, i18n, site } from '../../../config';
+import { getPosts, postSlug, relatedPosts, seriesPosts } from '../../../utils/posts';
+
+export const getStaticPaths = (async () => {
+  if (!features.i18nRouting) return [];
+  const langs = Object.keys(i18n.locales).filter((l) => l !== site.locale);
+  const paths = await Promise.all(
+    langs.map(async (lang) => {
+      const posts = await getPosts(lang);
+      return posts.map((post) => ({
+        params: { lang, slug: postSlug(post) },
+        props: {
+          post,
+          series: seriesPosts(post, posts),
+          related: relatedPosts(post, posts, blog.relatedPosts),
+        },
+      }));
+    }),
+  );
+  return paths.flat();
+}) satisfies GetStaticPaths;
+
+const { post, series, related } = Astro.props;
+const { Content, headings } = await render(post);
+const author = post.data.author && (await getEntry(post.data.author));
+---
+
+<PostLayout post={post} headings={headings} author={author} series={series} related={related}>
+  <Content components={{ Callout }} />
+</PostLayout>

@@ -1,0 +1,222 @@
+---
+// pro-only. Showcase of all twenty sections. For the demo and screenshots; safe to delete on a real site.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ogDefault from '../assets/og-default.png';
+import Archive from '../components/sections/Archive.astro';
+import Banner from '../components/sections/Banner.astro';
+import Bookshelf from '../components/sections/Bookshelf.astro';
+import CTA from '../components/sections/CTA.astro';
+import Comparison from '../components/sections/Comparison.astro';
+import FAQ from '../components/sections/FAQ.astro';
+import FeaturedPost from '../components/sections/FeaturedPost.astro';
+import Features from '../components/sections/Features.astro';
+import Hero from '../components/sections/Hero.astro';
+import LogoCloud from '../components/sections/LogoCloud.astro';
+import Newsletter from '../components/sections/Newsletter.astro';
+import Pricing from '../components/sections/Pricing.astro';
+import PullQuote from '../components/sections/PullQuote.astro';
+import RecentPosts from '../components/sections/RecentPosts.astro';
+import Split from '../components/sections/Split.astro';
+import Stats from '../components/sections/Stats.astro';
+import Steps from '../components/sections/Steps.astro';
+import Team from '../components/sections/Team.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import Timeline from '../components/sections/Timeline.astro';
+import { useT } from '../i18n/t';
+import { getPosts } from '../utils/posts';
+import { newsletterForm } from '../utils/forms';
+
+const t = useT(Astro.currentLocale);
+
+const posts = await getPosts();
+---
+
+<BaseLayout
+  title="Sections"
+  description="Every section Pilcrow ships with, assembled on one page from props."
+>
+  <Banner
+    text="Pilcrow Pro includes twenty sections."
+    link={{ label: 'Read the essays', href: '/blog/' }}
+  />
+  <Hero
+    eyebrow="Pilcrow Pro"
+    title="All twenty sections, on one page."
+    lede="Each block below is a component in src/components/sections/. They take props and nothing else, so a page is just a list of them."
+    actions={[{ label: 'Back home', href: '/' }]}
+  />
+  <LogoCloud
+    title="Read by people at"
+    items={[
+      { name: 'The Margin Review' },
+      { name: 'Quarto & Folio' },
+      { name: 'Ledger Press' },
+      { name: 'Small Hours' },
+      { name: 'Verso' },
+    ]}
+  />
+  <FeaturedPost title="Featured essay" post={posts[0]!} />
+  <RecentPosts
+    title="Recent writing"
+    posts={posts.slice(1, 4)}
+    moreLabel={t.allPosts}
+    moreHref="/blog/"
+  />
+  <Features
+    title="Built for reading"
+    items={[
+      { title: 'A measure you can follow', body: 'Body text stays near 65 characters a line.' },
+      {
+        title: 'Footnotes, tables, quotes',
+        body: 'Every device an essay leans on is styled with restraint.',
+      },
+      { title: 'Light, dark, and fast', body: 'Self-hosted fonts and zero client frameworks.' },
+    ]}
+  />
+  <PullQuote
+    quote="A page should be quiet enough that you forget it is there."
+    cite="From the colophon"
+  />
+  <Stats
+    title="By the numbers"
+    items={[
+      { value: '65ch', label: 'Measure' },
+      { value: '1.75', label: 'Line height' },
+      { value: '0 KB', label: 'Client framework' },
+      { value: '4', label: 'Font files' },
+    ]}
+  />
+  <Split
+    title="One accent, used sparingly"
+    body="The rubric red comes from medieval manuscripts, where scribes marked new paragraphs with a pilcrow in red ink. Here it marks links, focus, and nothing else."
+    image={ogDefault}
+    alt="The Pilcrow wordmark with a red paragraph sign on cream paper."
+    action={{ label: 'About the theme', href: '/about/' }}
+  />
+  <Steps
+    title="Setup"
+    items={[
+      { title: 'Set your name', body: 'Edit src/config.ts. Everything site-wide lives there.' },
+      { title: 'Arrange the home page', body: 'Reorder sections in src/pages/index.astro.' },
+      { title: 'Write', body: 'Add an .mdx file to src/content/blog/ and publish.' },
+    ]}
+  />
+  <Testimonials
+    title="Readers"
+    items={[
+      {
+        quote: 'The first theme where I stopped fiddling and started writing.',
+        name: 'Nell Whitlock',
+        role: 'essayist',
+      },
+      {
+        quote: 'My footnotes have never looked this respectable.',
+        name: 'Tomás Ferrer',
+        role: 'historian',
+      },
+    ]}
+  />
+  <Pricing
+    title="Plans"
+    lede="One payment, a year of updates."
+    plans={[
+      {
+        name: 'Personal',
+        price: '$49',
+        period: 'once',
+        description: 'For a single site of your own.',
+        features: ['All sections and pages', '1 year of updates', 'Email support'],
+        action: { label: 'Choose Personal', href: '/contact/' },
+      },
+      {
+        name: 'Team',
+        price: '$129',
+        period: 'once',
+        description: 'For studios and publications.',
+        features: ['Unlimited sites', '1 year of updates', 'Priority email support'],
+        action: { label: 'Choose Team', href: '/contact/' },
+        featured: true,
+        badge: 'Popular',
+      },
+      {
+        name: 'Bundle',
+        price: '$199',
+        period: 'once',
+        description: 'Every theme, now and later.',
+        features: ['All current themes', 'Future themes', 'Unlimited sites'],
+        action: { label: 'Choose Bundle', href: '/contact/' },
+      },
+    ]}
+  />
+  <Comparison
+    title="Free and Pro"
+    columns={['Free', 'Pro']}
+    rows={[
+      { label: 'Home sections', values: ['5', '20'] },
+      { label: 'Dark mode', values: [true, true] },
+      { label: 'Search', values: [false, true] },
+      { label: 'Generated OG images', values: [false, true] },
+    ]}
+  />
+  <Team
+    title="Masthead"
+    members={[
+      { name: 'Nell Whitlock', role: 'Editor', bio: 'Reads everything twice.' },
+      { name: 'Tomás Ferrer', role: 'Contributing writer' },
+      { name: 'June Okafor', role: 'Copy desk', bio: 'Keeper of the serial comma.' },
+    ]}
+  />
+  <Timeline
+    title="History"
+    items={[
+      { date: '2024', title: 'First essay', body: 'Written longhand, typed up later.' },
+      { date: '2025', title: 'The newsletter', body: 'A letter now and then.' },
+      { date: '2026', title: 'A new page', body: 'Rebuilt on Pilcrow.' },
+    ]}
+  />
+  <Bookshelf
+    title="On the shelf"
+    items={[
+      {
+        title: 'The Elements of Typographic Style',
+        author: 'Robert Bringhurst',
+        note: 'The one to read first.',
+      },
+      { title: 'Detail in Typography', author: 'Jost Hochuli' },
+      {
+        title: 'The Form of the Book',
+        author: 'Jan Tschichold',
+        note: 'Short essays, long influence.',
+      },
+      { title: 'Thinking with Type', author: 'Ellen Lupton' },
+    ]}
+  />
+  <Archive title="Archive" posts={posts} />
+  <FAQ
+    title="Questions"
+    items={[
+      {
+        question: 'Does it need JavaScript?',
+        answer: 'Only a few lines for the dark mode toggle.',
+      },
+      {
+        question: 'Can I change the fonts?',
+        answer: 'Yes. Swap the files and the @theme variables in global.css.',
+      },
+      {
+        question: 'Is it accessible?',
+        answer: 'It ships with a skip link, visible focus, and AA contrast in both themes.',
+      },
+    ]}
+  />
+  <Newsletter
+    title="Newsletter"
+    body="A short note when a new essay goes up."
+    {...newsletterForm()}
+  />
+  <CTA
+    title="Want a site like this one?"
+    body="Start with the home page and move sections around until it reads right."
+    action={{ label: 'Get in touch', href: '/contact/' }}
+  />
+</BaseLayout>

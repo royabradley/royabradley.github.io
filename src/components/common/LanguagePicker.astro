@@ -1,0 +1,29 @@
+---
+// pro-only. Links to the other languages. Without a translation, the link goes to that language's blog listing.
+import { site } from '../../config';
+import { useT } from '../../i18n/t';
+import { alternates } from '../../utils/i18n';
+
+const current = Astro.currentLocale ?? site.locale;
+const t = useT(current);
+const others = (await alternates(Astro.url.pathname, current)).filter((a) => a.locale !== current);
+---
+
+<ul aria-label={t.language} class="flex gap-3 font-sans text-sm">
+  {others.map(({ locale, label, href, exists }) => (
+    <li>
+      <a
+        href={href}
+        hreflang={locale}
+        lang={locale}
+        rel={exists ? 'alternate' : undefined}
+        class="text-muted hover:text-foreground no-underline transition-colors"
+      >
+        <span class="sm:hidden" aria-hidden="true">
+          {locale.toUpperCase()}
+        </span>
+        <span class="max-sm:sr-only">{label}</span>
+      </a>
+    </li>
+  ))}
+</ul>

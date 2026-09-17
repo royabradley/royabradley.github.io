@@ -1,0 +1,25 @@
+---
+// pro-only
+interface Props {
+  title: string;
+  items: { quote: string; name: string; role?: string }[];
+}
+const { title, items } = Astro.props;
+---
+
+<section class="hang mx-auto max-w-5xl px-4 py-16">
+  <h2 class="section-label">{title}</h2>
+  <ul class="grid gap-10 md:grid-cols-2">
+    {items.map((item) => (
+      <li>
+        <figure class="border-primary border-l-2 pl-6">
+          <blockquote class="text-xl italic">“{item.quote}”</blockquote>
+          <figcaption class="mt-4 font-sans text-sm">
+            <span class="font-medium">{item.name}</span>
+            {item.role && <span class="text-muted">, {item.role}</span>}
+          </figcaption>
+        </figure>
+      </li>
+    ))}
+  </ul>
+</section>

@@ -1,0 +1,30 @@
+---
+// pro-only. Native <details> for open/close. No JS.
+interface Props {
+  title: string;
+  items: { question: string; answer: string }[];
+}
+const { title, items } = Astro.props;
+---
+
+<section class="mx-auto max-w-5xl px-4 py-16">
+  <div class="grid gap-8 md:grid-cols-[1fr_2fr]">
+    <h2 class="text-4xl">{title}</h2>
+    <div class="divide-border border-border divide-y border-y">
+      {items.map((item) => (
+        <details class="group py-5">
+          <summary class="flex cursor-pointer list-none items-baseline justify-between gap-4 text-xl font-medium [&::-webkit-details-marker]:hidden">
+            {item.question}
+            <span
+              class="text-primary font-sans text-lg transition-transform group-open:rotate-45"
+              aria-hidden="true"
+            >
+              +
+            </span>
+          </summary>
+          <p class="text-muted mt-3">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

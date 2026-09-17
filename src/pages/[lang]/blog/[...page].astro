@@ -1,0 +1,37 @@
+---
+// pro-only. /<locale>/blog, /<locale>/blog/2, …: post listings for non-default languages. The default language uses blog/[...page].astro
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Pagination from '../../../components/blog/Pagination.astro';
+import PostList from '../../../components/blog/PostList.astro';
+import { blog, features, i18n, site } from '../../../config';
+import { useT } from '../../../i18n/t';
+import { getPosts } from '../../../utils/posts';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  if (!features.i18nRouting) return [];
+  const langs = Object.keys(i18n.locales).filter((l) => l !== site.locale);
+  const pages = await Promise.all(
+    langs.map(async (lang) =>
+      paginate(await getPosts(lang), { pageSize: blog.postsPerPage, params: { lang } }),
+    ),
+  );
+  return pages.flat();
+}) satisfies GetStaticPaths;
+
+const t = useT(Astro.currentLocale);
+
+const { page } = Astro.props;
+const title = page.currentPage > 1 ? `${t.blog} (${page.currentPage})` : t.blog;
+---
+
+<BaseLayout title={title} description={t.blogDescription}>
+  <div class="mx-auto max-w-5xl px-4 py-12 sm:py-16">
+    <h1 class="text-5xl font-light tracking-tight">{t.blog}</h1>
+    <p class="text-muted mt-4 text-xl">{t.blogDescription}</p>
+    <div class="mt-12">
+      <PostList posts={page.data} />
+    </div>
+    <Pagination page={page} />
+  </div>
+</BaseLayout>

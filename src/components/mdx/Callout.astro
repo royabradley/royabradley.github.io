@@ -1,0 +1,28 @@
+---
+// pro-only. MDX callout. Post and docs pages pass it via components, so MDX can use it without an import.
+//   <Callout type="tip" title="Optional title">Body</Callout>
+import { useT } from '../../i18n/t';
+
+const t = useT(Astro.currentLocale);
+
+interface Props {
+  type?: 'note' | 'tip' | 'warning';
+  title?: string;
+}
+const { type = 'note', title = t[type] } = Astro.props;
+---
+
+<aside
+  class:list={[
+    'not-prose my-8 rounded-r border-l-2 px-5 py-4',
+    type === 'warning' ? 'border-primary' : type === 'tip' ? 'border-foreground' : 'border-muted',
+    'bg-foreground/[0.03]',
+  ]}
+>
+  <p class:list={['font-sans text-sm font-semibold', type === 'warning' && 'text-primary']}>
+    {title}
+  </p>
+  <div class="mt-1 [&_a]:underline [&_code]:font-mono [&_code]:text-[0.85em] [&>*+*]:mt-3">
+    <slot />
+  </div>
+</aside>

@@ -1,0 +1,25 @@
+---
+// pro-only
+interface Props {
+  title: string;
+  items: { date: string; title: string; body?: string }[];
+}
+const { title, items } = Astro.props;
+---
+
+<section class="mx-auto max-w-5xl px-4 py-16">
+  <h2 class="text-4xl">{title}</h2>
+  <ol class="border-border mt-10 max-w-prose border-l">
+    {items.map((item) => (
+      <li class="relative pb-10 pl-8 last:pb-0">
+        <span
+          class="bg-primary absolute top-2.5 -left-[5px] size-2.5 rounded-full"
+          aria-hidden="true"
+        ></span>
+        <p class="text-muted font-sans text-sm">{item.date}</p>
+        <h3 class="mt-1 text-2xl font-medium">{item.title}</h3>
+        {item.body && <p class="text-muted mt-2">{item.body}</p>}
+      </li>
+    ))}
+  </ol>
+</section>

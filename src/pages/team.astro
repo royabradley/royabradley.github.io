@@ -1,0 +1,52 @@
+---
+// pro-only. Team and masthead. For photos, import an image from src/assets into members[].image.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/sections/CTA.astro';
+import Hero from '../components/sections/Hero.astro';
+import Team from '../components/sections/Team.astro';
+import Timeline from '../components/sections/Timeline.astro';
+---
+
+<BaseLayout title="Team" description="The people who write, edit, and proofread this publication.">
+  <Hero
+    eyebrow="Masthead"
+    title="A small desk, reading everything twice."
+    lede="Three people write, edit, and proofread every piece that goes up here. Nobody works on it full-time, and it shows only in the pace."
+  />
+  <Team
+    title="Editors"
+    members={[
+      {
+        name: 'Nell Whitlock',
+        role: 'Editor',
+        bio: 'Founded the publication; still reads every draft.',
+      },
+      { name: 'June Okafor', role: 'Copy desk', bio: 'Keeper of the serial comma.' },
+    ]}
+  />
+  <Team
+    title="Contributors"
+    members={[
+      {
+        name: 'Tomás Ferrer',
+        role: 'Contributing writer',
+        bio: 'Writes about archives and the people in them.',
+      },
+      { name: 'Mei Tanaka', role: 'Contributing writer', bio: 'Essays on translation.' },
+      { name: 'Oskar Lind', role: 'Illustrator' },
+    ]}
+  />
+  <Timeline
+    title="How we got here"
+    items={[
+      { date: '2023', title: 'A shared document', body: 'Three friends swapping drafts.' },
+      { date: '2024', title: 'First issue', body: 'Published to a list of forty readers.' },
+      { date: '2026', title: 'This site', body: 'Rebuilt on Pilcrow.' },
+    ]}
+  />
+  <CTA
+    title="Want to write for us?"
+    body="We read every pitch, and answer most of them within a fortnight."
+    action={{ label: 'Send a pitch', href: '/contact/' }}
+  />
+</BaseLayout>

@@ -1,0 +1,87 @@
+---
+// pro-only. Paid subscription plans. Put checkout links in action.href.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/sections/CTA.astro';
+import Comparison from '../components/sections/Comparison.astro';
+import FAQ from '../components/sections/FAQ.astro';
+import Hero from '../components/sections/Hero.astro';
+import Pricing from '../components/sections/Pricing.astro';
+---
+
+<BaseLayout
+  title="Pricing"
+  description="Read for free, or support the writing with a paid subscription."
+>
+  <Hero
+    eyebrow="Support the writing"
+    title="Every essay is free. Some readers pay anyway."
+    lede="A paid subscription keeps the site ad-free and buys a little more time to write. You get a few small things in return."
+  />
+  <Pricing
+    title="Subscriptions"
+    plans={[
+      {
+        name: 'Reader',
+        price: '$0',
+        description: 'Every essay, as soon as it is published.',
+        features: ['All essays', 'The weekly letter', 'RSS feed'],
+        action: { label: 'Subscribe free', href: '/newsletter/' },
+      },
+      {
+        name: 'Patron',
+        price: '$5',
+        period: 'month',
+        description: 'For readers who want to keep this going.',
+        features: ['Everything in Reader', 'Monthly reading notes', 'Reply to any letter'],
+        action: { label: 'Become a patron', href: '/contact/' },
+        featured: true,
+        badge: 'Most chosen',
+      },
+      {
+        name: 'Founding',
+        price: '$120',
+        period: 'year',
+        description: 'For the ones who were here first.',
+        features: [
+          'Everything in Patron',
+          'A printed annual, posted once a year',
+          'Name in the colophon',
+        ],
+        action: { label: 'Become a founder', href: '/contact/' },
+      },
+    ]}
+  />
+  <Comparison
+    title="What each plan includes"
+    columns={['Reader', 'Patron', 'Founding']}
+    rows={[
+      { label: 'Essays', values: [true, true, true] },
+      { label: 'Weekly letter', values: [true, true, true] },
+      { label: 'Reading notes', values: [false, true, true] },
+      { label: 'Printed annual', values: [false, false, true] },
+      { label: 'Price', values: ['Free', '$5 / month', '$120 / year'] },
+    ]}
+  />
+  <FAQ
+    title="Questions"
+    items={[
+      {
+        question: 'Will essays ever go behind a paywall?',
+        answer: 'No. The essays stay free for everyone.',
+      },
+      {
+        question: 'Can I cancel?',
+        answer: 'Any time, from the link at the bottom of every letter.',
+      },
+      {
+        question: 'Do you offer student rates?',
+        answer: 'Write to me and we will sort something out.',
+      },
+    ]}
+  />
+  <CTA
+    title="Not sure yet?"
+    body="Start with the free letter. You can upgrade from any issue."
+    action={{ label: 'Get the letter', href: '/newsletter/' }}
+  />
+</BaseLayout>

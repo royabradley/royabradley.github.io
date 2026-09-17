@@ -1,0 +1,63 @@
+---
+// pro-only
+import Button from '../ui/Button.astro';
+
+interface Plan {
+  name: string;
+  price: string;
+  period?: string;
+  description: string;
+  features: string[];
+  action: { label: string; href: string };
+  featured?: boolean;
+  badge?: string;
+}
+interface Props {
+  title: string;
+  lede?: string;
+  plans: Plan[];
+}
+const { title, lede, plans } = Astro.props;
+---
+
+<section class="mx-auto max-w-5xl px-4 py-16">
+  <h2 class="text-4xl">{title}</h2>
+  {lede && <p class="text-muted mt-3 max-w-prose text-lg">{lede}</p>}
+  <ul class="mt-10 grid gap-x-8 gap-y-12 md:grid-cols-3">
+    {plans.map((plan) => (
+      <li
+        class:list={[
+          'flex flex-col pt-6',
+          plan.featured ? 'border-foreground border-t-2' : 'border-border border-t',
+        ]}
+      >
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="text-2xl font-medium">{plan.name}</h3>
+          {plan.badge && <span class="text-primary italic">{plan.badge}</span>}
+        </div>
+        <p class="mt-4">
+          <span class="text-5xl font-light">{plan.price}</span>
+          {plan.period && <span class="text-muted font-sans text-sm"> {plan.period}</span>}
+        </p>
+        <p class="text-muted mt-3">{plan.description}</p>
+        <ul class="mt-6 flex-1 space-y-2 font-sans text-sm">
+          {plan.features.map((feature) => (
+            <li class="flex gap-2">
+              <span class="text-primary" aria-hidden="true">
+                ¶
+              </span>
+              {feature}
+            </li>
+          ))}
+        </ul>
+        <Button
+          href={plan.action.href}
+          variant={plan.featured ? 'primary' : 'secondary'}
+          class="mt-8"
+        >
+          {plan.action.label}
+        </Button>
+      </li>
+    ))}
+  </ul>
+</section>

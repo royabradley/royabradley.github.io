@@ -1,0 +1,24 @@
+---
+// pro-only. Copies each footnote next to its reference so wide screens can show it in the margin.
+// Styles live in global.css (.sidenote). The footnote list at the end stays for narrow screens and screen readers.
+---
+
+<script is:inline>
+  const wide = matchMedia('(min-width: 80rem)');
+  document.querySelectorAll('.prose [data-footnote-ref]').forEach((ref) => {
+    const item = document.getElementById(decodeURIComponent(ref.hash.slice(1)));
+    if (!item) return;
+    const body = item.cloneNode(true);
+    body.querySelectorAll('[data-footnote-backref]').forEach((a) => a.remove());
+    const note = document.createElement('span');
+    note.className = 'sidenote';
+    note.setAttribute('aria-hidden', 'true');
+    note.innerHTML = `<span class="sidenote-num">${ref.textContent}</span>${[...body.querySelectorAll('p')].map((p) => p.innerHTML).join(' ')}`;
+    (ref.closest('sup') ?? ref).after(note);
+    // The footnote list is visually hidden on wide screens, so don't jump to it
+    ref.addEventListener('click', (event) => {
+      if (wide.matches) event.preventDefault();
+    });
+    ref.closest('.prose')?.classList.add('has-sidenotes');
+  });
+</script>

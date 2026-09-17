@@ -1,0 +1,25 @@
+---
+// pro-only. One-line notice. It sits at the top of the page, so it uses the preloaded body font (Inter would cause CLS on font swap)
+interface Props {
+  text: string;
+  link?: { label: string; href: string };
+}
+const { text, link } = Astro.props;
+---
+
+<aside class="border-border border-b">
+  <p class="mx-auto max-w-5xl px-4 py-3 text-center">
+    <span class="text-primary" aria-hidden="true">
+      ¶{' '}
+    </span>
+    {text}
+    {link && (
+      <>
+        {' '}
+        <a href={link.href} class="font-medium">
+          {link.label} →
+        </a>
+      </>
+    )}
+  </p>
+</aside>

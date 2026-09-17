@@ -1,0 +1,42 @@
+---
+// pro-only. Work listing (portfolio).
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Hero from '../../components/sections/Hero.astro';
+import { getWork, workHref } from '../../utils/work';
+
+const items = await getWork();
+---
+
+<BaseLayout title="Work" description="Selected writing and editorial projects.">
+  <Hero
+    eyebrow="Selected work"
+    title="Projects, commissions, and a newsletter."
+    lede="A few pieces of work done for other people, and one done for myself, each with a short account of how it went."
+  />
+  <section class="mx-auto max-w-5xl px-4">
+    <ol class="divide-border border-border divide-y border-y">
+      {items.map((item) => (
+        <li class="grid gap-x-8 gap-y-2 py-8 sm:grid-cols-[9rem_1fr]">
+          <p class="text-muted pt-1.5 font-sans text-sm">
+            {item.data.year}
+            {item.data.client && <span class="block">{item.data.client}</span>}
+          </p>
+          <div class="space-y-2">
+            <h2 class="text-2xl font-medium">
+              <a href={workHref(item)} class="text-foreground hover:text-primary no-underline">
+                {item.data.title}
+              </a>
+            </h2>
+            <p class="text-muted">{item.data.description}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+  <CTA
+    title="Have a project in mind?"
+    body="I take on a small number of editing and writing commissions each year."
+    action={{ label: 'Get in touch', href: '/contact/' }}
+  />
+</BaseLayout>
