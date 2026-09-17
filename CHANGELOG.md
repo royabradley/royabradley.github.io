@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.2] - 2026-09-17
+
+### Fixed
+
+- Lists marked `not-prose` no longer get prose bullets or numbers (the `/docs` index showed numbers outside the page margin on phones).
+
 ## [1.0.1] - 2026-09-17
 
 ### Changed

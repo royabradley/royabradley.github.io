@@ -222,10 +222,10 @@
   .prose :where(ul, ol):not(:where(.not-prose, .not-prose *)) {
     padding-left: 1.4em;
   }
-  .prose ul {
+  .prose ul:not(:where(.not-prose, .not-prose *)) {
     list-style: disc;
   }
-  .prose ol {
+  .prose ol:not(:where(.not-prose, .not-prose *)) {
     list-style: decimal;
   }
   .prose li {
