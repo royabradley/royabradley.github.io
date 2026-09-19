@@ -16,12 +16,18 @@ A quiet, typography-first Astro theme for writers. Good type, generous measure, 
 
 ## Quick start
 
+You need Node.js 22.12+ and pnpm 9 or newer (`npm i -g pnpm`). `package.json` pins the exact pnpm version, and pnpm 10+ switches to it on its own.
+
+From GitHub, after you accept the repository invite that came with your purchase:
+
 ```sh
-git clone git@github.com:ondelva/astro-theme-pilcrow-pro.git my-site
+git clone https://github.com/ondelva/astro-theme-pilcrow-pro.git my-site
 cd my-site
 pnpm install
 pnpm dev
 ```
+
+From the zip download, unzip it, `cd` into the folder, then run `pnpm install` and `pnpm dev`.
 
 ## Configure
 
@@ -30,9 +36,7 @@ Colors and fonts: `src/styles/global.css` (`@theme` block). See [docs/customizat
 
 ## Deploy
 
-Static output. Works on Cloudflare Pages, Vercel, Netlify.
-[![Deploy to Cloudflare Pages](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ondelva/astro-theme-pilcrow-pro)
-
+Static output. Works on Cloudflare, Vercel, Netlify. Push the site to a repository of your own first, then connect that repository to your host.
 See [docs/deploy.md](docs/deploy.md).
 
 ## Free vs Pro

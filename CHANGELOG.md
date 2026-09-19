@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.3] - 2026-09-19
+
+### Fixed
+
+- `pnpm install` works with pnpm 9 and older pnpm 10 releases. The project now pins pnpm 10.34.5 instead of pnpm 12, which older pnpm could not read or switch to.
+
+### Changed
+
+- README: HTTPS clone URL, install steps for the zip download, and the required Node.js and pnpm versions.
+- `docs/deploy.md`: removed deploy buttons (they need a public repository) and added steps to push your copy to your own repository first.
+
 ## [1.0.2] - 2026-09-17
 
 ### Fixed
