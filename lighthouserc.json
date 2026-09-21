@@ -14,7 +14,7 @@
         "http://localhost/ko/blog/on-rereading/",
         "http://localhost/search/"
       ],
-      "numberOfRuns": 1
+      "numberOfRuns": 3
     },
     "assert": {
       "assertions": {
