@@ -48,6 +48,7 @@ See [docs/deploy.md](docs/deploy.md).
 | Search        | –                               | Pagefind                                                |
 | i18n routing  | –                               | ✓                                                       |
 | Color presets | 1                               | 4                                                       |
+| Footer credit | One line, easy to remove        | None                                                    |
 | Support       | GitHub Issues                   | Email (im@ondelva.com), 2 business days                 |
 
 [Get Pro →](https://buy.polar.sh/polar_cl_8dCt7ufpdKweXNgPSp3DH73SlxkMoirMTbBuF3WJooD)
