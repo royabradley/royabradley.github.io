@@ -50,27 +50,37 @@ const messages = {
     const list = document.querySelector('[data-search-results]');
     const item = document.querySelector('[data-search-item]');
 
+    // The index and its wasm are loaded on the first keystroke, not on page load:
+    // initialising them eagerly costs blocking time for a visitor who never types.
+    // A page opened with ?q= loads them straight away.
     let pagefind;
-    try {
-      pagefind = await import('/pagefind/pagefind.js');
-      await pagefind.init();
-    } catch {
-      status.textContent = messages.unavailable;
-      return;
-    }
+    let failed = false;
+    const load = async () => {
+      if (pagefind || failed) return pagefind;
+      try {
+        pagefind = await import('/pagefind/pagefind.js');
+        await pagefind.init();
+      } catch {
+        failed = true;
+        status.textContent = messages.unavailable;
+      }
+      return pagefind;
+    };
 
     const run = async (q) => {
       const url = new URL(location.href);
       if (q) url.searchParams.set('q', q);
       else url.searchParams.delete('q');
       history.replaceState(null, '', url);
-      const search = await pagefind.debouncedSearch(q);
-      if (search === null) return; // cancelled by newer input
-      list.replaceChildren();
       if (!q.trim()) {
+        list.replaceChildren();
         status.textContent = '';
         return;
       }
+      if (!(await load())) return;
+      const search = await pagefind.debouncedSearch(q);
+      if (search === null) return; // cancelled by newer input
+      list.replaceChildren();
       const results = await Promise.all(search.results.slice(0, 20).map((r) => r.data()));
       status.textContent = results.length
         ? messages.results.replace('{n}', String(search.results.length))
