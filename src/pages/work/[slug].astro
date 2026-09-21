@@ -3,18 +3,22 @@
 import type { GetStaticPaths } from 'astro';
 import { render } from 'astro:content';
 import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+import { work } from '../../config';
+import { seriesPosts } from '../../utils/posts';
 import { getWork } from '../../utils/work';
 
-export const getStaticPaths = (async () =>
-  (await getWork()).map((item) => ({
+export const getStaticPaths = (async () => {
+  const items = await getWork();
+  return items.map((item) => ({
     params: { slug: item.id },
-    props: { item },
-  }))) satisfies GetStaticPaths;
+    props: { item, series: work.series ? seriesPosts(item, items) : [] },
+  }));
+}) satisfies GetStaticPaths;
 
-const { item } = Astro.props;
-const { Content } = await render(item);
+const { item, series } = Astro.props;
+const { Content, headings } = await render(item);
 ---
 
-<CaseStudyLayout item={item}>
+<CaseStudyLayout item={item} headings={headings} series={series}>
   <Content />
 </CaseStudyLayout>

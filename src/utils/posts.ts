@@ -60,8 +60,8 @@ export function relatedPosts(post: Post, posts: Post[], limit: number) {
     .map(({ p }) => p);
 }
 
-/** Posts in the same series, oldest first. [] when not in a series. */
-export const seriesPosts = (post: Post, posts: Post[]) =>
-  post.data.series ? posts.filter((p) => p.data.series === post.data.series).toReversed() : [];
+/** Entries in the same series, oldest first. [] when not in a series. Works for blog and work. */
+export const seriesPosts = <T extends { data: { series?: string } }>(entry: T, entries: T[]) =>
+  entry.data.series ? entries.filter((e) => e.data.series === entry.data.series).toReversed() : [];
 
 export const authorHref = (id: string) => `/blog/author/${id}/`;

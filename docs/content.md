@@ -96,6 +96,7 @@ Fields:
 - `heroImage` (image, optional)
 - `heroAlt` (string, required if `heroImage` is set)
 - `draft` (boolean, default `false`)
+- `series` (string, optional) — entries with the same value are grouped, oldest year first. Needs `work.series` in `src/config.ts`
 
 Example:
 
@@ -111,11 +112,33 @@ role: Lead designer
 
 Rendered at `/work/<id>/`.
 
+### Work as long-form
+
+Work entries use the same reading column and body styles as posts, so the collection also suits
+essays, studies, guides, and multi-part editorial projects — anything ordered by year rather than
+by date. Three post features are available here too, in the `work` object of `src/config.ts`:
+
+- `work.series` — groups entries that share a `series` value, using the same navigation posts use.
+  Renders nothing until an entry has a `series` value.
+- `work.sidenotes` — on screens 1280px and wider, footnotes move into the right margin. Renders
+  nothing until an entry has a footnote.
+- `work.toc` — contents list above the body, on entries with 3 or more `h2`/`h3` headings. Same rule
+  posts follow. Unlike the other two this needs nothing from the frontmatter, so it appears on any
+  entry long enough to qualify; set it to `false` for a portfolio of short case studies.
+
+All three default to `true`. To break a section component out of the reading column inside an entry,
+see [Section components in long-form
+content](customization.md#section-components-in-long-form-content).
+
+Worked examples ship at `src/content/work/how-people-read-long-essays.mdx` (five embedded sections)
+and `what-we-thought-readers-wanted.mdx` (series and footnotes).
+
 ## MDX features
 
 - `<Callout type="note" title="Optional title">...</Callout>` — usable in any `.mdx` file with no import. `type` is `'note'`, `'tip'`, or `'warning'` (default `'note'`); `title` defaults to a locale string for the type if omitted. Defined in `src/components/mdx/Callout.astro`.
 - Code blocks get a copy button automatically.
 - Footnotes and tables (GFM) are supported out of the box. With `blog.sidenotes` on, wide screens show footnotes in the margin.
-- A table of contents appears automatically once a post has 3 or more `h2`/`h3` headings (`src/components/blog/TableOfContents.astro`).
+- A table of contents appears automatically once a post has 3 or more `h2`/`h3` headings (`src/components/blog/TableOfContents.astro`). In `work` entries this is opt-in via `work.toc`.
+- Section components can be embedded in the body of any post, page, or work entry. See [Section components in long-form content](customization.md#section-components-in-long-form-content).
 - Reading time is computed automatically and shown when `blog.showReadingTime` is `true` in `src/config.ts`.
 - Translated posts: put the translation in `src/content/blog/<locale>/`, with a file name matching the original-language post.

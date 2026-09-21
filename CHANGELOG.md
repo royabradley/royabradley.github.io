@@ -2,6 +2,28 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.2.0] - 2026-09-21
+
+### Added
+
+- Section components can be embedded in the body of a post, page, or work entry. Wrap one in
+  `<div class="not-prose breakout">` and it keeps the width and look it has on the home page; the
+  prose around it stays at the reading measure. `breakout` is a new `@utility` in `global.css`, and
+  no section component had to change. A worked example ships at `/work/how-people-read-long-essays/`.
+- Work entries can use the long-form features posts have: `work.series`, `work.sidenotes`, and
+  `work.toc` in `src/config.ts`, plus an optional `series` field in work frontmatter. This makes the
+  collection usable for essays, studies, and guides, not only portfolio case studies. All three
+  default to `true`. `series` and `sidenotes` render nothing until an entry has a `series` value or
+  a footnote; `toc` follows the same rule posts do and appears on an entry with 3 or more headings,
+  so set it to `false` for a portfolio of short case studies.
+
+### Fixed
+
+- `.not-prose` now opts a block out of every `.prose` rule. Quotes, tables, list spacing, link
+  underlines, and image rounding still leaked through, which restyled a section component embedded
+  in a post. The only visible change to existing content is the `/docs/` index, where the list rows
+  lose the body-text margin they were never meant to inherit.
+
 ## [1.1.2] - 2026-09-21
 
 ### Fixed

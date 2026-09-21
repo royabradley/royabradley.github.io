@@ -58,6 +58,7 @@ const work = defineCollection({
         heroImage: image().optional(),
         heroAlt: z.string().optional(),
         draft: z.boolean().default(false),
+        series: z.string().optional(), // Entries with the same value are grouped, oldest year first. Needs work.series in config.ts
       })
       .refine((d) => !d.heroImage || d.heroAlt, {
         message: 'heroAlt is required when heroImage is set',

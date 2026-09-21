@@ -67,6 +67,14 @@ export const blog = {
   sidenotes: true, // pro-only. On wide screens, also show footnotes in the right margin
 };
 
+// pro-only. Case studies (/work/…). The long-form features posts have, for using Work for essays,
+// studies, and guides rather than portfolio case studies.
+export const work = {
+  toc: true, // Contents box above the body, on entries with 3+ h2/h3 headings. Same rule as posts
+  sidenotes: true, // On wide screens, also show footnotes in the right margin. Same default as blog
+  series: true, // Group entries that share a series value in frontmatter. Silent without one
+};
+
 export const features = {
   darkMode: true,
   search: true, // pro-only. Build a Pagefind index and enable the /search page

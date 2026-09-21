@@ -1,0 +1,123 @@
+---
+title: How people read long essays
+description: A six-month reading study, written up as an essay with the findings set as sections inside the text.
+year: 2026
+client: The Margin Review
+role: Research and writing
+series: Reading at The Margin Review
+---
+
+import Bookshelf from '../../components/sections/Bookshelf.astro';
+import Features from '../../components/sections/Features.astro';
+import PullQuote from '../../components/sections/PullQuote.astro';
+import Steps from '../../components/sections/Steps.astro';
+import Timeline from '../../components/sections/Timeline.astro';
+
+This entry is written the way a Work page can be written: mostly prose at the usual measure, with a section component dropped in wherever a list, a quote, or a sequence says the thing better than a paragraph would. Every section below is the same component the home page uses, at the same width, unmodified.
+
+The Margin Review wanted to know why readers finished some essays and abandoned others of the same length. We watched forty-one people read, and asked them afterward what they remembered.
+
+## How the study ran
+
+<div class="not-prose breakout">
+  <Steps
+    title="Method"
+    items={[
+      {
+        title: 'Recruit from the subscriber list',
+        body: 'Forty-one readers, all of whom had opened at least four issues. Paying readers were deliberately over-represented, because they are the ones who finish.',
+      },
+      {
+        title: 'Read one essay, unprompted',
+        body: 'Each session began with a two-thousand-word essay and no instructions beyond "read this the way you normally would."',
+      },
+      {
+        title: 'Ask what stayed',
+        body: 'Twenty minutes later, an open question: what do you remember? No prompting, no multiple choice.',
+      },
+    ]}
+  />
+</div>
+
+Nobody read straight through. Every single reader scanned first — down the headings, past the pull quotes, to the end — and only then went back to the top. The ones who abandoned an essay were the ones whose first scan turned up nothing to land on.
+
+<div class="not-prose breakout">
+  <PullQuote
+    quote="I look for the part where they finally say it. If I can't find it, I assume they never do."
+    cite="Reader 19, on scanning before reading"
+  />
+</div>
+
+## What the finishers had in common
+
+<div class="not-prose breakout">
+  <Features
+    title="Findings"
+    items={[
+      {
+        title: 'A visible spine',
+        body: 'Essays with descriptive headings were finished at roughly twice the rate of essays with clever ones. Readers used headings as a map, not as jokes.',
+      },
+      {
+        title: 'Somewhere to stop',
+        body: 'Readers who put an essay down and came back later almost always resumed at a section break. Essays with no breaks were rarely resumed at all.',
+      },
+      {
+        title: 'One claim per screen',
+        body: 'Paragraphs that made two arguments at once were the most common point of abandonment, well ahead of length.',
+      },
+    ]}
+  />
+</div>
+
+None of this is a case against long essays. The essays readers finished were not shorter. They were easier to re-enter.
+
+## What we changed, and when
+
+<div class="not-prose breakout">
+  <Timeline
+    title="Rollout"
+    items={[
+      {
+        date: 'January 2026',
+        title: 'Headings rewritten',
+        body: 'Every heading in the archive was rewritten to say what its section argues.',
+      },
+      {
+        date: 'March 2026',
+        title: 'Section breaks added',
+        body: 'Essays over fifteen hundred words got breaks whether the author had planned them or not.',
+      },
+      {
+        date: 'June 2026',
+        title: 'Contents restored',
+        body: 'A collapsible contents list returned to the top of every long piece.',
+      },
+    ]}
+  />
+</div>
+
+Completion on new essays rose from thirty-one to fifty-four percent over the two issues that followed. The archive, where we changed only the headings, moved almost as much.
+
+<div class="not-prose breakout">
+  <Bookshelf
+    title="Read alongside"
+    items={[
+      {
+        title: 'Reading on Screen',
+        author: 'Anne Mangen',
+        note: 'On why the same text is harder to hold on a screen than on paper.',
+      },
+      {
+        title: 'The Elements of Typographic Style',
+        author: 'Robert Bringhurst',
+        note: 'The measure, the leading, and the reasons for both.',
+      },
+      {
+        title: 'Don’t Make Me Think',
+        author: 'Steve Krug',
+        note: 'Written about interfaces, but the scanning chapter is about essays too.',
+      },
+    ]}
+  />
+</div>

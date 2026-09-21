@@ -34,6 +34,8 @@ After any change, `pnpm check && pnpm build` must pass.
 | Add a blog post                          | `src/content/blog/<slug>.mdx`                                                                 | Frontmatter schema below                                                                          |
 | Authors                                  | `src/content/authors.json`                                                                    | Entry `id` is the post's `author` value. Page: `/blog/author/<id>/`                               |
 | Docs pages, case studies                 | `src/content/docs/`, `src/content/work/`                                                      | Layouts: `src/layouts/DocsLayout.astro`, `CaseStudyLayout.astro`                                  |
+| Long-form options for work               | `work` in `src/config.ts`                                                                     | `series`/`sidenotes`/`toc`, all on. The first two need frontmatter; `toc` needs 3+ headings       |
+| Section inside a post or work entry      | Wrap it in `<div class="not-prose breakout">` in the `.mdx`                                   | `breakout` is an `@utility` in `global.css`. Never modify the section component itself            |
 | MDX components in posts                  | `src/components/mdx/Callout.astro`, `CopyCode.astro`                                          | `Callout` is injected via `components`, no import needed                                          |
 | Content schema fields                    | `src/content.config.ts`                                                                       | Never remove fields; add new ones as optional                                                     |
 | Header, footer                           | `src/components/common/Header.astro`, `Footer.astro`                                          | Link lists live in `config.ts`                                                                    |
@@ -54,6 +56,7 @@ After any change, `pnpm check && pnpm build` must pass.
 - Don't link external CDNs (fonts, scripts, icons).
 - Don't remove accessibility features (skip link, focus ring, alt, aria-label).
 - Don't add third-party assets that aren't listed in `THIRD-PARTY-NOTICES.md`. If you add one, add the notice too.
+- Don't add a `.prose` rule in `global.css` without the `:not(:where(.not-prose, .not-prose *))` guard. Embedded section components rely on it.
 
 ## Content schema (`src/content.config.ts`)
 
@@ -78,6 +81,7 @@ docs:
 
 work:
   title, description (max 160), year, client?, role?, heroImage?, heroAlt?, draft
+  series?                 # entries sharing a value are grouped; needs work.series in config.ts
 ```
 
 Human-readable version: `docs/content.md`.

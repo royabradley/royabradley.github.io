@@ -69,6 +69,62 @@ Font files live in `src/assets/fonts/` (woff2, self-hosted, licensed under the O
 
 `src/pages/index.astro` imports section components from `src/components/sections/` and passes them props to compose the home page; edit this file to reorder or change home page content. Available section components (all of `src/components/sections/`) can be previewed together at `/sections`. Section components only accept props; they do not fetch their own data.
 
+## Section components in long-form content
+
+Section components are not limited to the home page. Any of them can be dropped into the body of a
+post, a page, or a work entry, for the places where a sequence, a quote, or a comparison reads
+better than a paragraph.
+
+Two things have to be true where you place one:
+
+- **`.not-prose`** stops the body styles (`.prose`) from restyling the component's headings, lists,
+  quotes, and tables. Every `.prose` rule honours it, so the component keeps the look it has on the
+  home page.
+- **`.breakout`** lets the component escape the reading column and span the viewport. Section
+  components re-center themselves at `max-w-5xl`, so this restores the width they have on the home
+  page rather than making them full-bleed. Omit it and the component renders at reading width,
+  which is what you want for `Steps` and `Timeline` if you prefer them narrow.
+
+Import the component at the top of the `.mdx` file and wrap it:
+
+```mdx
+---
+title: How people read long essays
+description: A six-month reading study.
+year: 2026
+---
+
+import Steps from '../../components/sections/Steps.astro';
+
+Normal prose stays at the reading measure, exactly as it does in a post.
+
+<div class="not-prose breakout">
+  <Steps
+    title="Method"
+    items={[
+      { title: 'Recruit', body: 'Forty-one readers from the subscriber list.' },
+      { title: 'Observe', body: 'One essay each, no instructions.' },
+    ]}
+  />
+</div>
+
+And the prose picks up again here.
+```
+
+The import path is relative to the content file: `../../components/sections/` from
+`src/content/work/` or `src/content/blog/`, and `../../../components/sections/` from a translated
+post in `src/content/blog/<locale>/`.
+
+Notes:
+
+- No section component needs to be modified or copied to be used this way.
+- `.breakout` relies on `overflow-x: clip` on `html` (set in `src/styles/global.css`). Keep it, or a
+  classic scrollbar will add horizontal scrolling.
+- The utility is defined once in `src/styles/global.css` (`@utility breakout`) and works in any
+  `.prose` body, not only in work entries.
+- A worked example ships at `src/content/work/how-people-read-long-essays.mdx`, rendered at
+  `/work/how-people-read-long-essays/`.
+
 ## UI strings
 
 `src/i18n/<locale>.ts` (e.g. `src/i18n/en.ts`, `src/i18n/ko.ts`). Do not hardcode user-facing strings inside components; add a key here and read it with `useT(Astro.currentLocale)`.
@@ -117,6 +173,18 @@ Font files live in `src/assets/fonts/` (woff2, self-hosted, licensed under the O
 - `blog.showReadingTime` — show/hide estimated reading time.
 - `blog.dropCap` — drop the first letter of a post two lines, in the accent color (browsers without `initial-letter` show a plain letter).
 - `blog.sidenotes` — on screens 1280px and wider, show footnotes in the right margin next to their reference.
+
+## Work options
+
+`src/config.ts`, `work` object, all three `true` by default. These are the post long-form features,
+available on case studies; see [Work as long-form](content.md#work-as-long-form).
+
+- `work.series` — group entries that share a `series` value in frontmatter, oldest year first.
+  Nothing renders on an entry without one.
+- `work.sidenotes` — on screens 1280px and wider, show footnotes in the right margin. Nothing
+  renders on an entry without a footnote.
+- `work.toc` — contents list above the body, on entries with 3 or more `h2`/`h3` headings. This one
+  needs nothing from the frontmatter, so set it to `false` for a portfolio of short case studies.
 
 ## SEO
 

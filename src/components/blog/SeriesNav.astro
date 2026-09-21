@@ -1,16 +1,21 @@
 ---
-// pro-only. Series contents. The current post is marked with aria-current instead of a link.
+// pro-only. Series contents. The current entry is marked with aria-current instead of a link.
+// Takes blog posts or work entries; the link is built from the collection each one came from.
 import { useT } from '../../i18n/t';
 import { postHref, type Post } from '../../utils/posts';
+import { workHref, type Work } from '../../utils/work';
 
 const t = useT(Astro.currentLocale);
 
+type Entry = Post | Work;
+
 interface Props {
-  post: Post;
-  posts: Post[]; // result of seriesPosts()
+  post: Entry;
+  posts: Entry[]; // result of seriesPosts()
 }
 const { post, posts } = Astro.props;
 const n = posts.findIndex((p) => p.id === post.id) + 1;
+const href = (entry: Entry) => (entry.collection === 'work' ? workHref(entry) : postHref(entry));
 ---
 
 {posts.length > 1 && (
@@ -32,7 +37,7 @@ const n = posts.findIndex((p) => p.id === post.id) + 1;
               {p.data.title}
             </span>
           ) : (
-            <a href={postHref(p)} class="text-muted hover:text-foreground no-underline">
+            <a href={href(p)} class="text-muted hover:text-foreground no-underline">
               {p.data.title}
             </a>
           )}

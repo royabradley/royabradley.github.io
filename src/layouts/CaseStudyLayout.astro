@@ -1,7 +1,15 @@
 ---
 // pro-only. A single case study. Client, role, and year appear under the title.
+// The long-form extras (contents, series, sidenotes) are the same components posts use.
+// Each one is switched by work.* in config.ts.
+import type { MarkdownHeading } from 'astro';
 import { Image } from 'astro:assets';
 import BaseLayout from './BaseLayout.astro';
+import SeriesNav from '../components/blog/SeriesNav.astro';
+import Sidenotes from '../components/blog/Sidenotes.astro';
+import TableOfContents from '../components/blog/TableOfContents.astro';
+import CopyCode from '../components/mdx/CopyCode.astro';
+import { work } from '../config';
 import { useT } from '../i18n/t';
 import type { Work } from '../utils/work';
 
@@ -9,8 +17,11 @@ const t = useT(Astro.currentLocale);
 
 interface Props {
   item: Work;
+  headings?: MarkdownHeading[];
+  series?: Work[]; // result of seriesPosts(), already empty when work.series is off
 }
-const { title, description, year, client, role, heroImage, heroAlt } = Astro.props.item.data;
+const { item, headings = [], series = [] } = Astro.props;
+const { title, description, year, client, role, heroImage, heroAlt } = item.data;
 const meta = [
   [t.client, client],
   [t.role, role],
@@ -43,10 +54,14 @@ const meta = [
         class="mt-10 w-full rounded"
       />
     )}
+    {work.series && <SeriesNav post={item} posts={series} />}
+    {work.toc && <TableOfContents headings={headings} />}
     <div class="prose mt-12">
       <slot />
     </div>
-    <footer class="border-border mt-16 border-t pt-8">
+    <CopyCode />
+    {work.sidenotes && <Sidenotes />}
+    <footer data-pagefind-ignore class="border-border mt-16 border-t pt-8">
       <p class="font-sans text-sm">
         <a href="/work/">← {t.backToWork}</a>
       </p>
