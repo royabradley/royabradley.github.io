@@ -1,10 +1,10 @@
 # Pilcrow Pro License
 
-Copyright (c) 2026 Ondelva. All rights reserved.
+Copyright (c) 2026 ondelva. All rights reserved.
 
 ## 1. Grant
 
-Upon purchase, Ondelva ("we") grants you ("Licensee") a non-exclusive, non-transferable license to use
+Upon purchase, ondelva ("we") grants you ("Licensee") a non-exclusive, non-transferable license to use
 Pilcrow Pro (the "Theme") according to the tier purchased:
 
 | Tier     | Licensed users                      | End products |
