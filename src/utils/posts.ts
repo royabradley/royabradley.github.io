@@ -6,11 +6,17 @@ export type Post = CollectionEntry<'blog'>;
 
 /** Published posts, newest first. Drafts show only in dev. A null locale means every language (pro-only). */
 export async function getPosts(locale: string | null = site.locale) {
-  const posts = await getCollection(
-    'blog',
-    (post) =>
-      (import.meta.env.DEV || !post.data.draft) && (locale === null || postLocale(post) === locale),
-  );
+  const posts = await getCollection('blog', (post) => {
+    // A subfolder that isn't a language in i18n.locales would end up in the URL and fail the build
+    // with "Missing parameter: slug". Say what to fix instead (common after removing a language)
+    if (postSlug(post).includes('/'))
+      throw new Error(
+        `src/content/blog/${post.id}: "${post.id.split('/')[0]}/" is not a language in i18n.locales (src/config.ts). Add it there, or move or delete the folder.`,
+      );
+    return (
+      (import.meta.env.DEV || !post.data.draft) && (locale === null || postLocale(post) === locale)
+    );
+  });
   return posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 }
 

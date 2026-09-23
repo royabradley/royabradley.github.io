@@ -4,7 +4,6 @@ import { features, nav, site } from '../../config';
 import { useT } from '../../i18n/t';
 import { Icon } from 'astro-icon/components';
 import { localizeHref } from '../../utils/i18n';
-import LanguagePicker from './LanguagePicker.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
 const t = useT(Astro.currentLocale);
@@ -46,7 +45,6 @@ const links = features.i18nRouting
         ))}
       </ul>
     </nav>
-    {features.i18nRouting && <LanguagePicker />}
     {features.search && (
       <a
         href="/search/"

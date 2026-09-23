@@ -5,7 +5,7 @@ export const site = {
   name: 'Pilcrow',
   description: 'A minimal, typography-first Astro theme.',
   url: 'https://example.com',
-  locale: 'en', // 'en' | 'ko'
+  locale: 'en', // 'en' | 'ko' | 'hu', or any language with a src/i18n/<locale>.ts
   author: 'Ada Marlow', // Fictional demo author. Replace with your name
   defaultOgImage, // 1200×630. A post's heroImage takes precedence
 } as const;
@@ -94,6 +94,7 @@ export const giscus = {
 
 // Forms post to static form services. With empty values the forms render but don't submit.
 // pro-only. site.locale, not the first entry, is the default (unprefixed) language. Each needs src/i18n/<locale>.ts
+// (en, ko, and hu ship with the theme)
 export const i18n = {
   locales: { en: 'English', ko: '한국어' },
 };

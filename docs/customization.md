@@ -9,7 +9,7 @@ Everything site-specific lives in `src/config.ts`, `src/styles/global.css`, and 
 - `name` — shown in the header and page titles.
 - `description` — used for meta description and RSS.
 - `url` — your production URL. Set this before deploying; it feeds canonical links, RSS, and sitemap.
-- `locale` — `'en'` or `'ko'`, picks the default interface strings.
+- `locale` — `'en'`, `'ko'`, or `'hu'` (or any language you add in `src/i18n/`), picks the default interface strings.
 - `author` — shown in the footer and JSON-LD structured data.
 - `defaultOgImage` — imported from `src/assets/og-default.png` (see below).
 
@@ -63,7 +63,7 @@ Font files live in `src/assets/fonts/` (woff2, self-hosted, licensed under the O
 
 ## Generated per-post OG images
 
-`src/utils/og.ts` renders a 1200x630 PNG per post with satori at build time, served from `/og/<slug>.png`. Controlled by `theme.ogImages` in `src/config.ts` (`true`/`false`). If a post has its own `heroImage`, that image is used instead of a generated one. Generated OG images only support Latin-script titles; a non-Latin title (e.g. a Korean post) falls back to the default OG image. Fonts used for generation live in `src/assets/fonts/og/` (woff).
+`src/utils/og.ts` renders a 1200x630 PNG per post with satori at build time, served from `/og/<slug>.png`. Controlled by `theme.ogImages` in `src/config.ts` (`true`/`false`). If a post has its own `heroImage`, that image is used instead of a generated one. Generated OG images cover the Latin and Latin Extended characters used by Western and Central European languages (Hungarian, Polish, Czech, Turkish, and so on). A title with any other character (e.g. a Korean post, Cyrillic, or Vietnamese tone marks) falls back to the default OG image. Fonts used for generation live in `src/assets/fonts/og/` (woff).
 
 ## Home page sections
 
@@ -127,11 +127,11 @@ Notes:
 
 ## UI strings
 
-`src/i18n/<locale>.ts` (e.g. `src/i18n/en.ts`, `src/i18n/ko.ts`). Do not hardcode user-facing strings inside components; add a key here and read it with `useT(Astro.currentLocale)`.
+`src/i18n/<locale>.ts` (the theme ships `en.ts`, `ko.ts`, and `hu.ts`). Do not hardcode user-facing strings inside components; add a key here and read it with `useT(Astro.currentLocale)`.
 
 ## Languages
 
-`src/config.ts`, `i18n.locales` — a map of locale code to display name (e.g. `{ en: 'English', de: 'Deutsch' }`). `site.locale` is the default locale and is served without a path prefix; every other locale in `i18n.locales` is served under `/<locale>/...`. Adding a locale requires a matching `src/i18n/<locale>.ts` strings file. Translated posts live in `src/content/blog/<locale>/`, with file names matching the original-language post they translate.
+`src/config.ts`, `i18n.locales` — a map of locale code to display name (e.g. `{ en: 'English', de: 'Deutsch' }`). `site.locale` is the default locale and is served without a path prefix; every other locale in `i18n.locales` is served under `/<locale>/...`. Adding a locale requires a matching `src/i18n/<locale>.ts` strings file; copy `en.ts` and translate the values. It is picked up automatically, with no registration step. Translated posts live in `src/content/blog/<locale>/`, with file names matching the original-language post they translate.
 
 ## Search
 

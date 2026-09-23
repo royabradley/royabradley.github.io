@@ -10,10 +10,10 @@ Update this file whenever an asset is added or removed.
 | Inter          | Font  | https://github.com/rsms/inter                | OFL-1.1 | Copyright 2016 The Inter Project Authors. `src/assets/fonts/OFL-Inter.txt`                  |
 | JetBrains Mono | Font  | https://github.com/JetBrains/JetBrainsMono   | OFL-1.1 | Copyright 2020 The JetBrains Mono Project Authors. `src/assets/fonts/OFL-JetBrainsMono.txt` |
 
-The Newsreader italic file (`newsreader-latin-wght-italic.woff2`) is a modified version: its optical-size axis is
-pinned to 18 and its weight axis limited to 300–700. It remains under OFL-1.1.
+The Newsreader italic files (`newsreader-latin-wght-italic.woff2`, `newsreader-latin-ext-wght-italic.woff2`) are modified versions: their optical-size axis is
+pinned to 18 and their weight axis limited to 300–700. They remain under OFL-1.1.
 
-`src/assets/fonts/og/*.woff` are unmodified static Latin-subset files from Fontsource (`@fontsource/newsreader`,
+`src/assets/fonts/og/*.woff` are unmodified static Latin and Latin Extended subset files from Fontsource (`@fontsource/newsreader`,
 `@fontsource/inter`), used only to render generated OG images at build time. They are under OFL-1.1 (same notices as above).
 
 The logo (`src/assets/logo.svg`), favicon, and default OG image (`src/assets/og-default.png`) are drawn
