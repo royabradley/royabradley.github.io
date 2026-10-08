@@ -1,0 +1,38 @@
+---
+title: Configuration
+description: Site name, navigation, forms, and analytics all live in one file.
+order: 2
+---
+
+Everything that is specific to your site is in `src/config.ts`. If you find yourself editing a component to change your name or a link, look there first.
+
+## Site
+
+| Key      | What it does                                          |
+| -------- | ----------------------------------------------------- |
+| `name`   | Shown in the header and page titles                   |
+| `url`    | Your production URL, used for canonical links and RSS |
+| `locale` | `'en'`, `'ko'` or `'hu'`; picks the interface strings |
+| `author` | Used in the footer and structured data                |
+
+## Navigation
+
+`nav.header` is the list in the top bar. `nav.footer` is a list of groups, each with a title and links. Keep the header short — four links fit comfortably on a phone. With more than one language in `i18n.locales`, a language list is added to the footer as its last group.
+
+## Forms
+
+The contact form posts to [Web3Forms](https://web3forms.com). Paste your access key into `forms.web3formsKey`; with JavaScript on, the message is sent without leaving the page.
+
+For the newsletter form, set `forms.newsletter.provider`:
+
+| Provider       | `id`                                              |
+| -------------- | ------------------------------------------------- |
+| `'buttondown'` | Your Buttondown username                          |
+| `'kit'`        | The Kit form ID (the number in `/forms/<id>/`)    |
+| `'custom'`     | Leave empty and put the subscribe URL in `action` |
+
+Until these are filled in, the forms render but cannot be submitted.
+
+## Comments
+
+Comments use [Giscus](https://giscus.app), which stores them in GitHub Discussions. Enable Discussions on a public repository, install the giscus app, and pick the repository on giscus.app. Copy the `data-repo`, `data-repo-id`, `data-category` and `data-category-id` values into `giscus`, then set `features.comments` to `true`. The widget follows the light and dark theme and the post's language.

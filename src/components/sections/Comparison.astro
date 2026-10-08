@@ -1,0 +1,55 @@
+---
+// pro-only. true/false values render as marks; strings render as is.
+import { useT } from '../../i18n/t';
+
+const t = useT(Astro.currentLocale);
+
+interface Props {
+  title: string;
+  columns: string[];
+  rows: { label: string; values: (boolean | string)[] }[];
+}
+const { title, columns, rows } = Astro.props;
+---
+
+<section class="mx-auto max-w-5xl px-4 py-16">
+  <h2 class="text-4xl">{title}</h2>
+  <div class="mt-8 overflow-x-auto">
+    <table class="w-full min-w-[32rem] border-collapse text-left">
+      <thead>
+        <tr class="border-foreground border-b font-sans text-sm">
+          <td class="py-3"></td>
+          {columns.map((col) => (
+            <th scope="col" class="px-4 py-3 text-center font-medium">
+              {col}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr class="border-border border-b">
+            <th scope="row" class="py-3 pr-4 font-normal">
+              {row.label}
+            </th>
+            {row.values.map((value) => (
+              <td class="px-4 py-3 text-center font-sans text-sm">
+                {typeof value === 'string' ? (
+                  value
+                ) : value ? (
+                  <span class="text-primary" role="img" aria-label={t.included}>
+                    ✓
+                  </span>
+                ) : (
+                  <span class="text-muted" role="img" aria-label={t.notIncluded}>
+                    —
+                  </span>
+                )}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>

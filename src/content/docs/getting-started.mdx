@@ -1,0 +1,30 @@
+---
+title: Getting started
+description: Install the theme, run it locally, and publish your first page.
+order: 1
+---
+
+Pilcrow is an ordinary Astro project. There is no CLI of its own and nothing to eject from.
+
+## Requirements
+
+- Node.js 22.12 or newer
+- pnpm (the version is pinned in `package.json`)
+
+## Install
+
+```sh
+pnpm install
+pnpm dev
+```
+
+The site is now running at `http://localhost:4321`. Edits to any file under `src/` reload the page.
+
+## Build
+
+```sh
+pnpm check
+pnpm build
+```
+
+`pnpm build` writes a static site to `dist/`. Upload that folder to any static host — Cloudflare Pages, Netlify, Vercel, or a plain web server.

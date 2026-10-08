@@ -1,0 +1,70 @@
+---
+// pro-only. A single case study. Client, role, and year appear under the title.
+// The long-form extras (contents, series, sidenotes) are the same components posts use.
+// Each one is switched by work.* in config.ts.
+import type { MarkdownHeading } from 'astro';
+import { Image } from 'astro:assets';
+import BaseLayout from './BaseLayout.astro';
+import SeriesNav from '../components/blog/SeriesNav.astro';
+import Sidenotes from '../components/blog/Sidenotes.astro';
+import TableOfContents from '../components/blog/TableOfContents.astro';
+import CopyCode from '../components/mdx/CopyCode.astro';
+import { work } from '../config';
+import { useT } from '../i18n/t';
+import type { Work } from '../utils/work';
+
+const t = useT(Astro.currentLocale);
+
+interface Props {
+  item: Work;
+  headings?: MarkdownHeading[];
+  series?: Work[]; // result of seriesPosts(), already empty when work.series is off
+}
+const { item, headings = [], series = [] } = Astro.props;
+const { title, description, year, client, role, heroImage, heroAlt } = item.data;
+const meta = [
+  [t.client, client],
+  [t.role, role],
+  [t.year, String(year)],
+].filter((row): row is [string, string] => Boolean(row[1]));
+---
+
+<BaseLayout title={title} description={description} image={heroImage} type="article">
+  <article data-pagefind-body class="mx-auto max-w-prose px-4 py-12 sm:py-16">
+    <header>
+      <h1 class="text-4xl font-light tracking-tight sm:text-5xl">{title}</h1>
+      <p class="text-muted mt-4 text-xl">{description}</p>
+      <dl class="border-border mt-8 grid grid-cols-2 gap-4 border-y py-4 font-sans text-sm sm:grid-cols-3">
+        {meta.map(([label, value]) => (
+          <div>
+            <dt class="text-muted">{label}</dt>
+            <dd class="mt-1">{value}</dd>
+          </div>
+        ))}
+      </dl>
+    </header>
+    {heroImage && (
+      <Image
+        src={heroImage}
+        alt={heroAlt ?? ''}
+        widths={[720, 1440]}
+        sizes="(min-width: 720px) 720px, 100vw"
+        loading="eager"
+        fetchpriority="high"
+        class="mt-10 w-full rounded"
+      />
+    )}
+    {work.series && <SeriesNav post={item} posts={series} />}
+    {work.toc && <TableOfContents headings={headings} />}
+    <div class="prose mt-12">
+      <slot />
+    </div>
+    <CopyCode />
+    {work.sidenotes && <Sidenotes />}
+    <footer data-pagefind-ignore class="border-border mt-16 border-t pt-8">
+      <p class="font-sans text-sm">
+        <a href="/work/">← {t.backToWork}</a>
+      </p>
+    </footer>
+  </article>
+</BaseLayout>

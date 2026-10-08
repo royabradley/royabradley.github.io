@@ -1,0 +1,23 @@
+---
+// pro-only. Author bio at the end of a post.
+import type { CollectionEntry } from 'astro:content';
+import { useT } from '../../i18n/t';
+import { authorHref } from '../../utils/posts';
+
+const t = useT(Astro.currentLocale);
+
+interface Props {
+  author: CollectionEntry<'authors'>;
+}
+const { id, data } = Astro.props.author;
+---
+
+<section aria-label={t.writtenBy} class="font-sans text-sm">
+  <p class="section-label">{t.writtenBy}</p>
+  <p class="mt-1 font-serif text-lg">
+    <a href={authorHref(id)} class="text-foreground hover:text-primary no-underline">
+      {data.name}
+    </a>
+  </p>
+  <p class="text-muted mt-1">{data.bio}</p>
+</section>

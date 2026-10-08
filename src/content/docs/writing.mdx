@@ -1,0 +1,86 @@
+---
+title: Writing
+description: Add an essay, a case study, or a documentation page.
+order: 3
+---
+
+Content lives in `src/content/`, one folder per collection. Each file is Markdown or MDX with a short block of frontmatter at the top.
+
+## Essays
+
+Add a file to `src/content/blog/`. The file name becomes the URL.
+
+```md
+---
+title: On the pleasure of slow reading
+description: A short case for reading fewer books, more carefully.
+pubDate: 2026-03-02
+tags: [reading]
+---
+```
+
+Set `draft: true` to keep a post out of the production build while you work on it.
+
+Posts can also take:
+
+- `author` — an id from `src/content/authors.json`. The post shows a byline and a short bio, and the author gets a page at `/blog/author/<id>/`.
+- `series` — any name. Posts that share it are listed together, oldest first, at the top of each one.
+
+A table of contents appears when a post has three or more section headings. Reading time and related posts are set in `src/config.ts` under `blog`.
+
+<Callout type="note">
+  MDX files can use `<Callout>` without importing it. `type` is `note`, `tip`, or `warning`; `title` is optional.
+</Callout>
+
+## Work
+
+Case studies go in `src/content/work/`. They take a `year` and, optionally, a `client` and `role`, which are shown above the text.
+
+Work uses the same reading column and body styles as an essay, so the collection also suits studies, guides, and multi-part editorial projects — anything you would rather order by year than by date. Three options in the `work` object of `src/config.ts` decide how much of the essay format comes with it:
+
+| Option           | What it adds                                                        |
+| ---------------- | ------------------------------------------------------------------- |
+| `work.series`    | Groups entries sharing a `series` value, oldest year first          |
+| `work.sidenotes` | On screens 1280px and wider, moves footnotes into the right margin  |
+| `work.toc`       | A contents list above the body, on entries with 3+ section headings |
+
+All three are on. `series` and `sidenotes` stay silent until an entry uses them: nothing appears without a `series` value in the frontmatter or a footnote in the text. `toc` needs nothing from the frontmatter and follows the same rule posts do, so set it to `false` if your case studies are short enough to read without one.
+
+[Reading at The Margin Review](/work/what-we-thought-readers-wanted/) is a two-part series that uses both.
+
+## Sections inside your writing
+
+Section components are not only for the home page. Any of them can be dropped into the body of an essay, a page, or a work entry, wherever a sequence, a quote, or a comparison carries the point better than a paragraph.
+
+Import the component and wrap it in two classes:
+
+```mdx
+import Steps from '../../components/sections/Steps.astro';
+
+Prose stays at the reading measure, as it does anywhere else.
+
+<div class="not-prose breakout">
+  <Steps
+    title="Method"
+    items={[
+      { title: 'Recruit', body: 'Forty-one readers from the subscriber list.' },
+      { title: 'Observe', body: 'One essay each, no instructions.' },
+    ]}
+  />
+</div>
+
+And the prose picks up again here.
+```
+
+`not-prose` keeps the body styles off the component, so it looks the way it does on the home page. `breakout` lets it out of the reading column; each section re-centres itself, so this restores its usual width rather than making it full-bleed. Leave `breakout` off to keep a section at reading width, which suits `Steps` and `Timeline`.
+
+The import path is relative to the file: `../../components/sections/` from `src/content/work/` or `src/content/blog/`, and one level deeper from a translated post.
+
+<Callout type="tip">
+  No section component has to be copied or edited to be used this way. [How people read long
+  essays](/work/how-people-read-long-essays/) embeds five of them in one entry.
+</Callout>
+
+## Docs
+
+Pages like this one go in `src/content/docs/`. The `order` field sets their position in the sidebar, lowest first.

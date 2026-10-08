@@ -1,0 +1,27 @@
+---
+// pro-only. Adds a copy button to every code block in .prose. Include once per layout.
+import { useT } from '../../i18n/t';
+
+const t = useT(Astro.currentLocale);
+const labels = { copy: t.copyCode, copied: t.copiedCode };
+---
+
+<script is:inline define:vars={{ labels }}>
+  document.querySelectorAll('.prose pre').forEach((pre) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'relative';
+    pre.replaceWith(wrap);
+    wrap.append(pre);
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = labels.copy;
+    button.className =
+      'border-border bg-background text-muted hover:text-foreground absolute top-2 right-2 rounded border px-2 py-0.5 font-sans text-xs';
+    button.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(pre.textContent ?? '');
+      button.textContent = labels.copied;
+      setTimeout(() => (button.textContent = labels.copy), 1500);
+    });
+    wrap.append(button);
+  });
+</script>

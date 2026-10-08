@@ -1,0 +1,25 @@
+---
+// pro-only. Names set as wordmarks instead of logos. For image logos, create a new section.
+interface Props {
+  title: string;
+  items: { name: string; href?: string }[];
+}
+const { title, items } = Astro.props;
+---
+
+<section class="hang mx-auto max-w-5xl px-4 py-10">
+  <h2 class="section-label">{title}</h2>
+  <ul class="flex flex-wrap items-baseline gap-x-10 gap-y-4">
+    {items.map((item) => (
+      <li class="text-muted text-2xl italic">
+        {item.href ? (
+          <a href={item.href} class="text-muted hover:text-foreground no-underline">
+            {item.name}
+          </a>
+        ) : (
+          item.name
+        )}
+      </li>
+    ))}
+  </ul>
+</section>

@@ -1,0 +1,28 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Callout from '../../components/mdx/Callout.astro';
+import { getEntry, render } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
+import { blog } from '../../config';
+import { getPosts, relatedPosts, seriesPosts } from '../../utils/posts';
+
+export const getStaticPaths = (async () => {
+  const posts = await getPosts();
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      series: seriesPosts(post, posts),
+      related: relatedPosts(post, posts, blog.relatedPosts),
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { post, series, related } = Astro.props;
+const { Content, headings } = await render(post);
+const author = post.data.author && (await getEntry(post.data.author));
+---
+
+<PostLayout post={post} headings={headings} author={author} series={series} related={related}>
+  <Content components={{ Callout }} />
+</PostLayout>

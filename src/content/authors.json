@@ -1,0 +1,13 @@
+[
+  {
+    "id": "ada-marlow",
+    "name": "Ada Marlow",
+    "bio": "Essayist and recovering speed reader. Writes about books, margins, and the slow parts of the day.",
+    "url": "https://example.com/about/"
+  },
+  {
+    "id": "theo-lindqvist",
+    "name": "Theo Lindqvist",
+    "bio": "Type designer and occasional letterpress printer. Keeps a commonplace book and a drawer of broken nibs."
+  }
+]

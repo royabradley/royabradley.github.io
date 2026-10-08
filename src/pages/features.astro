@@ -1,0 +1,64 @@
+---
+// pro-only. Theme features page, assembled from sections.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ogDefault from '../assets/og-default.png';
+import CTA from '../components/sections/CTA.astro';
+import Features from '../components/sections/Features.astro';
+import Hero from '../components/sections/Hero.astro';
+import Split from '../components/sections/Split.astro';
+import Steps from '../components/sections/Steps.astro';
+---
+
+<BaseLayout title="Features" description="What Pilcrow does, and what it deliberately leaves out.">
+  <Hero
+    eyebrow="Features"
+    title="What the theme does"
+    lede="Pilcrow is made for long text: essays, letters, and posts with footnotes. This page lists what it does for the reader and for the person writing."
+    actions={[{ label: 'Read the docs', href: '/docs/' }]}
+  />
+  <Features
+    title="For the reader"
+    items={[
+      {
+        title: 'A comfortable measure',
+        body: 'About 65 characters a line, with leading to match.',
+      },
+      {
+        title: 'Real footnotes',
+        body: 'Numbered, linked both ways, and set at the foot of the essay.',
+      },
+      { title: 'Dark mode', body: 'Follows the system by default and remembers a manual choice.' },
+    ]}
+  />
+  <Features
+    title="For the writer"
+    items={[
+      {
+        title: 'Markdown and MDX',
+        body: 'Write in plain text; drop in a component when you need one.',
+      },
+      { title: 'Drafts', body: 'Mark a post as a draft and it stays out of the build.' },
+      { title: 'RSS and sitemap', body: 'Generated on every build, nothing to configure.' },
+    ]}
+  />
+  <Split
+    title="One file for your settings"
+    body="Name, links, forms, and analytics all live in src/config.ts. Components never hold site-specific values, so updates to the theme do not overwrite yours."
+    image={ogDefault}
+    alt="The Pilcrow wordmark with a red paragraph sign on cream paper."
+    reverse
+  />
+  <Steps
+    title="Getting set up"
+    items={[
+      { title: 'Install', body: 'pnpm install, then pnpm dev.' },
+      { title: 'Configure', body: 'Fill in src/config.ts.' },
+      { title: 'Publish', body: 'pnpm build and upload dist/ anywhere.' },
+    ]}
+  />
+  <CTA
+    title="Every section, on one page"
+    body="Every section on one page, assembled from props."
+    action={{ label: 'Browse sections', href: '/sections/' }}
+  />
+</BaseLayout>

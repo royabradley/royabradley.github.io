@@ -1,0 +1,33 @@
+---
+// pro-only. Language list, one footer group. Every language is listed in its own name, the current one marked.
+// Without a translation, a link goes to that language's blog listing.
+import { site } from '../../config';
+import { useT } from '../../i18n/t';
+import { alternates } from '../../utils/i18n';
+
+const current = Astro.currentLocale ?? site.locale;
+const t = useT(current);
+const all = await alternates(Astro.url.pathname, current);
+---
+
+{all.length > 1 && (
+  <div>
+    <p class="section-label">{t.language}</p>
+    <ul class="mt-2 space-y-1.5" aria-label={t.language}>
+      {all.map(({ locale, label, href, exists }) => (
+        <li>
+          <a
+            href={href}
+            hreflang={locale}
+            lang={locale}
+            rel={exists && locale !== current ? 'alternate' : undefined}
+            aria-current={locale === current ? 'true' : undefined}
+            class="text-muted hover:text-foreground aria-[current=true]:text-foreground no-underline"
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}

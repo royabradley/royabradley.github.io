@@ -1,0 +1,37 @@
+---
+// Home. Change section order and copy here. Section components live in src/components/sections/.
+// A writer's home page: the newest essay large, then the ones before it. Theme marketing lives in /features.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeaturedPost from '../components/sections/FeaturedPost.astro';
+import Hero from '../components/sections/Hero.astro';
+import Newsletter from '../components/sections/Newsletter.astro';
+import RecentPosts from '../components/sections/RecentPosts.astro';
+import { useT } from '../i18n/t';
+import { getPosts } from '../utils/posts';
+import { newsletterForm } from '../utils/forms';
+
+const t = useT(Astro.currentLocale);
+
+const [latest, ...earlier] = await getPosts();
+---
+
+<BaseLayout>
+  <Hero
+    eyebrow="Roy's notebook"
+    title="Reading slowly, and writing about it."
+    lede="Essays on the books that take me a month to finish, the notes I leave in their margins, and the few habits of print I refuse to give up. A new one turns up every few weeks."
+  />
+  {/* pro-only */}
+  {latest && <FeaturedPost title="Latest" post={latest} />}
+  <RecentPosts
+    title="Earlier"
+    posts={earlier.slice(0, 5)}
+    moreLabel={t.allPosts}
+    moreHref="/blog/"
+  />
+  <Newsletter
+    title="The Sunday letter"
+    body="The week’s essay, three things worth reading, and a closing line. Every letter has an unsubscribe link at the bottom."
+    {...newsletterForm()}
+  />
+</BaseLayout>

@@ -1,0 +1,20 @@
+---
+// pro-only
+interface Props {
+  title?: string;
+  items: { value: string; label: string }[];
+}
+const { title, items } = Astro.props;
+---
+
+<section class:list={['mx-auto max-w-5xl px-4 py-12', title && 'hang']}>
+  {title && <h2 class="section-label lg:pt-4">{title}</h2>}
+  <dl class="grid grid-cols-2 gap-8 md:grid-cols-4">
+    {items.map((item) => (
+      <div class="border-border flex flex-col-reverse border-t pt-4">
+        <dt class="text-muted mt-1 font-sans text-sm">{item.label}</dt>
+        <dd class="text-5xl font-light">{item.value}</dd>
+      </div>
+    ))}
+  </dl>
+</section>

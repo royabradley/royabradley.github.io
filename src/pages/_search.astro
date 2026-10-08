@@ -1,0 +1,107 @@
+---
+// pro-only. /search. astro.config.mjs adds the route only when features.search is on.
+// Pagefind writes the index to dist/pagefind/ at the end of the build. There is no index in dev.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useT } from '../i18n/t';
+
+const t = useT(Astro.currentLocale);
+const field =
+  'border-border bg-background focus-visible:border-primary w-full rounded-lg border px-4 py-2.5 font-sans text-base';
+const messages = {
+  results: t.searchResults,
+  none: t.searchNoResults,
+  unavailable: t.searchUnavailable,
+};
+---
+
+<BaseLayout title={t.search} description={t.searchDescription}>
+  <div class="mx-auto max-w-prose px-4 py-12 sm:py-16">
+    <h1 class="text-5xl font-light tracking-tight">{t.search}</h1>
+    <form role="search" action="/search/" class="mt-8 font-sans">
+      <label for="search-q" class="sr-only">
+        {t.searchLabel}
+      </label>
+      <input
+        id="search-q"
+        name="q"
+        type="search"
+        autocomplete="off"
+        placeholder={t.searchLabel}
+        class={field}
+      />
+    </form>
+    <p data-search-status role="status" class="text-muted mt-6 font-sans text-sm"></p>
+    <ol data-search-results class="divide-border mt-4 divide-y"></ol>
+    <template data-search-item>
+      <li class="py-6">
+        <h2 class="text-2xl font-medium">
+          <a class="text-foreground hover:text-primary no-underline"></a>
+        </h2>
+        <p class="text-muted mt-2 [&_mark]:text-foreground [&_mark]:bg-transparent [&_mark]:font-semibold"></p>
+      </li>
+    </template>
+  </div>
+</BaseLayout>
+
+<script is:inline define:vars={{ messages }}>
+  (async () => {
+    const input = document.getElementById('search-q');
+    const status = document.querySelector('[data-search-status]');
+    const list = document.querySelector('[data-search-results]');
+    const item = document.querySelector('[data-search-item]');
+
+    // The index and its wasm are loaded on the first keystroke, not on page load:
+    // initialising them eagerly costs blocking time for a visitor who never types.
+    // A page opened with ?q= loads them straight away.
+    let pagefind;
+    let failed = false;
+    const load = async () => {
+      if (pagefind || failed) return pagefind;
+      try {
+        pagefind = await import('/pagefind/pagefind.js');
+        await pagefind.init();
+      } catch {
+        failed = true;
+        status.textContent = messages.unavailable;
+      }
+      return pagefind;
+    };
+
+    const run = async (q) => {
+      const url = new URL(location.href);
+      if (q) url.searchParams.set('q', q);
+      else url.searchParams.delete('q');
+      history.replaceState(null, '', url);
+      if (!q.trim()) {
+        list.replaceChildren();
+        status.textContent = '';
+        return;
+      }
+      if (!(await load())) return;
+      const search = await pagefind.debouncedSearch(q);
+      if (search === null) return; // cancelled by newer input
+      list.replaceChildren();
+      const results = await Promise.all(search.results.slice(0, 20).map((r) => r.data()));
+      status.textContent = results.length
+        ? messages.results.replace('{n}', String(search.results.length))
+        : messages.none.replace('{q}', q);
+      for (const r of results) {
+        const li = item.content.cloneNode(true);
+        const a = li.querySelector('a');
+        a.href = r.url;
+        a.textContent = r.meta.title;
+        // Pagefind excerpts are escaped text with only <mark> added
+        li.querySelector('p').innerHTML = r.excerpt;
+        list.append(li);
+      }
+    };
+
+    input.value = new URLSearchParams(location.search).get('q') ?? '';
+    input.addEventListener('input', () => run(input.value));
+    input.form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      run(input.value);
+    });
+    if (input.value) run(input.value);
+  })();
+</script>

@@ -1,0 +1,20 @@
+---
+// pro-only
+import type { GetStaticPaths } from 'astro';
+import Callout from '../../components/mdx/Callout.astro';
+import { render } from 'astro:content';
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import { getDocs } from '../../utils/docs';
+
+export const getStaticPaths = (async () => {
+  const docs = await getDocs();
+  return docs.map((doc) => ({ params: { slug: doc.id }, props: { doc, docs } }));
+}) satisfies GetStaticPaths;
+
+const { doc, docs } = Astro.props;
+const { Content } = await render(doc);
+---
+
+<DocsLayout doc={doc} docs={docs}>
+  <Content components={{ Callout }} />
+</DocsLayout>

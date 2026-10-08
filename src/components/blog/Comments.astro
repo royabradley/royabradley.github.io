@@ -1,0 +1,58 @@
+---
+// pro-only. Giscus comments. Renders only when features.comments is on and the giscus values in config are set.
+// The script is injected on the client: it needs the current theme (html.dark) and must notify the iframe on toggle.
+import { features, giscus } from '../../config';
+import { useT } from '../../i18n/t';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const t = useT(Astro.currentLocale);
+const enabled = features.comments && giscus.repo && giscus.repoId && giscus.categoryId;
+const attrs = {
+  'data-repo': giscus.repo,
+  'data-repo-id': giscus.repoId,
+  'data-category': giscus.category,
+  'data-category-id': giscus.categoryId,
+  'data-mapping': giscus.mapping,
+  'data-strict': '1',
+  'data-reactions-enabled': '1',
+  'data-emit-metadata': '0',
+  'data-input-position': 'top',
+  'data-lang': locale,
+  'data-loading': 'lazy',
+};
+---
+
+{enabled && (
+  <section
+    data-pagefind-ignore
+    aria-labelledby="comments-heading"
+    class="mx-auto max-w-prose px-4 pb-16"
+  >
+    <h2 id="comments-heading" class="mb-6 text-3xl tracking-tight">
+      {t.comments}
+    </h2>
+    <div data-giscus />
+    <script is:inline define:vars={{ attrs }}>
+      const root = document.documentElement;
+      const theme = () => (root.classList.contains('dark') ? 'dark' : 'light');
+      const s = document.createElement('script');
+      s.src = 'https://giscus.app/client.js';
+      s.async = true;
+      s.crossOrigin = 'anonymous';
+      Object.entries(attrs).forEach(([k, v]) => s.setAttribute(k, v));
+      s.setAttribute('data-theme', theme());
+      document.querySelector('[data-giscus]').append(s);
+      new MutationObserver(() =>
+        document
+          .querySelector('iframe.giscus-frame')
+          ?.contentWindow.postMessage(
+            { giscus: { setConfig: { theme: theme() } } },
+            'https://giscus.app',
+          ),
+      ).observe(root, { attributeFilter: ['class'] });
+    </script>
+  </section>
+)}

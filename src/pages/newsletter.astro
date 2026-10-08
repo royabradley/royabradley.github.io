@@ -1,0 +1,65 @@
+---
+// pro-only. Newsletter landing page. The subscribe form uses forms.newsletter in src/config.ts.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/sections/FAQ.astro';
+import Hero from '../components/sections/Hero.astro';
+import Newsletter from '../components/sections/Newsletter.astro';
+import RecentPosts from '../components/sections/RecentPosts.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import { useT } from '../i18n/t';
+import { getPosts } from '../utils/posts';
+import { newsletterForm } from '../utils/forms';
+
+const t = useT(Astro.currentLocale);
+
+const recent = (await getPosts()).slice(0, 3);
+---
+
+<BaseLayout
+  title="Newsletter"
+  description="One letter a week: a new essay, three links, and a closing line."
+>
+  <Hero
+    eyebrow="The letter"
+    title="One letter a week, on Sunday morning."
+    lede="A new essay, three things worth reading, and a closing line. It arrives on Sunday morning and takes about ten minutes."
+  />
+  <Newsletter
+    title="Subscribe"
+    body="Free, and you can leave with one click. Your address is never shared."
+    {...newsletterForm()}
+  />
+  <RecentPosts title="Recent letters" posts={recent} moreLabel={t.allPosts} moreHref="/blog/" />
+  <Testimonials
+    title="From readers"
+    items={[
+      {
+        quote: 'The only newsletter I read on the day it arrives.',
+        name: 'Nell Whitlock',
+        role: 'essayist',
+      },
+      {
+        quote: 'Short enough to finish, long enough to remember.',
+        name: 'Tomás Ferrer',
+        role: 'historian',
+      },
+    ]}
+  />
+  <FAQ
+    title="Questions"
+    items={[
+      {
+        question: 'How often will I hear from you?',
+        answer: 'Once a week, on Sunday. Never more.',
+      },
+      {
+        question: 'Is there a paid tier?',
+        answer: 'Yes, but the letter itself is always free. See the pricing page.',
+      },
+      {
+        question: 'Do you track opens?',
+        answer: 'No. There are no tracking pixels in the letter.',
+      },
+    ]}
+  />
+</BaseLayout>
