@@ -18,8 +18,8 @@ const [latest, ...earlier] = await getPosts();
 <BaseLayout>
   <Hero
     eyebrow="Roy's notebook"
-    title="Reading slowly, and writing about it."
-    lede="Essays on the books that take me a month to finish, the notes I leave in their margins, and the few habits of print I refuse to give up. A new one turns up every few weeks."
+    title={`“Earth’s crammed with heaven.”`}
+    lede="Reading slowly, thinking deeply, and attending to the sacramental life in a world full of distractions."
   />
   {/* pro-only */}
   {latest && <FeaturedPost title="Latest" post={latest} />}
