@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 import { close, createIndex } from 'pagefind';
 import { satteri } from '@astrojs/markdown-satteri';
+import { tableScroll } from './src/utils/table-scroll.ts';
 import { features, i18n, site } from './src/config.ts';
 
 // GFM task-list checkboxes have no accessible name and fail Lighthouse's 'label' audit. Wrap each item in a <label>
@@ -47,7 +48,7 @@ export default defineConfig({
   // SITE_URL overrides config.ts at build time (used by the demo deploys)
   site: process.env.SITE_URL ?? site.url,
   markdown: {
-    processor: satteri({ hastPlugins: [taskListLabels] }),
+    processor: satteri({ hastPlugins: [taskListLabels, tableScroll] }),
     // Emit both light and dark themes as CSS variables. Colors are applied at the end of global.css
     shikiConfig: { themes: { light: 'github-light', dark: 'github-dark' }, defaultColor: false },
   },

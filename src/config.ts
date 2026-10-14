@@ -32,6 +32,7 @@ export const nav = {
         { label: 'Newsletter', href: '/newsletter/' },
         { label: 'Pricing', href: '/pricing/' },
         { label: 'Features', href: '/features/' },
+        { label: 'Sections', href: '/sections/' },
         { label: 'Team', href: '/team/' },
         { label: 'Docs', href: '/docs/' },
         { label: 'Changelog', href: '/changelog/' },
