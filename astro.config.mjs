@@ -72,6 +72,9 @@ export default defineConfig({
       name: 'pilcrow-styleguide',
       hooks: {
         'astro:config:setup': ({ command, injectRoute }) => {
+          // Demo builds only (the demo bar links to it): the changelog as a page
+          if (process.env.PUBLIC_DEMO_BUY_URL)
+            injectRoute({ pattern: '/whats-new', entrypoint: './src/pages/_whats-new.astro' });
           // pro-only: features.styleguide builds it for production too
           if (command === 'dev' || features.styleguide)
             injectRoute({ pattern: '/styleguide', entrypoint: './src/pages/_styleguide.astro' });

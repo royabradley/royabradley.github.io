@@ -4,7 +4,6 @@
 // Each one is switched by work.* in config.ts.
 import type { MarkdownHeading } from 'astro';
 import { Image } from 'astro:assets';
-import katexCss from 'katex/dist/katex.min.css?url';
 import BaseLayout from './BaseLayout.astro';
 import SeriesNav from '../components/blog/SeriesNav.astro';
 import Sidenotes from '../components/blog/Sidenotes.astro';
@@ -13,6 +12,7 @@ import CopyCode from '../components/mdx/CopyCode.astro';
 import { work } from '../config';
 import { useT } from '../i18n/t';
 import type { Work } from '../utils/work';
+import MathHead from '../components/mdx/MathHead.astro'; // pro-only
 
 const t = useT(Astro.currentLocale);
 
@@ -33,7 +33,7 @@ const meta = [
 ---
 
 <BaseLayout title={title} description={description} image={heroImage} type="article">
-  {math && <link slot="head" rel="stylesheet" href={katexCss} />}
+  {math && <MathHead slot="head" />}
   <article data-pagefind-body class="mx-auto max-w-prose px-4 py-12 sm:py-16">
     <header>
       <h1 class="text-4xl font-light tracking-tight sm:text-5xl">{title}</h1>

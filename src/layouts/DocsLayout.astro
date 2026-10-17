@@ -1,10 +1,10 @@
 ---
 // pro-only. Docs layout. Contents on the left on wide screens, above the text on narrow ones.
-import katexCss from 'katex/dist/katex.min.css?url';
 import BaseLayout from './BaseLayout.astro';
 import CopyCode from '../components/mdx/CopyCode.astro';
 import { useT } from '../i18n/t';
 import { docHref as href, type Doc } from '../utils/docs';
+import MathHead from '../components/mdx/MathHead.astro'; // pro-only
 
 const t = useT(Astro.currentLocale);
 
@@ -21,7 +21,7 @@ const next = docs[i + 1];
 ---
 
 <BaseLayout title={doc.data.title} description={doc.data.description}>
-  {math && <link slot="head" rel="stylesheet" href={katexCss} />}
+  {math && <MathHead slot="head" />}
   <div class="mx-auto grid max-w-5xl grid-cols-[minmax(0,1fr)] gap-10 px-4 py-12 sm:py-16 lg:grid-cols-[13rem_minmax(0,1fr)] lg:gap-16">
     <nav aria-label={t.docsNav} class="font-sans text-sm">
       <p class="section-label">{t.docs}</p>

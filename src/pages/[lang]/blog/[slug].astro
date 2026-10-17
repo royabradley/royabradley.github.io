@@ -2,6 +2,7 @@
 // pro-only. /<locale>/blog/<slug> from src/content/blog/<locale>/<slug>.mdx. The default language uses blog/[slug].astro
 import type { GetStaticPaths } from 'astro';
 import Callout from '../../../components/mdx/Callout.astro';
+import Theorem from '../../../components/mdx/Theorem.astro';
 import { getEntry, render } from 'astro:content';
 import PostLayout from '../../../layouts/PostLayout.astro';
 import { blog, features, i18n, site } from '../../../config';
@@ -39,5 +40,5 @@ const author = post.data.author && (await getEntry(post.data.author));
   related={related}
   math={remarkPluginFrontmatter.hasMath}
 >
-  <Content components={{ Callout }} />
+  <Content components={{ Callout, Theorem }} />
 </PostLayout>

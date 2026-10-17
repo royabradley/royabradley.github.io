@@ -1,0 +1,24 @@
+---
+// pro-only. A numbered statement in MDX, passed via components like Callout, so no import is needed.
+//   <Theorem kind="lemma" title="Optional name">Body</Theorem>
+// Theorems, lemmas, propositions, corollaries, definitions and examples share one counter per page
+// (CSS, global.css), so "Lemma 2" follows "Theorem 1". Proofs and remarks are not numbered; a
+// proof ends with ∎.
+import { useT } from '../../i18n/t';
+
+const t = useT(Astro.currentLocale);
+
+interface Props {
+  kind?: keyof typeof t.statements;
+  title?: string;
+}
+const { kind = 'theorem', title } = Astro.props;
+---
+
+<div class:list={['statement', `statement-${kind}`]}>
+  <p class="statement-label">
+    <span class="statement-kind">{t.statements[kind]}</span>
+    {title && ` (${title})`}.
+  </p>
+  <slot />
+</div>

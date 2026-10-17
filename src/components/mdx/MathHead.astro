@@ -1,0 +1,17 @@
+---
+// pro-only. What a page with math needs: the KaTeX stylesheet, and copy-tex, so copying a formula
+// puts its LaTeX source on the clipboard. Layouts render it into the head only when the page has math.
+import katexCss from 'katex/dist/katex.min.css?url';
+---
+
+<link rel="stylesheet" href={katexCss} />
+<script>
+  import 'katex/contrib/copy-tex';
+</script>
+
+<style is:global>
+  /* The number beside a formula is set at the size of the text, not at KaTeX's 1.21em */
+  .katex-display .katex-tag {
+    font-size: 0.826em;
+  }
+</style>

@@ -371,6 +371,44 @@
     content-visibility: auto;
     contain-intrinsic-size: auto 3lh;
   }
+  /* pro-only: <Theorem> (src/components/mdx/Theorem.astro). The numbered kinds share one counter per
+     page; a proof and a remark are not numbered. Theorem-like statements set their body in italic,
+     as in print; a definition or an example stays upright. */
+  .prose:not(:where(.not-prose, .not-prose *)) {
+    counter-reset: statement;
+  }
+  .prose .statement:not(.statement-proof, .statement-remark):not(:where(.not-prose, .not-prose *)) {
+    counter-increment: statement;
+  }
+  .prose
+    .statement:not(.statement-proof, .statement-remark)
+    .statement-kind:not(:where(.not-prose, .not-prose *))::after {
+    content: ' ' counter(statement);
+  }
+  .prose .statement-label:not(:where(.not-prose, .not-prose *)) {
+    margin-bottom: 0;
+    font-family: var(--font-sans);
+    font-size: 0.875em;
+    font-weight: 600;
+  }
+  .prose .statement-label + :not(:where(.not-prose, .not-prose *)) {
+    margin-top: 0.3em;
+  }
+  .prose
+    :is(.statement-theorem, .statement-lemma, .statement-proposition, .statement-corollary)
+    > :not(.statement-label):not(:where(.not-prose, .not-prose *)) {
+    font-style: italic;
+  }
+  .prose .statement-proof .statement-label:not(:where(.not-prose, .not-prose *)) {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 400;
+    font-style: italic;
+  }
+  .prose .statement-proof > :last-child:not(:where(.not-prose, .not-prose *))::after {
+    content: '∎';
+    float: inline-end;
+  }
   .prose table:not(:where(.not-prose, .not-prose *)) {
     width: 100%;
     font-family: var(--font-sans);
