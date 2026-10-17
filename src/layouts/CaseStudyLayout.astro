@@ -4,6 +4,7 @@
 // Each one is switched by work.* in config.ts.
 import type { MarkdownHeading } from 'astro';
 import { Image } from 'astro:assets';
+import katexCss from 'katex/dist/katex.min.css?url';
 import BaseLayout from './BaseLayout.astro';
 import SeriesNav from '../components/blog/SeriesNav.astro';
 import Sidenotes from '../components/blog/Sidenotes.astro';
@@ -19,8 +20,10 @@ interface Props {
   item: Work;
   headings?: MarkdownHeading[];
   series?: Work[]; // result of seriesPosts(), already empty when work.series is off
+  /** Set by the math plugin (src/utils/math.ts) when the body has `$…$` or `$$…$$` */
+  math?: boolean;
 }
-const { item, headings = [], series = [] } = Astro.props;
+const { item, headings = [], series = [], math } = Astro.props;
 const { title, description, year, client, role, heroImage, heroAlt } = item.data;
 const meta = [
   [t.client, client],
@@ -30,6 +33,7 @@ const meta = [
 ---
 
 <BaseLayout title={title} description={description} image={heroImage} type="article">
+  {math && <link slot="head" rel="stylesheet" href={katexCss} />}
   <article data-pagefind-body class="mx-auto max-w-prose px-4 py-12 sm:py-16">
     <header>
       <h1 class="text-4xl font-light tracking-tight sm:text-5xl">{title}</h1>

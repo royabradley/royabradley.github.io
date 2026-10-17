@@ -138,6 +138,10 @@ and `what-we-thought-readers-wanted.mdx` (series and footnotes).
 - `<Callout type="note" title="Optional title">...</Callout>` — usable in any `.mdx` file with no import. `type` is `'note'`, `'tip'`, or `'warning'` (default `'note'`); `title` defaults to a locale string for the type if omitted. Defined in `src/components/mdx/Callout.astro`.
 - Code blocks get a copy button automatically.
 - Footnotes and tables (GFM) are supported out of the box. With `blog.sidenotes` on, wide screens show footnotes in the margin.
+- Math in LaTeX: `$…$` inline, `$$…$$` on its own lines, in posts, docs, work entries, and pages.
+  It renders to HTML with KaTeX at build time, and only pages with math load the KaTeX
+  stylesheet. Two dollar signs in one paragraph (`$20 and $30`) read as a formula between them;
+  write `\$` for a literal dollar sign. Chemical equations use mhchem: `$\ce{2H2 + O2 -> 2H2O}$`.
 - A table of contents appears automatically once a post has 3 or more `h2`/`h3` headings (`src/components/blog/TableOfContents.astro`). In `work` entries this is opt-in via `work.toc`.
 - Section components can be embedded in the body of any post, page, or work entry. See [Section components in long-form content](customization.md#section-components-in-long-form-content).
 - Reading time is computed automatically and shown when `blog.showReadingTime` is `true` in `src/config.ts`.

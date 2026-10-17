@@ -27,10 +27,17 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { post, series, related } = Astro.props;
-const { Content, headings } = await render(post);
+const { Content, headings, remarkPluginFrontmatter } = await render(post);
 const author = post.data.author && (await getEntry(post.data.author));
 ---
 
-<PostLayout post={post} headings={headings} author={author} series={series} related={related}>
+<PostLayout
+  post={post}
+  headings={headings}
+  author={author}
+  series={series}
+  related={related}
+  math={remarkPluginFrontmatter.hasMath}
+>
   <Content components={{ Callout }} />
 </PostLayout>

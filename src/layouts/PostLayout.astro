@@ -2,6 +2,7 @@
 import type { MarkdownHeading } from 'astro';
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import katexCss from 'katex/dist/katex.min.css?url';
 import BaseLayout from './BaseLayout.astro';
 import AuthorCard from '../components/blog/AuthorCard.astro';
 import Comments from '../components/blog/Comments.astro';
@@ -26,8 +27,10 @@ interface Props {
   author?: CollectionEntry<'authors'>;
   series?: Post[];
   related?: Post[];
+  /** Set by the math plugin (src/utils/math.ts) when the body has `$…$` or `$$…$$` */
+  math?: boolean;
 }
-const { post, headings = [], author, series = [], related = [] } = Astro.props;
+const { post, headings = [], author, series = [], related = [], math } = Astro.props;
 const { title, description, pubDate, updatedDate, heroImage, heroAlt, tags } = post.data;
 const url = new URL(Astro.url.pathname, Astro.site).href;
 const abs = (path: string) => new URL(path, Astro.site).href;
@@ -64,6 +67,7 @@ const jsonLd = [
 ---
 
 <BaseLayout title={title} description={description} image={image} type="article" jsonLd={jsonLd}>
+  {math && <link slot="head" rel="stylesheet" href={katexCss} />}
   <article data-pagefind-body class="mx-auto max-w-prose px-4 py-12 sm:py-16">
     <header>
       <p class="text-muted font-sans text-sm">

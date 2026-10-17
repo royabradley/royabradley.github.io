@@ -16,9 +16,14 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { item, series } = Astro.props;
-const { Content, headings } = await render(item);
+const { Content, headings, remarkPluginFrontmatter } = await render(item);
 ---
 
-<CaseStudyLayout item={item} headings={headings} series={series}>
+<CaseStudyLayout
+  item={item}
+  headings={headings}
+  series={series}
+  math={remarkPluginFrontmatter.hasMath}
+>
   <Content />
 </CaseStudyLayout>

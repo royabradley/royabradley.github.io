@@ -12,9 +12,9 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { doc, docs } = Astro.props;
-const { Content } = await render(doc);
+const { Content, remarkPluginFrontmatter } = await render(doc);
 ---
 
-<DocsLayout doc={doc} docs={docs}>
+<DocsLayout doc={doc} docs={docs} math={remarkPluginFrontmatter.hasMath}>
   <Content components={{ Callout }} />
 </DocsLayout>
