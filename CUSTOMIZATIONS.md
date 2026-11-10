@@ -1,7 +1,7 @@
 # Customizations to Pilcrow Pro
 
 This site is Pilcrow Pro plus a thin layer of my own code, kept apart from the theme so that a new
-Pilcrow release merges with few or no conflicts. The theme is currently **v1.3.0**.
+Pilcrow release merges with few or no conflicts. The theme is currently **v1.5.0** (merged 2026-11-10).
 
 ## Three layers and the seams between them
 
@@ -80,11 +80,15 @@ git merge v1.4.0                    # merge the release tag
 #   conflicts should appear only in seam files; resolve each one by hand
 #   demo content I deleted and upstream changed: keep the deletion with `git rm <file>`
 pnpm install && pnpm check && pnpm build
-pnpm dev                            # look at the site before going further
+pnpm dev --host                     # look at the site before going further
 git switch main && git merge theme-update-v1.4.0
 ```
 
 Then update the version at the top of this file.
+
+If `pnpm-lock.yaml` conflicts, don't resolve it by hand: take either side
+(`git checkout --theirs pnpm-lock.yaml`), run `pnpm install` to regenerate it from the merged
+`package.json`, and stage the result.
 
 For each forked component, see what upstream changed in the original and apply what you want to
 your copy by hand:
