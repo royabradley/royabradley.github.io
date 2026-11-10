@@ -2,6 +2,7 @@
 // pro-only
 import type { GetStaticPaths } from 'astro';
 import Callout from '../../components/mdx/Callout.astro';
+import Theorem from '../../components/mdx/Theorem.astro';
 import { render } from 'astro:content';
 import DocsLayout from '../../layouts/DocsLayout.astro';
 import { getDocs } from '../../utils/docs';
@@ -12,9 +13,9 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { doc, docs } = Astro.props;
-const { Content } = await render(doc);
+const { Content, remarkPluginFrontmatter } = await render(doc);
 ---
 
-<DocsLayout doc={doc} docs={docs}>
-  <Content components={{ Callout }} />
+<DocsLayout doc={doc} docs={docs} math={remarkPluginFrontmatter.hasMath}>
+  <Content components={{ Callout, Theorem }} />
 </DocsLayout>

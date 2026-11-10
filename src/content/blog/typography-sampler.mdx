@@ -81,6 +81,28 @@ And an inline mention of a specific value — say, the `font-variant-numeric: ol
   callout sets them apart without pretending they are part of the argument.
 </Callout>
 
+## Math, set as math
+
+An equation has its own typography, and prose is a poor substitute for it. Inline, between dollar signs, a formula sits on the line with the text: the line height of a paragraph is roughly $1.5 \times$ its font size, and a measure of $45$–$75$ characters keeps the eye from losing its place. Chemistry gets the same care: $\ce{2H2 + O2 -> 2H2O}$. A price like \$20 needs its dollar sign escaped in the source, or it starts a formula. Doubled dollar signs set a formula on its own line:
+
+$$
+\text{characters per line} \approx \frac{\text{measure}}{0.5\,\text{em}} \label{eq:measure}
+$$
+
+A label gives a formula a number, and $\eqref{eq:measure}$ in the text links back to it. An argument can be set the way a mathematics paper sets one:
+
+<Theorem kind="definition" title="Measure">
+  The measure is the width of a column of text, given in ems of the type it holds.
+</Theorem>
+
+<Theorem kind="proposition">
+  At a fixed size, doubling the measure doubles the characters on a line.
+</Theorem>
+
+<Theorem kind="proof">
+  The right-hand side of $\eqref{eq:measure}$ is linear in the measure.
+</Theorem>
+
 ## A small checklist, and a small glossary
 
 Some sequences are neither strictly ordered nor simply related — they are a set of conditions to be satisfied, which is its own kind of list:

@@ -4,20 +4,24 @@ import BaseLayout from './BaseLayout.astro';
 import CopyCode from '../components/mdx/CopyCode.astro';
 import { useT } from '../i18n/t';
 import { docHref as href, type Doc } from '../utils/docs';
+import MathHead from '../components/mdx/MathHead.astro'; // pro-only
 
 const t = useT(Astro.currentLocale);
 
 interface Props {
   doc: Doc;
   docs: Doc[]; // result of getDocs()
+  /** Set by the math plugin (src/utils/math.ts) when the body has `$…$` or `$$…$$` */
+  math?: boolean;
 }
-const { doc, docs } = Astro.props;
+const { doc, docs, math } = Astro.props;
 const i = docs.findIndex((d) => d.id === doc.id);
 const prev = docs[i - 1];
 const next = docs[i + 1];
 ---
 
 <BaseLayout title={doc.data.title} description={doc.data.description}>
+  {math && <MathHead slot="head" />}
   <div class="mx-auto grid max-w-5xl grid-cols-[minmax(0,1fr)] gap-10 px-4 py-12 sm:py-16 lg:grid-cols-[13rem_minmax(0,1fr)] lg:gap-16">
     <nav aria-label={t.docsNav} class="font-sans text-sm">
       <p class="section-label">{t.docs}</p>

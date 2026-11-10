@@ -16,6 +16,7 @@ import { useT } from '../i18n/t';
 import { localePath } from '../utils/i18n';
 import { ogImage } from '../utils/og';
 import { authorHref, formatDate, postLocale, readingTime, type Post } from '../utils/posts';
+import MathHead from '../components/mdx/MathHead.astro'; // pro-only
 
 const t = useT(Astro.currentLocale);
 
@@ -26,8 +27,10 @@ interface Props {
   author?: CollectionEntry<'authors'>;
   series?: Post[];
   related?: Post[];
+  /** Set by the math plugin (src/utils/math.ts) when the body has `$…$` or `$$…$$` */
+  math?: boolean;
 }
-const { post, headings = [], author, series = [], related = [] } = Astro.props;
+const { post, headings = [], author, series = [], related = [], math } = Astro.props;
 const { title, description, pubDate, updatedDate, heroImage, heroAlt, tags } = post.data;
 const url = new URL(Astro.url.pathname, Astro.site).href;
 const abs = (path: string) => new URL(path, Astro.site).href;
@@ -64,6 +67,7 @@ const jsonLd = [
 ---
 
 <BaseLayout title={title} description={description} image={image} type="article" jsonLd={jsonLd}>
+  {math && <MathHead slot="head" />}
   <article data-pagefind-body class="mx-auto max-w-prose px-4 py-12 sm:py-16">
     <header>
       <p class="text-muted font-sans text-sm">

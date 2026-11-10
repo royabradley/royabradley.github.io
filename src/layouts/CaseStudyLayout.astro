@@ -12,6 +12,7 @@ import CopyCode from '../components/mdx/CopyCode.astro';
 import { work } from '../config';
 import { useT } from '../i18n/t';
 import type { Work } from '../utils/work';
+import MathHead from '../components/mdx/MathHead.astro'; // pro-only
 
 const t = useT(Astro.currentLocale);
 
@@ -19,8 +20,10 @@ interface Props {
   item: Work;
   headings?: MarkdownHeading[];
   series?: Work[]; // result of seriesPosts(), already empty when work.series is off
+  /** Set by the math plugin (src/utils/math.ts) when the body has `$…$` or `$$…$$` */
+  math?: boolean;
 }
-const { item, headings = [], series = [] } = Astro.props;
+const { item, headings = [], series = [], math } = Astro.props;
 const { title, description, year, client, role, heroImage, heroAlt } = item.data;
 const meta = [
   [t.client, client],
@@ -30,6 +33,7 @@ const meta = [
 ---
 
 <BaseLayout title={title} description={description} image={heroImage} type="article">
+  {math && <MathHead slot="head" />}
   <article data-pagefind-body class="mx-auto max-w-prose px-4 py-12 sm:py-16">
     <header>
       <h1 class="text-4xl font-light tracking-tight sm:text-5xl">{title}</h1>

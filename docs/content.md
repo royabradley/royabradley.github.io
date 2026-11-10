@@ -138,6 +138,17 @@ and `what-we-thought-readers-wanted.mdx` (series and footnotes).
 - `<Callout type="note" title="Optional title">...</Callout>` — usable in any `.mdx` file with no import. `type` is `'note'`, `'tip'`, or `'warning'` (default `'note'`); `title` defaults to a locale string for the type if omitted. Defined in `src/components/mdx/Callout.astro`.
 - Code blocks get a copy button automatically.
 - Footnotes and tables (GFM) are supported out of the box. With `blog.sidenotes` on, wide screens show footnotes in the margin.
+- Math in LaTeX: `$…$` inline, `$$…$$` on its own lines, in posts, docs, work entries, and pages.
+  It renders to HTML with KaTeX at build time, and only pages with math load the KaTeX
+  stylesheet. Two dollar signs in one paragraph (`$20 and $30`) read as a formula between them;
+  write `\$` for a literal dollar sign. Chemical equations use mhchem: `$\ce{2H2 + O2 -> 2H2O}$`.
+- Numbered equations (Pro): put `\label{eq:name}` in a `$$…$$` formula and it gets the next number;
+  `$\eqref{eq:name}$` anywhere in the text prints `(1)` as a link to it, `$\ref{eq:name}$` the bare
+  number. A reference may come before its equation. Copying a formula copies its LaTeX source.
+- `<Theorem kind="theorem" title="Optional name">...</Theorem>` (Pro) — usable in any post or doc
+  with no import. `kind` is `theorem`, `lemma`, `proposition`, `corollary`, `definition`, `example`,
+  `remark` or `proof`. The first six share one count per page (Theorem 1, Lemma 2, …); a proof ends
+  with ∎. Defined in `src/components/mdx/Theorem.astro`, labels in `src/i18n/<locale>.ts`.
 - A table of contents appears automatically once a post has 3 or more `h2`/`h3` headings (`src/components/blog/TableOfContents.astro`). In `work` entries this is opt-in via `work.toc`.
 - Section components can be embedded in the body of any post, page, or work entry. See [Section components in long-form content](customization.md#section-components-in-long-form-content).
 - Reading time is computed automatically and shown when `blog.showReadingTime` is `true` in `src/config.ts`.

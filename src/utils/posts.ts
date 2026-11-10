@@ -50,9 +50,17 @@ export const formatDate = (date: Date, locale: string = site.locale) =>
 
 // pro-only from here: reading time, related posts, series, authors.
 
+// Chinese and Japanese are written without spaces: each character counts as a word and reads
+// faster than one. Korean separates words with spaces and counts like English.
+const CJK = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/gu;
+
 /** Minutes, at least 1. Assumes 230 English words per minute. */
-export const readingTime = (post: Post) =>
-  Math.max(1, Math.round((post.body ?? '').split(/\s+/).filter(Boolean).length / 230));
+export const readingTime = (post: Post) => {
+  const body = post.body ?? '';
+  const cjk = body.match(CJK)?.length ?? 0;
+  const words = body.replace(CJK, ' ').split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 230 + cjk / 400));
+};
 
 /** Most shared tags first, then newest (posts are already newest first). Posts with no shared tag are dropped. */
 export function relatedPosts(post: Post, posts: Post[], limit: number) {
