@@ -3,10 +3,14 @@
 {
 	"name": "Node.js",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:5-22-bookworm"
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:5-22-bookworm",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	// rab: the image's Node lags behind Astro's minimum (7.4 needs >=22.23.4). Install the newest 22.x
+	// at build time, and pnpm at the version package.json pins.
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": { "version": "22", "pnpmVersion": "10.34.5" }
+	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],

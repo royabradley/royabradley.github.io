@@ -26,7 +26,7 @@ update.
 | `tsconfig.json`                   | `@custom/*` path alias                                   | Stable import paths for overlay components from any depth | 2026-11 |
 | `.gitignore`                      | `.pnpm-store/`                                           | Keep the local pnpm store out of git                     | 2026-10 |
 | `.github/workflows/deploy.yml`    | Added: GitHub Pages deploy                               | Publishing                                               | 2026-10 |
-| `.devcontainer/devcontainer.json` | Added: Node dev container                                | Local tooling                                            | 2026-10 |
+| `.devcontainer/devcontainer.json` | Added: Node dev container; Node feature installs newest 22.x and pnpm 10.34.5 | Local tooling; the base image's Node is older than Astro 7.4 requires | 2026-10, 2026-11 |
 | `package.json`, `pnpm-lock.yaml`  | Dependency bumps (Astro 7.4.2, MDX 8.1.1); uncommitted as of 2026-11-10 | Patch updates                               | 2026-11 |
 
 ### Forked theme components
