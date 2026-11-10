@@ -1,0 +1,15 @@
+/* rab: Site overlay. My styles on top of Pilcrow Pro.
+
+   Loaded by one @import in src/styles/global.css, so Tailwind features work here: @theme, @utility,
+   @layer, and theme variables such as var(--color-primary).
+
+   Cascade. Every rule in global.css sits in a cascade layer, so put rules here in a layer too:
+     @layer base        element defaults and color presets, html[data-preset='…'] and its .dark twin
+     @layer components  classes for overlay components (figures, diagrams, marginalia)
+     @utility <name>    new utilities
+   An unlayered rule beats every theme rule and every utility class, dark-mode blocks included,
+   so use one only when that is the point.
+
+   Known constraint. src/utils/palette.js reads color presets from global.css with a regex, for
+   OG images and `pnpm check:contrast`. A preset defined only here is invisible to both.
+   See CUSTOMIZATIONS.md, "Known constraints", before adding the Data Ink preset. */

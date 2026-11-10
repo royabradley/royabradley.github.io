@@ -1,5 +1,9 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "exclude": ["dist"],
+  "compilerOptions": {
+    // rab: overlay alias, see CUSTOMIZATIONS.md
+    "paths": { "@custom/*": ["./src/custom/*"] }
+  }
 }

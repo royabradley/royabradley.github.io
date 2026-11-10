@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import '../custom/styles/custom.css'; /* rab: site overlay, see CUSTOMIZATIONS.md */
 
 /* Dark mode: driven by the html.dark class (set by ThemeToggle) */
 @custom-variant dark (&:where(.dark, .dark *));
