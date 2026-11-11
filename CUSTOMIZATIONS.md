@@ -27,7 +27,8 @@ update.
 | `.gitignore`                      | `.pnpm-store/`                                           | Keep the local pnpm store out of git                     | 2026-10 |
 | `.github/workflows/deploy.yml`    | Added: GitHub Pages deploy                               | Publishing                                               | 2026-10 |
 | `.devcontainer/devcontainer.json` | Added: Node dev container; Node feature installs newest 22.x and pnpm 10.34.5 | Local tooling; the base image's Node is older than Astro 7.4 requires | 2026-10, 2026-11 |
-| `package.json`, `pnpm-lock.yaml`  | Dependency bumps (Astro 7.4.2, MDX 8.1.1); uncommitted as of 2026-11-10 | Patch updates                               | 2026-11 |
+| `.devcontainer/devcontainer-lock.json` | Added by the dev container rebuild                  | Pins the Node feature's version, the way `pnpm-lock.yaml` pins packages | 2026-11 |
+| `package.json`, `pnpm-lock.yaml`  | Dependency bumps (Astro 7.4.8, `@astrojs/mdx` 8.1.3, `@astrojs/markdown-satteri` 0.4.7, KaTeX from Pilcrow v1.4); committed 2026-11-10 | Patch updates                               | 2026-11 |
 
 ### Forked theme components
 
