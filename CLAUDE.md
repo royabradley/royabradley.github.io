@@ -17,7 +17,7 @@ fork stays updatable. Where the two differ, this file and `CUSTOMIZATIONS.md` wi
   fork in `CUSTOMIZATIONS.md`, rather than editing the original.
 - Import overlay components with the `@custom/` alias:
   `import Figure from '@custom/components/Figure.astro';`
-- Visual work follows Roy's Data Ink design system (Tufte, Doumont): label things directly, at
+- Visual work follows Roy's Tufte-Doumont design system: label things directly, at
   most one emphasis color, no decoration.
 - After any change, `pnpm check && pnpm build` must pass.
 - Roy works inside the VS Code dev container: start the preview with `pnpm dev --host`, or the

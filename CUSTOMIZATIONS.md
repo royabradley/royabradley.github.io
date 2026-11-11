@@ -102,7 +102,7 @@ git diff v1.3.0 v1.4.0 -- src/components/blog/Sidenotes.astro
 ## Known constraints
 
 - `src/utils/palette.js` reads color presets from `global.css` with a regex, for generated OG
-  images and `pnpm check:contrast`. A Data Ink preset defined only in `custom.css` would be
+  images and `pnpm check:contrast`. A Tufte-Doumont preset defined only in `custom.css` would be
   invisible to both. When the preset is built, either add its two blocks to `global.css` as a
   marked seam, or teach `palette.js` to read `custom.css` too. The first is simpler; the second
   keeps `global.css` clean.
