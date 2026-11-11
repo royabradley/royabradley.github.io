@@ -25,19 +25,7 @@ export const nav = {
     { label: 'Contact', href: '/contact' },
   ],
   footer: [
-    // pro-only
-    {
-      title: 'Theme demo',
-      links: [
-        { label: 'Newsletter', href: '/newsletter/' },
-        { label: 'Pricing', href: '/pricing/' },
-        { label: 'Features', href: '/features/' },
-        { label: 'Sections', href: '/sections/' },
-        { label: 'Team', href: '/team/' },
-        { label: 'Docs', href: '/docs/' },
-        { label: 'Changelog', href: '/changelog/' },
-      ],
-    },
+    // rab: the theme's 'Theme demo' link group removed; those pages are left out of builds
     {
       title: 'Legal',
       links: [
@@ -81,7 +69,7 @@ export const features = {
   search: true, // pro-only. Build a Pagefind index and enable the /search page
   i18nRouting: false, // rab: off with one language (hides the language picker). pro-only. Languages other than site.locale are served under /<locale>/blog/…
   comments: false, // pro-only. Giscus comments under posts (requires the giscus values below)
-  styleguide: true, // pro-only. Build /styleguide (token and preset preview, noindex). It is always on in dev
+  styleguide: false, // rab: dev only. pro-only. Build /styleguide (token and preset preview, noindex). It is always on in dev
 };
 
 // pro-only. Copy the data-* values https://giscus.app gives you for your repo (enable Discussions and install the giscus app first)

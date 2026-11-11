@@ -31,8 +31,29 @@ export const themeDemo = {
   ],
 };
 
+// Theme demo pages: built in `pnpm dev`, removed from production builds by the integration in
+// src/custom/integrations/theme-demo-pages.ts. A path ending in / covers everything under it.
+export const themeDemoPages = [
+  '/pricing/',
+  '/team/',
+  '/features/',
+  '/sections/',
+  '/newsletter/',
+  '/changelog/',
+  '/docs/',
+  // Author pages come from src/content/authors.json, not from posts, so they outlive the demo posts
+  '/blog/author/ada-marlow/',
+  '/blog/author/theo-lindqvist/',
+];
+
+/** True for a URL or pathname that belongs to a theme demo page. */
+export const isThemeDemoPage = (page: string) => {
+  const path = new URL(page, 'https://x').pathname.replace(/\/?$/, '/');
+  return themeDemoPages.some((demo) => path.startsWith(demo));
+};
+
 /** Glob patterns for a collection's loader: every entry, minus the theme demo entries in production. */
 export const contentPattern = (collection: keyof typeof themeDemo) => [
   '**/*.{md,mdx}',
-  ...(import.meta.env.PROD ? themeDemo[collection].map((path) => `!${path}`) : []),
+  ...(import.meta.env?.PROD ? themeDemo[collection].map((path) => `!${path}`) : []),
 ];

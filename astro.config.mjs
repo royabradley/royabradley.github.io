@@ -1,4 +1,6 @@
 // @ts-check
+import { isThemeDemoPage } from './src/custom/theme-demo.ts'; // rab
+import { themeDemoPagesIntegration } from './src/custom/integrations/theme-demo-pages.ts'; // rab
 import { defineConfig } from 'astro/config';
 import { fileURLToPath } from 'node:url';
 import tailwindcss from '@tailwindcss/vite';
@@ -66,7 +68,7 @@ export default defineConfig({
     : undefined,
   integrations: [
     mdx(),
-    sitemap({ filter: (page) => !page.endsWith('/styleguide/') }),
+    sitemap({ filter: (page) => !page.endsWith('/styleguide/') && !isThemeDemoPage(page) }), // rab: theme demo pages
     icon(),
     {
       name: 'pilcrow-styleguide',
@@ -84,6 +86,7 @@ export default defineConfig({
         },
       },
     },
+    themeDemoPagesIntegration(), // rab: before pagefind, so demo pages are gone before indexing
     ...(features.search ? [pagefind] : []),
   ],
   vite: {
