@@ -29,9 +29,10 @@ const [latest, ...earlier] = await getPosts();
     moreLabel={t.allPosts}
     moreHref="/blog/"
   />
+  {/* rab: Monthly Letter marked as in development until it launches */}
   <Newsletter
-    title="The Sunday letter"
-    body="The week’s essay, three things worth reading, and a closing line. Every letter has an unsubscribe link at the bottom."
+    title="The Monthly Letter"
+    body="In development and coming soon: once a month, a new essay, three things worth reading, and a closing line. Signups open when the first letter is ready."
     {...newsletterForm()}
   />
 </BaseLayout>

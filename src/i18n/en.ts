@@ -25,7 +25,7 @@ export default {
   nameLabel: 'Name',
   messageLabel: 'Message',
   send: 'Send message',
-  formNotConfigured: 'This form is not connected yet.',
+  formNotConfigured: 'Not open yet.', // rab: shown under the Monthly Letter until it launches
   tagDescription: 'Every post tagged “{tag}”.',
   tagsDescription: 'Every tag, with how many posts carry it.',
   included: 'Included',

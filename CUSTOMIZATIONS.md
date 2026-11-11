@@ -32,7 +32,9 @@ update.
 | `src/i18n/en.ts`                  | `blog` → 'Study', `blogDescription` reworded | The blog's heading, tab title and breadcrumb say Study; URLs stay `/blog/` | 2026-11 |
 | `src/content.config.ts`           | One import; `...provenanceFields` spread into the `blog` schema | Optional essay provenance fields (`written`, `course`, `instructor`, `institution`, `revision`); defined in `src/custom/utils/provenance.ts` | 2026-11 |
 | `src/layouts/PostLayout.astro`    | One import; `<Provenance post={post} />` under the description | One-line provenance in the post header for essays written elsewhere first (`src/custom/components/Provenance.astro`); renders nothing for other posts | 2026-11 |
-| `src/pages/index.astro`           | Hero copy                                                | The theme's intended place for home-page content         | 2026-10 |
+| `src/pages/privacy.mdx`, `terms.mdx`, `cookies.mdx`, `accessibility.mdx` | Rewritten for this site | The theme's placeholders replaced with my own statements (no tracking; Web3Forms; sermon reuse terms) | 2026-11 |
+| `src/i18n/en.ts`                  | `formNotConfigured` → 'Not open yet.' | Shown under the Monthly Letter until it launches | 2026-11 |
+| `src/pages/index.astro`           | Hero copy; Monthly Letter marked as in development                                                | The theme's intended place for home-page content         | 2026-10 |
 | `src/styles/global.css`           | One `@import` of `src/custom/styles/custom.css` (line 2) | Loads overlay styles with access to Tailwind and the theme tokens | 2026-11 |
 | `tsconfig.json`                   | `@custom/*` path alias                                   | Stable import paths for overlay components from any depth | 2026-11 |
 | `.gitignore`                      | `.pnpm-store/`                                           | Keep the local pnpm store out of git                     | 2026-10 |
