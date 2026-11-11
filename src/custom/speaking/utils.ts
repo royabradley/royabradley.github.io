@@ -20,7 +20,7 @@ export const sections: Record<Section, { title: string; lede: string; kinds: Kin
   },
   lectern: {
     title: 'Lectern',
-    lede: 'Lessons, talks, devotionals and presentations: teaching given at the reading desk.',
+    lede: 'Lessons, talks, devotionals and presentations.',
     kinds: ['lesson', 'talk', 'devotional', 'presentation'],
   },
 };
