@@ -59,3 +59,21 @@
     }
   }
 }
+
+/* rab: Drop cap. Two fixes to the theme's "Rubricated initial" (global.css):
+   1. Safari supports only the prefixed -webkit-initial-letter, so the theme's
+      @supports (initial-letter: 2) rule never applies there; this block adds the prefixed form.
+   2. The theme's rule only matches a post whose first block is a paragraph. The seminary essays
+      open with "## Introduction", so the initial also goes on the paragraph after that heading. */
+@layer components {
+  @supports (initial-letter: 2) or (-webkit-initial-letter: 2) {
+    .prose.drop-cap:not(:lang(ko)) > p:first-child::first-letter,
+    .prose.drop-cap:not(:lang(ko)) > h2:first-child + p::first-letter {
+      -webkit-initial-letter: 2;
+      initial-letter: 2;
+      margin-right: 0.12em;
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+  }
+}

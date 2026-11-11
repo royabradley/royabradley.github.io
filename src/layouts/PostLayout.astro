@@ -17,6 +17,7 @@ import { localePath } from '../utils/i18n';
 import { ogImage } from '../utils/og';
 import { authorHref, formatDate, postLocale, readingTime, type Post } from '../utils/posts';
 import MathHead from '../components/mdx/MathHead.astro'; // pro-only
+import Provenance from '../custom/components/Provenance.astro'; // rab: essay provenance
 
 const t = useT(Astro.currentLocale);
 
@@ -90,6 +91,7 @@ const jsonLd = [
       </p>
       <h1 class="mt-3 text-4xl font-light tracking-tight sm:text-5xl">{title}</h1>
       <p class="text-muted mt-4 text-xl">{description}</p>
+      <Provenance post={post} /> {/* rab: essay provenance */}
       {author && (
         <p class="mt-4 font-sans text-sm">
           <a href={authorHref(author.id)} class="text-foreground hover:text-primary no-underline">

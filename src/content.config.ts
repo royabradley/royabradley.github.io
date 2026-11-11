@@ -3,6 +3,7 @@ import { file, glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { contentPattern } from './custom/theme-demo'; // rab: theme demo content left out of builds
 import { speakingCollections } from './custom/speaking/collections'; // rab: speaking record
+import { provenanceFields } from './custom/utils/provenance'; // rab: essay provenance
 
 const blog = defineCollection({
   loader: glob({ base: './src/content/blog', pattern: contentPattern('blog') }), // rab: see src/custom/theme-demo.ts
@@ -19,6 +20,7 @@ const blog = defineCollection({
         draft: z.boolean().default(false),
         author: reference('authors').optional(), // pro-only. Falls back to site.author
         series: z.string().optional(), // pro-only. Posts with the same value are grouped, ordered by pubDate
+        ...provenanceFields, // rab: course, instructor, written… see src/custom/utils/provenance.ts
       })
       .refine((d) => !d.heroImage || d.heroAlt, {
         message: 'heroAlt is required when heroImage is set',
