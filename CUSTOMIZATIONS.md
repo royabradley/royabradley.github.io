@@ -22,6 +22,7 @@ update.
 | --------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | ------- |
 | `src/config.ts`                   | Site identity, `seo.titleTemplate`                       | The theme's intended place for site values               | 2026-10 |
 | `src/config.ts`                   | `i18n.locales` English only; `features.i18nRouting: false` | Korean support disabled. Theme demo posts in `src/content/blog/ko/` deleted; a theme update may re-add them, so delete them again on merge | 2026-11 |
+| `src/content.config.ts`           | One import; `blog` and `work` loaders use `contentPattern()` from `src/custom/theme-demo.ts` | Theme demo posts stay in the repo, untouched, and show in dev, but production builds leave them out. `theme-status.sh` lists new upstream demo posts not yet in the list | 2026-11 |
 | `src/pages/index.astro`           | Hero copy                                                | The theme's intended place for home-page content         | 2026-10 |
 | `src/styles/global.css`           | One `@import` of `src/custom/styles/custom.css` (line 2) | Loads overlay styles with access to Tailwind and the theme tokens | 2026-11 |
 | `tsconfig.json`                   | `@custom/*` path alias                                   | Stable import paths for overlay components from any depth | 2026-11 |

@@ -39,3 +39,16 @@ fi
 echo
 echo "Theme files I have changed since $current (the seams):"
 mine | sed 's/^/  /'
+
+# Demo posts in the latest release that src/custom/theme-demo.ts doesn't list would publish.
+# blog/ko/ is skipped: those posts were deleted with Korean support (see CUSTOMIZATIONS.md).
+echo
+echo "Upstream demo content not listed in src/custom/theme-demo.ts (it would publish):"
+missing=0
+while read -r f; do
+  name=${f#src/content/*/}
+  case "$name" in ko/*) continue ;; esac
+  grep -q "'$name'" src/custom/theme-demo.ts || { echo "  $f"; missing=1; }
+done < <(git ls-tree -r --name-only "$latest" src/content/blog src/content/work)
+[ "$missing" = 0 ] && echo "  None."
+

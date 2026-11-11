@@ -1,9 +1,10 @@
 import { defineCollection, reference } from 'astro:content';
 import { file, glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { contentPattern } from './custom/theme-demo'; // rab: theme demo content left out of builds
 
 const blog = defineCollection({
-  loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
+  loader: glob({ base: './src/content/blog', pattern: contentPattern('blog') }), // rab: see src/custom/theme-demo.ts
   schema: ({ image }) =>
     z
       .object({
@@ -46,7 +47,7 @@ const docs = defineCollection({
 
 // pro-only. Work and case studies (/work/…). Newest year first.
 const work = defineCollection({
-  loader: glob({ base: './src/content/work', pattern: '**/*.{md,mdx}' }),
+  loader: glob({ base: './src/content/work', pattern: contentPattern('work') }), // rab: see src/custom/theme-demo.ts
   schema: ({ image }) =>
     z
       .object({
