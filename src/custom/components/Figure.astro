@@ -1,0 +1,77 @@
+---
+// rab: A numbered figure for posts, following the Tufte-Doumont design system. Import it in MDX:
+//   import Figure from '@custom/components/Figure.astro';
+//   <Figure caption="Sales doubled after the price cut." source="Company reports, 2025">…</Figure>
+//   <Figure width="wide" …>  <Figure width="margin" …>  <Figure src={img} alt="…" caption="…" />
+//
+// The caption is the figure's message as a full sentence, not a label. CSS numbers it "Figure n."
+// with its own counter (custom.css), so figures and theorems number independently. Use
+// slot="caption" instead of the prop when the caption needs markup or math.
+//
+// Widths: column (default), wide (breakout, centred at max-w-5xl), margin (the sidenote column from
+// 80rem up, inline below that). Styles: the theme's .prose figure and figcaption, plus custom.css.
+//
+// Two rules for anything you put in the slot:
+// - Every chart SVG gets role="img" and a name: aria-labelledby="<id>-caption" (pass id to Figure)
+//   or a <title> as the SVG's first child.
+// - One emphasis color at most. Put class="text-primary" on the one highlighted series and draw it
+//   with currentColor; everything else is currentColor or class="text-muted". No other colors.
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+// Rendered content width of the post column (<article> max-w-prose, 65ch, minus px-4), in rem.
+// Used in sizes, where ch and em resolve against the browser's 16px default, not the prose font.
+// Measured: 557px content width at 16px per rem, read in dev at 1024px and 1400px viewports.
+const COLUMN_REM = 34.8125;
+// srcset candidates in px: margin at 1x/2x (13rem = 208px), then column and wide at 1x/2x.
+// Astro drops any wider than the source image.
+const WIDTHS = [208, 416, 640, 960, 1280, 1600, 2048];
+
+interface Props {
+  caption?: string;
+  source?: string;
+  width?: 'column' | 'wide' | 'margin';
+  src?: ImageMetadata;
+  alt?: string;
+  id?: string;
+}
+
+const { caption, source, width = 'column', src, alt, id } = Astro.props;
+
+if (!caption && !Astro.slots.has('caption')) {
+  throw new Error('Figure: give a caption, as the caption prop or slot="caption".');
+}
+if (src && alt === undefined) {
+  throw new Error('Figure: alt is required when src is set (alt="" only for a purely decorative image).');
+}
+
+const column = `min(${COLUMN_REM}rem, 100vw)`;
+const sizes = {
+  column,
+  wide: 'min(64rem, 100vw)',
+  margin: `(min-width: 80rem) 13rem, ${column}`,
+}[width];
+const wide = width === 'wide';
+---
+
+<figure id={id} class:list={['figure', `figure-${width}`, { breakout: wide }]}>
+  <div class:list={{ 'mx-auto max-w-5xl px-4': wide }}>
+    <div class="overflow-x-auto">
+      {src ? <Image src={src} alt={alt ?? ''} widths={WIDTHS} sizes={sizes} /> : <slot />}
+    </div>
+  </div>
+  {/* A wide figure's caption sits on the reading column, so its left edge matches the body text.
+      Sized from COLUMN_REM, not max-w-prose: ch varies with the element's font family and size,
+      so 65ch here never equals the article's 65ch. Content width plus the px-4 gutters matches
+      the article box (mx-auto max-w-prose px-4 in PostLayout.astro). */}
+  <div
+    class:list={{ 'mx-auto px-4': wide }}
+    style={wide ? `max-width: calc(${COLUMN_REM}rem + 2rem)` : undefined}
+  >
+    <figcaption id={id && `${id}-caption`}>
+      <span class="figure-label text-foreground font-semibold">Figure</span>
+      {caption ? caption : <slot name="caption" />}
+      {source && <span class="mt-1 block">Source: {source}</span>}
+    </figcaption>
+  </div>
+</figure>

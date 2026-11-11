@@ -12,4 +12,50 @@
 
    Known constraint. src/utils/palette.js reads color presets from global.css with a regex, for
    OG images and `pnpm check:contrast`. A preset defined only here is invisible to both.
-   See CUSTOMIZATIONS.md, "Known constraints", before adding the Data Ink preset. */
+   See CUSTOMIZATIONS.md, "Known constraints", before adding the Tufte-Doumont preset. */
+
+/* <Figure> (src/custom/components/Figure.astro). Only what Pilcrow lacks: the theme already styles
+   .prose figure (spacing) and .prose figcaption (small muted sans). */
+@layer components {
+  /* counter-set, not counter-reset: a reset here would replace the theme's `counter-reset: statement`
+     on .prose and break Theorem numbering. counter-set creates the counter alongside it. */
+  .prose:not(:where(.not-prose, .not-prose *)) {
+    counter-set: figure 0;
+  }
+  .prose .figure:not(:where(.not-prose, .not-prose *)) {
+    counter-increment: figure;
+  }
+  .prose .figure-label:not(:where(.not-prose, .not-prose *))::after {
+    content: ' ' counter(figure) '. ';
+  }
+  /* Rounded corners are decoration. Beats the theme's .prose img (0,1,1); other images keep them. */
+  .prose .figure img:not(:where(.not-prose, .not-prose *)) {
+    border-radius: 0;
+  }
+  /* Below 80rem a margin figure sits in the column. Cap it so a small supporting figure stays small
+     instead of stretching to the full column; it keeps the column's left edge. */
+  @media (width < 80rem) {
+    .prose .figure-margin:not(:where(.not-prose, .not-prose *)) {
+      max-width: 20rem;
+    }
+  }
+  @media (width >= 80rem) {
+    /* Same geometry as .prose .sidenote in global.css (L440–468), so figures and sidenotes share one
+       margin. Below 80rem a margin figure sits in the column like any other. */
+    .prose .figure-margin:not(:where(.not-prose, .not-prose *)) {
+      float: right;
+      clear: right;
+      width: 13rem;
+      margin-right: -16rem;
+      margin-block: 0.35em 1em;
+    }
+    .prose .figure-margin figcaption:not(:where(.not-prose, .not-prose *)) {
+      font-size: 0.7em;
+      line-height: 1.55;
+    }
+    /* breakout ignores floats: start a wide figure below any sidenote or margin figure. */
+    .prose .figure-wide:not(:where(.not-prose, .not-prose *)) {
+      clear: right;
+    }
+  }
+}

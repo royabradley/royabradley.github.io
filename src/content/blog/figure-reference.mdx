@@ -1,0 +1,148 @@
+---
+title: 'Figures: a working reference'
+description: 'How to use Figure: column, wide and margin variants, captions with markup, source lines, numbering, and a checklist for every chart.'
+pubDate: 2026-11-11
+tags: ['reference']
+draft: true
+---
+
+import Figure from '@custom/components/Figure.astro';
+import ogImage from '../../assets/og-default.png';
+
+This page is the working reference for `<Figure>`. Copy from it. The data in every chart is made up. Each figure numbers itself in page order, and the rules each one follows are stated just before it. The checklist at the end sums them up.
+
+## Images
+
+A raster image goes through `src` and `alt`. The component builds the `srcset` and `sizes`, so the browser downloads the smallest file that fills the column. The caption states what the reader should take from the image; the `alt` describes what is in it.
+
+{/* TODO: replace og-default.png with the site's own social card, then rewrite this caption. */}
+
+<Figure src={ogImage} alt="A social card with a red pilcrow, the word Pilcrow in large serif type, and the line 'A minimal, typography-first Astro theme.'" caption="The default social card leads with the mark, then the name, then one line of description." />
+
+## Charts in the reading column
+
+Label lines directly, at their ends, instead of using a legend. Give every number a comparison and a unit. Use `text-primary` for the one series the caption is about, and `currentColor` or `text-muted` for everything else.
+
+A column chart is drawn for the narrowest screen. Its `viewBox` is 640 wide and its labels are 17 units, so they read at about 9px on a phone and 15px on a desktop. Leave room at the right edge for the end labels: the `overflow-x-auto` wrapper clips anything outside the `viewBox`.
+
+<Figure id="fig-length" caption="Readers finish short essays, and most give up on long ones after about 3,000 words." source="Illustrative data, not a study">
+  <svg role="img" aria-labelledby="fig-length-caption" viewBox="0 0 640 240" width="100%" class="block h-auto">
+    <g class="text-muted" fill="none" stroke="currentColor">
+      <line x1="70" y1="200" x2="500" y2="200" stroke-width="1" />
+      <polyline points="70,50 156,54.5 328,65 500,74" stroke-width="1.5" />
+    </g>
+    <g class="text-primary" fill="none" stroke="currentColor">
+      <polyline points="70,56 156,68 328,138.5 500,167" stroke-width="2.5" />
+    </g>
+    <g class="font-sans" font-size="17" fill="currentColor">
+      <text x="70" y="24" class="text-muted">Share of readers (%)</text>
+      <text x="70" y="226">1,000 words</text>
+      <text x="500" y="226" text-anchor="end">6,000 words</text>
+      <text x="62" y="48" text-anchor="end" class="text-muted">100</text>
+      <text x="62" y="68" text-anchor="end" class="text-primary">96</text>
+      <text x="508" y="80" class="text-muted">84 Started</text>
+      <text x="508" y="173" class="text-primary">22 Finished</text>
+    </g>
+  </svg>
+</Figure>
+
+This chart names itself with `aria-labelledby`, which points at its own caption: pass `id` to `Figure` and the caption gets `<id>-caption`. The other charts on this page use a `<title>` instead. Either is fine; every chart needs one or the other.
+
+A figure doesn't have to be a picture. When the exact values matter more than the shape, a table is the better figure.
+
+<Figure caption="Completion falls fastest between 2,000 and 4,000 words.">
+
+| Length (words) | Started | Finished |
+| -------------- | ------: | -------: |
+| 1,000          |     100 |       96 |
+| 2,000          |      97 |       88 |
+| 4,000          |      90 |       41 |
+| 6,000          |      84 |       22 |
+
+</Figure>
+
+## Captions with markup
+
+When a caption needs italics, Greek or Hebrew, or math, put it in a `slot="caption"` element instead of the `caption` prop.
+
+<Figure>
+  <span slot="caption">Matthew brackets the body of the sermon with <em>ho nomos kai hoi prophētai</em>, "the Law and the Prophets" (5:17; 7:12), and sets the Lord's Prayer near its center.</span>
+
+| Matthew   | Movement                                           |
+| --------- | -------------------------------------------------- |
+| 5:3–16    | The blessed people: Beatitudes, salt and light     |
+| 5:17–48   | The law fulfilled: "you have heard… but I say"     |
+| 6:1–18    | Hidden righteousness: alms, prayer, fasting        |
+| 6:19–7:12 | Undivided life: treasure, anxiety, judging, asking |
+| 7:13–27   | Two ways, two trees, two houses                    |
+
+</Figure>
+
+## Numbering and cross-references
+
+Figures number themselves with a CSS counter, so the numbers can't be referenced automatically. Write them by hand, as in "the table in Figure 3 has the values behind Figure 2", and check them whenever you reorder figures.
+
+Theorems keep their own counter, so a page can mix the two. This one reads Theorem 1 after four figures:
+
+<Theorem title="Independent counters">Figures and theorems number separately on the same page.</Theorem>
+
+## Wide figures
+
+A wide figure leaves the reading column for data that needs horizontal room, usually a long time series. Its caption stays on the reading column, aligned with the body text.
+
+On a phone, a wide chart scrolls sideways instead of shrinking: `min-w-[40rem]` on the `<svg>` keeps its labels at full size, and the figure's own wrapper scrolls while the page doesn't.
+
+<Figure width="wide" caption="Over a year, only the essays published on Sundays held their readers past the halfway mark.">
+  <svg role="img" viewBox="0 0 1000 240" width="100%" class="block h-auto min-w-[40rem]">
+    <title>Halfway retention by month for essays published on each day of the week; the Sunday line stays highest.</title>
+    <g class="text-muted" fill="none" stroke="currentColor">
+      <line x1="40" y1="200" x2="840" y2="200" stroke-width="1" />
+      <line x1="40" y1="80" x2="840" y2="80" stroke-width="1" stroke-dasharray="2 4" />
+      <polyline points="40,118.4 200,116 360,120.8 520,118.4 680,123.2 840,120.8" stroke-width="1.5" />
+      <polyline points="40,128 200,130.4 360,125.6 520,132.8 680,130.4 840,135.2" stroke-width="1.5" />
+    </g>
+    <g class="text-primary" fill="none" stroke="currentColor">
+      <polyline points="40,77.6 200,72.8 360,65.6 520,58.4 680,53.6 840,48.8" stroke-width="2.5" />
+    </g>
+    <g class="font-sans" font-size="14" fill="currentColor">
+      <text x="40" y="24" class="text-muted">Share of readers past halfway (%)</text>
+      <text x="40" y="222">January</text>
+      <text x="840" y="222" text-anchor="end">December</text>
+      <text x="850" y="54" class="text-primary">63 Sunday</text>
+      <text x="850" y="85" class="text-muted">halfway</text>
+      <text x="850" y="125" class="text-muted">33 Weekdays</text>
+      <text x="850" y="142" class="text-muted">27 Saturday</text>
+    </g>
+  </svg>
+</Figure>
+
+## Margin figures
+
+A margin figure holds a small, supporting trend beside the paragraph that discusses it. Label its two ends; there is no room for anything else.
+
+<Figure width="margin" caption="Weekly visits rose steadily all year.">
+  <svg role="img" viewBox="0 0 200 60" width="100%" class="block h-auto">
+    <title>Weekly visits over a year, rising from about 200 to about 900.</title>
+    <polyline class="text-muted" points="30,52 53,48 77,44 100,40 123,30 147,24 170,16" fill="none" stroke="currentColor" stroke-width="1.5" />
+    <circle class="text-primary" cx="170" cy="16" r="3" fill="currentColor" />
+    <g class="font-sans" font-size="12" fill="currentColor">
+      <text x="26" y="56" text-anchor="end" class="text-muted">200</text>
+      <text x="177" y="20" class="text-primary">900</text>
+    </g>
+  </svg>
+</Figure>
+
+From 80rem up, the small figure beside this paragraph sits in the right margin, in the same column as the sidenote this footnote creates.[^1] Below that width it appears in the reading column, capped at 20rem so a small figure stays small, and the footnote moves to the end of the page. That covers phones and most iPads; only a 13-inch iPad Pro in landscape is wide enough for the margin. The figure and the sidenote stack instead of overlapping.
+
+## Checklist before publishing a figure
+
+- The caption is a full sentence that states the message, not a label.
+- Lines and points are labelled directly; there is no legend.
+- Every number has a comparison and a unit.
+- At most one series uses `text-primary`.
+- Every chart SVG has `role="img"` and a name: a `<title>`, or `aria-labelledby` pointing at the caption.
+- Real data has a `source`.
+- Column charts use labels of 16–18 units in a 640-wide `viewBox`; wide charts carry `min-w-[40rem]`.
+- Cross-references to figure numbers are still right after any reordering.
+
+[^1]: A sidenote, sharing the margin column with the figure.
