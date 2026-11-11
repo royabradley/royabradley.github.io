@@ -100,9 +100,13 @@ export const forms = {
   },
 };
 
+// rab: Umami Cloud visit counts. Paste the website ID from Umami's tracking code (the
+// data-website-id value) here. Production builds only, so pnpm dev visits aren't counted.
+const UMAMI_WEBSITE_ID = 'c3a341a8-a252-4cf3-9c35-00339082c997';
+
 export const analytics = {
-  provider: null as null | 'plausible' | 'ga4' | 'umami',
-  id: '',
+  provider: 'umami' as null | 'plausible' | 'ga4' | 'umami', // rab: was null
+  id: import.meta.env.PROD ? UMAMI_WEBSITE_ID : '', // rab: was ''
   // Self-hosted Plausible or Umami: the origin serving the script, no trailing slash.
   // Empty means the hosted service. GA4 ignores it.
   host: '',
