@@ -91,7 +91,7 @@ export const i18n = {
 };
 
 export const forms = {
-  web3formsKey: '', // /contact: access key from https://web3forms.com
+  web3formsKey: '34d7c628-6cf3-4e34-99ec-e2c92888800b', // /contact: access key from https://web3forms.com (rab: sends to my iCloud address)
   newsletter: {
     // 'custom': put the subscribe URL (accepting a single email field) in action
     provider: 'custom' as 'custom' | 'buttondown' | 'kit', // pro-only: buttondown·kit
