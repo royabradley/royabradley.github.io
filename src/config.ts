@@ -79,7 +79,7 @@ export const work = {
 export const features = {
   darkMode: true,
   search: true, // pro-only. Build a Pagefind index and enable the /search page
-  i18nRouting: true, // pro-only. Languages other than site.locale are served under /<locale>/blog/…
+  i18nRouting: false, // rab: off with one language (hides the language picker). pro-only. Languages other than site.locale are served under /<locale>/blog/…
   comments: false, // pro-only. Giscus comments under posts (requires the giscus values below)
   styleguide: true, // pro-only. Build /styleguide (token and preset preview, noindex). It is always on in dev
 };
@@ -97,7 +97,7 @@ export const giscus = {
 // pro-only. site.locale, not the first entry, is the default (unprefixed) language. Each needs src/i18n/<locale>.ts
 // (en, ko, and hu ship with the theme)
 export const i18n = {
-  locales: { en: 'English', ko: '한국어' },
+  locales: { en: 'English' }, // rab: Korean removed 2026-11-10; English only
 };
 
 export const forms = {
