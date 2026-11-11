@@ -15,6 +15,8 @@ const year = new Date().getFullYear();
       <p>
         © {year} {site.author}
       </p>
+      {/* rab: list and RSS icon shown only when there's something to show (features.footerRss) */}
+      {(nav.social.length > 0 || features.footerRss) && (
       <ul class="mt-3 -ml-2.5 flex gap-1">
         {nav.social.map(({ label, href, icon }) => (
           <li>
@@ -28,6 +30,7 @@ const year = new Date().getFullYear();
             </a>
           </li>
         ))}
+        {features.footerRss && (
         <li>
           <a
             href="/rss.xml"
@@ -37,7 +40,9 @@ const year = new Date().getFullYear();
             <Icon name="lucide:rss" class="size-5" aria-hidden="true" />
           </a>
         </li>
+        )}
       </ul>
+      )}
     </div>
     <nav aria-label={t.footerNav} class="flex flex-wrap gap-x-16 gap-y-8">
       {nav.footer.map((group) => (

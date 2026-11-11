@@ -39,7 +39,8 @@ export const nav = {
     },
   ],
   social: [
-    { label: 'GitHub', href: 'https://github.com/', icon: 'lucide:github' },
+    // rab: GitHub hidden for now (it pointed at github.com, not a profile). Restore with your profile URL
+    // { label: 'GitHub', href: 'https://github.com/royabradley', icon: 'lucide:github' },
     // Icons are Lucide names (https://lucide.dev/icons), e.g. { label: 'Mastodon', href: '…', icon: 'lucide:at-sign' }
   ],
 } as const;
@@ -71,6 +72,7 @@ export const features = {
   search: true, // pro-only. Build a Pagefind index and enable the /search page
   i18nRouting: false, // rab: off with one language (hides the language picker). pro-only. Languages other than site.locale are served under /<locale>/blog/…
   comments: false, // pro-only. Giscus comments under posts (requires the giscus values below)
+  footerRss: false, // rab: RSS icon in the footer. The feed itself (/rss.xml) is still built
   styleguide: false, // rab: dev only. pro-only. Build /styleguide (token and preset preview, noindex). It is always on in dev
 };
 
