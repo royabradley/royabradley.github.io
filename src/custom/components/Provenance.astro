@@ -1,6 +1,6 @@
 ---
 // rab: One quiet line under a post's description saying where the piece first came from:
-//   Written for CH504: Church History 2, Dr. Joshua Bruce, Knox Theological Seminary · Published as written
+//   Written for CH504: Church History 2, Dr. Joshua Bruce, Knox Theological Seminary · Published as written.
 // Renders nothing for posts without provenance fields. Fields: src/custom/utils/provenance.ts.
 // Seam: one import and one line in src/layouts/PostLayout.astro.
 import type { Post } from '../../utils/posts';
@@ -22,4 +22,4 @@ const parts = [
 ].filter(Boolean);
 ---
 
-{parts.length > 0 && <p class="provenance text-muted mt-4 font-sans text-sm italic">{parts.join(' · ')}</p>}
+{parts.length > 0 && <p class="provenance text-muted mt-4 font-sans text-sm italic">{parts.join(' · ')}.</p>}
