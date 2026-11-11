@@ -1,0 +1,25 @@
+---
+// rab: The whole speaking record in one list, by year: sermons from the Pulpit and everything from
+// the Lectern together. Not in the nav; linked from the About page.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ItemList from '../custom/components/speaking/ItemList.astro';
+import { getItems } from '../custom/speaking/utils';
+
+const items = await getItems();
+const years = [...new Set(items.map((i) => i.data.date.getUTCFullYear()))];
+---
+
+<BaseLayout title="Preaching and teaching record" description="Every sermon, lesson, talk, devotional and presentation published here, by year.">
+  <div class="mx-auto max-w-5xl px-4 py-12 sm:py-16">
+    <h1 class="text-4xl font-light tracking-tight sm:text-5xl">Preaching and teaching record</h1>
+    <p class="text-muted mt-4 max-w-prose text-xl">
+      Everything from the <a href="/pulpit/">Pulpit</a> and the <a href="/lectern/">Lectern</a> in one list, newest first.
+    </p>
+    {years.map((year) => (
+      <section class="mt-12">
+        <h2 class="section-label">{year}</h2>
+        <div class="mt-4"><ItemList items={items.filter((i) => i.data.date.getUTCFullYear() === year)} /></div>
+      </section>
+    ))}
+  </div>
+</BaseLayout>

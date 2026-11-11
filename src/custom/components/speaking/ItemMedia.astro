@@ -1,0 +1,24 @@
+---
+// rab: Recording and slides for a speaking item. Media are links out (no players or files from a
+// CDN, per AGENTS.md); audio uses the browser's own <audio> element and loads nothing until played.
+import type { Item } from '../../speaking/utils';
+
+interface Props {
+  item: Item;
+  /** 'top' when a ruled block (the contents box) follows directly, so two rules don't stack */
+  rules?: 'both' | 'top';
+}
+const { item, rules = 'both' } = Astro.props;
+const { audio, video, slides } = item.data;
+---
+
+{(audio || video || slides) && (
+  <div data-pagefind-ignore class:list={['border-border mt-8 space-y-3 py-4 font-sans text-sm', rules === 'both' ? 'border-y' : 'border-t']}>
+    {audio && <audio controls preload="none" src={audio} class="w-full" aria-label="Recording" />}
+    <p class="space-x-4">
+      {audio && <a href={audio}>Download audio</a>}
+      {video && <a href={video}>Watch the video</a>}
+      {slides && <a href={slides}>Open the slides</a>}
+    </p>
+  </div>
+)}

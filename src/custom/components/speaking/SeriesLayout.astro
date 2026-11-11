@@ -1,0 +1,50 @@
+---
+// rab: A series hub: the overview (the series entry's own MDX), then its contents as a table.
+import type { MarkdownHeading } from 'astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Sidenotes from '../../../components/blog/Sidenotes.astro';
+import TableOfContents from '../../../components/blog/TableOfContents.astro';
+import MathHead from '../../../components/mdx/MathHead.astro';
+import SeriesTable from './SeriesTable.astro';
+import { formatDate } from '../../../utils/posts';
+import { kindPlural, sectionHref, sections, seriesKindLabel, seriesSection, type Item, type Series } from '../../speaking/utils';
+
+interface Props {
+  series: Series;
+  items: Item[]; // in series order
+  headings?: MarkdownHeading[];
+  math?: boolean;
+}
+const { series, items, headings = [], math } = Astro.props;
+const { title, description, kind, passage, place } = series.data;
+const dates = items.map((i) => i.data.date.valueOf());
+const span =
+  items.length > 0 &&
+  [Math.min(...dates), Math.max(...dates)]
+    .map((d) => formatDate(new Date(d)))
+    .filter((d, i, all) => all.indexOf(d) === i)
+    .join(' – ');
+const count = `${items.length} ${items.length === 1 ? kind : kindPlural[kind]}`;
+const meta = [seriesKindLabel[kind], passage, count, span, place].filter(Boolean);
+---
+
+<BaseLayout title={title} description={description} type="article">
+  {math && <MathHead slot="head" />}
+  <article data-pagefind-body class="mx-auto max-w-prose px-4 py-12 sm:py-16">
+    <header>
+      <h1 class="text-4xl font-light tracking-tight sm:text-5xl">{title}</h1>
+      <p class="text-muted mt-4 text-xl">{description}</p>
+      <p class="text-muted mt-6 font-sans text-sm">{meta.join(' · ')}</p>
+    </header>
+    <TableOfContents headings={[...headings, { depth: 2, slug: 'contents', text: `The ${kindPlural[kind]}` }]} />
+    <div class="prose mt-12">
+      <slot />
+      <h2 id="contents">The {kindPlural[kind]}</h2>
+      {items.length > 0 ? <SeriesTable items={items} /> : <p>None published yet.</p>}
+    </div>
+    <Sidenotes />
+    <footer data-pagefind-ignore class="border-border mt-16 border-t pt-8 font-sans text-sm">
+      <a href={sectionHref(seriesSection(series))}>← {sections[seriesSection(series)].title}</a>
+    </footer>
+  </article>
+</BaseLayout>

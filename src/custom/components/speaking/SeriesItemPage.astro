@@ -1,0 +1,20 @@
+---
+// rab: Renders an item in a series, from routes.ts seriesItemPaths().
+import { render } from 'astro:content';
+import Callout from '../../../components/mdx/Callout.astro';
+import Theorem from '../../../components/mdx/Theorem.astro';
+import ItemLayout from './ItemLayout.astro';
+import type { Item, Series } from '../../speaking/utils';
+
+interface Props {
+  item: Item;
+  series: Series;
+  seriesItems: Item[];
+}
+const { item, series, seriesItems } = Astro.props;
+const { Content, headings, remarkPluginFrontmatter } = await render(item);
+---
+
+<ItemLayout item={item} series={series} seriesItems={seriesItems} headings={headings} math={remarkPluginFrontmatter.hasMath}>
+  <Content components={{ Callout, Theorem }} />
+</ItemLayout>

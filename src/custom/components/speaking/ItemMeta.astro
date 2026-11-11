@@ -1,0 +1,31 @@
+---
+// rab: One metadata line for a speaking item: Sermon · Matthew 5:3–12 · Part 2 of 9 · Manuscript ·
+// 12 January 2025 · Place · Occasion. Labels stay in the line, so nothing needs a key.
+import { formatDate } from '../../../utils/posts';
+import { formLabel, kindLabel, type Item } from '../../speaking/utils';
+
+interface Props {
+  item: Item;
+  position?: { n: number; total: number };
+}
+const { item, position } = Astro.props;
+const { kind, passage, form, date, place, occasion } = item.data;
+const parts = [
+  kindLabel[kind],
+  passage,
+  position && `Part ${position.n} of ${position.total}`,
+  formLabel[form],
+  formatDate(date),
+  place,
+  occasion,
+].filter(Boolean);
+---
+
+<p class="text-muted mt-6 font-sans text-sm">
+  {parts.map((part, i) => (
+    <>
+      {i > 0 && <span aria-hidden="true"> · </span>}
+      {part === formatDate(date) ? <time datetime={date.toISOString()}>{part}</time> : <span>{part}</span>}
+    </>
+  ))}
+</p>

@@ -1,0 +1,42 @@
+---
+// rab: Renders one page from routes.ts slugPaths(): a kind's listing, a series hub, or a standalone item.
+import { render } from 'astro:content';
+import Callout from '../../../components/mdx/Callout.astro';
+import Theorem from '../../../components/mdx/Theorem.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ItemLayout from './ItemLayout.astro';
+import ItemList from './ItemList.astro';
+import SeriesLayout from './SeriesLayout.astro';
+import type { SlugPage } from '../../speaking/routes';
+import { kindPlural } from '../../speaking/utils';
+
+interface Props {
+  page: SlugPage;
+}
+const { page } = Astro.props;
+const rendered =
+  page.type === 'series' ? await render(page.series) : page.type === 'item' ? await render(page.item) : undefined;
+const Content = rendered?.Content;
+const plural = page.type === 'kind' ? kindPlural[page.kind] : '';
+const heading = plural.charAt(0).toUpperCase() + plural.slice(1);
+---
+
+{page.type === 'kind' && (
+  <BaseLayout title={heading} description={`All ${plural}, newest first.`}>
+    <div class="mx-auto max-w-5xl px-4 py-12 sm:py-16">
+      <h1 class="text-4xl font-light tracking-tight sm:text-5xl">{heading}</h1>
+      <p class="text-muted mt-4 font-sans text-sm"><a href="/lectern/">← Lectern</a></p>
+      <div class="mt-10"><ItemList items={page.items} showKind={false} /></div>
+    </div>
+  </BaseLayout>
+)}
+{page.type === 'series' && Content && (
+  <SeriesLayout series={page.series} items={page.items} headings={rendered.headings} math={rendered.remarkPluginFrontmatter.hasMath}>
+    <Content components={{ Callout, Theorem }} />
+  </SeriesLayout>
+)}
+{page.type === 'item' && Content && (
+  <ItemLayout item={page.item} headings={rendered.headings} math={rendered.remarkPluginFrontmatter.hasMath}>
+    <Content components={{ Callout, Theorem }} />
+  </ItemLayout>
+)}

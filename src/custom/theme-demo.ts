@@ -41,6 +41,9 @@ export const themeDemoPages = [
   '/newsletter/',
   '/changelog/',
   '/docs/',
+  // Not a demo, but unused for now: Work is out of the nav, and its empty index carries theme copy.
+  // Delete this line to bring Work back.
+  '/work/',
   // Author pages come from src/content/authors.json, not from posts, so they outlive the demo posts
   '/blog/author/ada-marlow/',
   '/blog/author/theo-lindqvist/',

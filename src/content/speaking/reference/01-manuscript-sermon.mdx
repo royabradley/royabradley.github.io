@@ -1,0 +1,70 @@
+---
+title: "A sermon in manuscript form"
+description: "Reference: a full manuscript in a series, with headings, sidenotes, a figure, Greek in the text, and the recording as a companion."
+date: 2025-01-12
+kind: sermon
+form: manuscript
+passage: Matthew 5:1–12
+series: reference-speaking
+part: 1
+place: "[Church name]"
+occasion: Lord's Day morning
+audio: https://example.com/reference.mp3
+---
+
+import Figure from '@custom/components/Figure.astro';
+
+A manuscript is the full text of what was preached, set as long-form reading. This page is one, and it shows each piece a manuscript can use. The frontmatter that produced it is at the end.
+
+## What the page builds for you
+
+Everything above the first heading comes from frontmatter. The metadata line reads the fields in a fixed order: kind, passage, part, form, date, place, occasion. The series box lists the series in `part` order and marks this page. The recording follows it, because in a manuscript the text comes first and the audio accompanies it. Then the contents box, built from the headings in the body once there are three or more.
+
+## Writing the body
+
+Write the sermon as you would for print. Headings mark its movements, and should say what each movement claims, not just what it covers.
+
+Greek and Hebrew go straight into the text: *makarioi*, μακάριοι, or *ʾašrê*, אַשְׁרֵי. Italicize transliterations; leave the original script upright.
+
+Exegetical asides belong in footnotes.[^1] From 80rem up they sit in the margin beside the line that calls them; on phones and most iPads they collect at the end, with links back.
+
+Scripture can be set as a block quotation when the wording itself is the point:
+
+> Blessed are the poor in spirit, for theirs is the kingdom of heaven. (Matthew 5:3)
+
+## Figures in a sermon
+
+A structure the congregation heard can be shown on the page. A figure numbers itself and states its message in the caption:
+
+<Figure>
+  <span slot="caption">The Beatitudes open and close with the same promise, <em>theirs is the kingdom of heaven</em> (5:3, 10).</span>
+
+| Verse | Blessed are | For they |
+| --- | --- | --- |
+| 5:3 | the poor in spirit | theirs is the kingdom of heaven |
+| 5:4 | those who mourn | shall be comforted |
+| 5:10 | those persecuted for righteousness' sake | theirs is the kingdom of heaven |
+
+</Figure>
+
+See `src/content/blog/figure-reference.mdx` for every figure variant and the checklist before publishing one.
+
+## This page's frontmatter
+
+```yaml
+title: "A sermon in manuscript form"
+description: "One sentence, 160 characters at most."
+date: 2025-01-12
+kind: sermon
+form: manuscript
+passage: Matthew 5:1–12
+series: reference-speaking   # the series file's name, without .mdx
+part: 1
+place: "[Church name]"
+occasion: Lord's Day morning
+audio: https://example.com/reference.mp3
+```
+
+The file is `src/content/speaking/reference/01-manuscript-sermon.mdx`. The `01-` orders it in the folder and is dropped from the URL.
+
+[^1]: A sidenote: the term's range of meaning, its use elsewhere in Matthew, or a source. Keep it to what would interrupt the sentence if it stood in the text.

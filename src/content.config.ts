@@ -2,6 +2,7 @@ import { defineCollection, reference } from 'astro:content';
 import { file, glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { contentPattern } from './custom/theme-demo'; // rab: theme demo content left out of builds
+import { speakingCollections } from './custom/speaking/collections'; // rab: speaking record
 
 const blog = defineCollection({
   loader: glob({ base: './src/content/blog', pattern: contentPattern('blog') }), // rab: see src/custom/theme-demo.ts
@@ -67,4 +68,4 @@ const work = defineCollection({
       }),
 });
 
-export const collections = { blog, authors, docs, work };
+export const collections = { blog, authors, docs, work, ...speakingCollections }; // rab: speaking record

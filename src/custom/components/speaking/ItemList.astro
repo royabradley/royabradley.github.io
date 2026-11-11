@@ -1,0 +1,32 @@
+---
+// rab: A list of speaking items, in the theme's PostList layout: date and kind on the left,
+// title, description and passage on the right.
+import { formatDate } from '../../../utils/posts';
+import { formLabel, itemHref, kindLabel, type Item } from '../../speaking/utils';
+
+interface Props {
+  items: Item[];
+  showKind?: boolean;
+}
+const { items, showKind = true } = Astro.props;
+---
+
+<ol class="divide-border border-border divide-y border-y">
+  {items.map((item) => (
+    <li class="grid gap-x-8 gap-y-2 py-8 sm:grid-cols-[9rem_1fr]">
+      <p class="text-muted pt-1.5 font-sans text-sm">
+        <time datetime={item.data.date.toISOString()}>{formatDate(item.data.date)}</time>
+        <span class="before:content-['_·_'] sm:block sm:before:content-none">
+          {showKind ? kindLabel[item.data.kind] : formLabel[item.data.form]}
+        </span>
+      </p>
+      <div class="space-y-2">
+        <h2 class="text-2xl font-medium">
+          <a href={itemHref(item)} class="text-foreground hover:text-primary no-underline">{item.data.title}</a>
+        </h2>
+        <p class="text-muted">{item.data.description}</p>
+        {item.data.passage && <p class="text-muted font-sans text-sm">{item.data.passage}</p>}
+      </div>
+    </li>
+  ))}
+</ol>

@@ -1,0 +1,11 @@
+---
+// rab: /lectern/<series>/<item>/: an item in a series. Logic in src/custom/speaking.
+import type { GetStaticPaths } from 'astro';
+import SeriesItemPage from '../../../custom/components/speaking/SeriesItemPage.astro';
+import { seriesItemPaths } from '../../../custom/speaking/routes';
+
+export const getStaticPaths = (() => seriesItemPaths('lectern')) satisfies GetStaticPaths;
+const { item, series, seriesItems } = Astro.props;
+---
+
+<SeriesItemPage item={item} series={series} seriesItems={seriesItems} />

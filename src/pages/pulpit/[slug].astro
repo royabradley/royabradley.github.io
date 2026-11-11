@@ -1,0 +1,11 @@
+---
+// rab: /pulpit/<slug>/: a series hub, a standalone item. Logic in src/custom/speaking.
+import type { GetStaticPaths } from 'astro';
+import SlugPage from '../../custom/components/speaking/SlugPage.astro';
+import { slugPaths } from '../../custom/speaking/routes';
+
+export const getStaticPaths = (() => slugPaths('pulpit')) satisfies GetStaticPaths;
+const { page } = Astro.props;
+---
+
+<SlugPage page={page} />

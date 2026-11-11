@@ -1,0 +1,69 @@
+---
+// rab: The front page of a section (/pulpit/ or /lectern/): its series, then its items newest first.
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ItemList from './ItemList.astro';
+import {
+  getItems,
+  getSeries,
+  itemSection,
+  itemsInSeries,
+  kindHref,
+  kindPlural,
+  sections,
+  seriesHref,
+  seriesKindLabel,
+  seriesSection,
+  type Section,
+} from '../../speaking/utils';
+
+interface Props {
+  section: Section;
+}
+const { section } = Astro.props;
+const { title, lede, kinds: sectionKinds } = sections[section];
+const items = (await getItems()).filter((i) => itemSection(i) === section);
+const series = (await getSeries()).filter((s) => seriesSection(s) === section);
+const kinds = sectionKinds.filter((k) => items.some((i) => i.data.kind === k));
+---
+
+<BaseLayout title={title} description={lede}>
+  <div class="mx-auto max-w-5xl px-4 py-12 sm:py-16">
+    <h1 class="text-4xl font-light tracking-tight sm:text-5xl">{title}</h1>
+    <p class="text-muted mt-4 max-w-prose text-xl">{lede}</p>
+    {kinds.length > 1 && (
+      <p class="text-muted mt-4 font-sans text-sm">
+        {kinds.map((k, i) => (
+          <>
+            {i > 0 && <span aria-hidden="true"> · </span>}
+            <a href={kindHref(k)} class="capitalize">{kindPlural[k]}</a>
+          </>
+        ))}
+      </p>
+    )}
+    {series.length > 0 && (
+      <section class="mt-12">
+        <h2 class="section-label">Series</h2>
+        <ol class="divide-border border-border mt-4 divide-y border-y">
+          {series.map((s) => (
+            <li class="grid gap-x-8 gap-y-2 py-6 sm:grid-cols-[9rem_1fr]">
+              <p class="text-muted pt-1.5 font-sans text-sm">
+                {seriesKindLabel[s.data.kind]}
+                <span class="block">{itemsInSeries(s.id, items).length} {kindPlural[s.data.kind]}</span>
+              </p>
+              <div class="space-y-2">
+                <h3 class="text-2xl font-medium">
+                  <a href={seriesHref(s)} class="text-foreground hover:text-primary no-underline">{s.data.title}</a>
+                </h3>
+                <p class="text-muted">{s.data.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+    <section class="mt-12">
+      <h2 class="section-label">{section === 'pulpit' ? 'All sermons' : 'Everything'}, newest first</h2>
+      <div class="mt-4"><ItemList items={items} showKind={section === 'lectern'} /></div>
+    </section>
+  </div>
+</BaseLayout>

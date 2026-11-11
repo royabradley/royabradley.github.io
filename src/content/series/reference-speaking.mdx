@@ -1,0 +1,112 @@
+---
+title: "The speaking record: a working reference"
+description: "How the Pulpit and Lectern work: two collections, every field, the URLs, the safeguards, and how a note from the vault becomes a page."
+kind: sermon
+---
+
+import Figure from '@custom/components/Figure.astro';
+
+This series documents the speaking record, published as the Pulpit and the Lectern, by being part of it. The hub you are reading is a series entry, and the pages linked below are speaking items, each written as a working example of its kind and form. Copy from them.
+
+<Callout type="note" title="Dev only">
+These pages live in `src/content/speaking/reference/` and `src/content/series/reference-*.mdx`. They show in `pnpm dev` and are left out of every production build by the loader patterns in `src/custom/speaking/collections.ts`, so they never need `draft: true`.
+</Callout>
+
+## The model
+
+The record has two collections. Everything on its pages is derived from their fields.
+It is published in two sections, named for where the words were spoken, and `kind` decides which:
+
+| Section | Holds | URL |
+| --- | --- | --- |
+| Pulpit | Sermons, and sermon series | `/pulpit/` |
+| Lectern | Lessons, talks, devotionals and presentations, and lesson series | `/lectern/` |
+| Record | Everything from both, by year; linked from About, not in the nav | `/record/` |
+
+
+| Collection | One entry is | Folder |
+| --- | --- | --- |
+| `speaking` | One sermon, lesson, talk, devotional or presentation | `src/content/speaking/` |
+| `series` | One series hub: an overview, followed by a generated table of its items | `src/content/series/` |
+
+The schema is in `src/custom/speaking/collections.ts`; queries, labels and URLs are in `src/custom/speaking/utils.ts`; the components are in `src/custom/components/speaking/`. The route files in `src/pages/pulpit/` and `src/pages/lectern/` (and `src/pages/record.astro`) only pass entries to those components; the paths themselves are built in `src/custom/speaking/routes.ts`.
+
+## Fields of a speaking item
+
+| Field | Required | What it does |
+| --- | --- | --- |
+| `title` | Yes | Page title and list entry |
+| `description` | Yes | One sentence, 160 characters at most; shown under the title and in lists |
+| `date` | Yes | When it was preached, taught or given; orders every list |
+| `kind` | Yes | `sermon`, `lesson`, `talk`, `devotional` or `presentation`; the label and the per-kind listing |
+| `form` | No (`manuscript`) | `manuscript`, `notes` or `slides`; the shape of the page |
+| `passage` | No | What it expounds: "Matthew 5:3–12", or "Heidelberg Catechism, Q. 1". Leave it out for a topical lesson or talk |
+| `series` | No | The id of a series entry; makes the item part of that series |
+| `part` | No | Its place in the series; without it, items fall back to date order |
+| `place` | No | Congregation or venue |
+| `occasion` | No | "Christmas Eve", "Sunday School", "Men's retreat" |
+| `audio`, `video`, `slides` | No | Links out; audio also gets the browser's own player |
+| `draft` | No (`false`) | `true` keeps it out of production builds |
+
+A series entry has `title`, `description`, `kind` (`sermon` or `lesson`), and optionally `passage`, `place` and `draft`.
+
+## Kinds and forms
+
+`kind` says what the item was; `form` says what the page holds. Any kind can take any form, and the page follows the form:
+
+<Figure caption="The form, not the kind, decides how a page is laid out.">
+
+| Form | Body | Recording or deck | Contents box |
+| --- | --- | --- | --- |
+| Manuscript | Full prose, with sidenotes and figures | After the series contents, as a companion | Yes, from three headings up |
+| Notes | An outline or condensed points | First, under the title | No |
+| Slides | A short summary | The deck link first, under the title | No |
+
+</Figure>
+
+## Files and URLs
+
+File names become URLs. A leading number orders files in the folder and is dropped from the URL, so `01-the-blessed.mdx` publishes as `the-blessed`.
+
+In the URLs below, `<section>` is `pulpit` or `lectern`.
+
+| Page | URL | Comes from |
+| --- | --- | --- |
+| A section | `/<section>/` | Its series, then its items, newest first |
+| A kind's listing | `/lectern/lessons/` | Lectern items of that kind; built only once one exists. Sermons need none: the Pulpit is their listing |
+| A series hub | `/<section>/<series>/` | `src/content/series/<series>.mdx` |
+| An item in a series | `/<section>/<series>/<item>/` | Any file in `speaking/` whose `series` names it |
+| A standalone item | `/<section>/<item>/` | Any file in `speaking/` without a `series` |
+| The record | `/record/` | Every published item, by year |
+
+Series membership comes from the `series` field, not the folder. Keeping a series' files in a folder of the same name is a convenience, nothing more.
+
+## Safeguards
+
+The build stops, with a message that names the problem, when:
+
+- an item's `series` names a series that doesn't exist;
+- an item has a `part` but no `series`;
+- an item sits in a series of the other section: a sermon in a lesson series, or a lesson in a sermon series;
+- a description runs past 160 characters;
+- a series, a kind's listing and a standalone item in the same section would share one URL.
+
+An item in a draft series is unpublished too, so a series can be prepared in full and released at once by removing one `draft: true`.
+
+## From the vault to the site
+
+A note from SPEAKING RECORD becomes a page in four steps:
+
+1. Copy it into `src/content/speaking/` (or a series folder) and change `.md` to `.mdx`.
+2. Make sure its properties match the fields above; Obsidian properties and Astro frontmatter are both YAML.
+3. Replace `[[wikilinks]]` with ordinary links or plain text, and Obsidian callouts (`> [!note]`) with `<Callout>`.
+4. Keep footnotes as they are; `[^1]` works in both, and becomes a sidenote here.
+
+## The reference pages
+
+In this series, which lives in the Pulpit, the two sermons show the two main forms side by side. The other kinds stand alone at the Lectern:
+
+- [A lesson](/lectern/reference-lesson/), in notes form
+- [A talk](/lectern/reference-talk/), in slides form
+- [A devotional](/lectern/reference-devotional/), in notes form
+- [A presentation](/lectern/reference-presentation/), in slides form

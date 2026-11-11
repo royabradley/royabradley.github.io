@@ -1,0 +1,36 @@
+---
+// rab: The contents of a series as a table, for its hub page. Rendered inside .prose, so it takes
+// the theme's table styles. Only published items appear, so it fills in as the series goes online.
+import { formLabel, itemHref, type Item } from '../../speaking/utils';
+
+interface Props {
+  items: Item[]; // in series order
+}
+const { items } = Astro.props;
+// Short dates keep the five columns from wrapping within the reading column
+const short = (date: Date) =>
+  date.toLocaleDateString('en-US', { dateStyle: 'medium', timeZone: 'UTC' });
+---
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Part</th>
+      <th scope="col">Passage</th>
+      <th scope="col">Title</th>
+      <th scope="col">Form</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {items.map((item, i) => (
+      <tr>
+        <td class="whitespace-nowrap">{item.data.part ?? i + 1}</td>
+        <td class="whitespace-nowrap">{item.data.passage ?? '—'}</td>
+        <td><a href={itemHref(item)}>{item.data.title}</a></td>
+        <td>{formLabel[item.data.form]}</td>
+        <td class="whitespace-nowrap"><time datetime={item.data.date.toISOString()}>{short(item.data.date)}</time></td>
+      </tr>
+    ))}
+  </tbody>
+</table>

@@ -8,8 +8,8 @@ export default {
   notFoundTitle: 'Page not found',
   notFoundBody: 'The page you were looking for has moved, or never existed.',
   backHome: 'Back to the front page',
-  blog: 'Blog',
-  blogDescription: 'Essays and notes, newest first.',
+  blog: 'Study', // rab: the blog is labeled Study; its URLs stay /blog/
+  blogDescription: 'What I’m (slowly) reading and thinking through, newest first.', // rab
   allPosts: 'All posts',
   taggedWith: 'Tagged',
   tags: 'Tags',

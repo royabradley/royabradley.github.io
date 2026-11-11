@@ -1,0 +1,41 @@
+---
+title: "A lesson"
+description: "Reference: a standalone Sunday School lesson in notes form. Lessons may take a Scripture text, a topic, or a confession as their subject."
+date: 2024-03-03
+kind: lesson
+form: notes
+passage: Ephesians 6:1–4
+place: "[Church name]"
+occasion: Sunday School
+---
+
+A lesson works like a sermon in its fields, but its subject varies more. Set `passage` to whatever the lesson is about:
+
+| Lesson on | `passage` | Example title |
+| --- | --- | --- |
+| A Scripture text | `Ephesians 6:1–4` | Children, obey your parents |
+| A confession or catechism | `Heidelberg Catechism, Q. 1` | Our only comfort |
+| A topic of Christian life | Leave it out | Keeping the Lord's Day |
+
+For a topical lesson, the title carries the subject, and the metadata line simply has no passage. `occasion` is usually "Sunday School", which the line shows at the end.
+
+## Standalone or in a series
+
+This lesson has no `series`, so it lives at `/lectern/reference-lesson/`, has no part number, and its footer links back to all lessons. To put lessons in a series, create a series entry with `kind: lesson`; it appears at the Lectern, its hub reads "Sunday School series", and its table lists lessons. A sermon can't join it: the build stops if a series mixes the two sections.
+
+## An example lesson outline
+
+1. The household as a place of discipleship (6:1–4)
+2. Obedience "in the Lord": what the phrase includes and limits (6:1)
+3. The promise attached to the fifth commandment (6:2–3)
+4. Fathers: provoke not, but bring up (6:4)
+5. Discussion: what does catechesis at home look like this week?
+
+## This page's frontmatter
+
+```yaml
+kind: lesson
+form: notes
+passage: Ephesians 6:1–4   # or a confession's question, or leave out for a topic
+occasion: Sunday School
+```

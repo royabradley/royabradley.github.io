@@ -1,0 +1,55 @@
+---
+// rab: One sermon, lesson, talk, devotional or presentation. Built from the same pieces as the
+// theme's CaseStudyLayout (contents, sidenotes, math, copy buttons), with the page shaped by `form`:
+// a manuscript gets the contents box and puts its recording after the series; notes and slides lead
+// with the recording or deck, since that is the main way in.
+import type { MarkdownHeading } from 'astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Sidenotes from '../../../components/blog/Sidenotes.astro';
+import TableOfContents from '../../../components/blog/TableOfContents.astro';
+import CopyCode from '../../../components/mdx/CopyCode.astro';
+import MathHead from '../../../components/mdx/MathHead.astro';
+import ItemMeta from './ItemMeta.astro';
+import ItemMedia from './ItemMedia.astro';
+import SeriesNav from './SeriesNav.astro';
+import { kindHref, kindPlural, seriesHref, type Item, type Series } from '../../speaking/utils';
+
+interface Props {
+  item: Item;
+  series?: Series;
+  seriesItems?: Item[];
+  headings?: MarkdownHeading[];
+  math?: boolean;
+}
+const { item, series, seriesItems = [], headings = [], math } = Astro.props;
+const { title, description, form, kind } = item.data;
+const n = seriesItems.findIndex((i) => i.id === item.id) + 1;
+const manuscript = form === 'manuscript';
+---
+
+<BaseLayout title={title} description={description} type="article">
+  {math && <MathHead slot="head" />}
+  <article data-pagefind-body class="mx-auto max-w-prose px-4 py-12 sm:py-16">
+    <header>
+      <h1 class="text-4xl font-light tracking-tight sm:text-5xl">{title}</h1>
+      <p class="text-muted mt-4 text-xl">{description}</p>
+      <ItemMeta item={item} position={series ? { n, total: seriesItems.length } : undefined} />
+    </header>
+    {!manuscript && <ItemMedia item={item} />}
+    {series && <SeriesNav item={item} series={series} items={seriesItems} />}
+    {manuscript && <ItemMedia item={item} rules={headings.filter((h) => h.depth <= 3 && h.slug !== 'footnote-label').length >= 3 ? 'top' : 'both'} />}
+    {manuscript && <TableOfContents headings={headings} />}
+    <div class="prose mt-12">
+      <slot />
+    </div>
+    <CopyCode />
+    <Sidenotes />
+    <footer data-pagefind-ignore class="border-border mt-16 border-t pt-8 font-sans text-sm">
+      {series ? (
+        <a href={seriesHref(series)}>← {series.data.title}</a>
+      ) : (
+        <a href={kindHref(kind)}>← All {kindPlural[kind]}</a>
+      )}
+    </footer>
+  </article>
+</BaseLayout>

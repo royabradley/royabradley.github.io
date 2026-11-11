@@ -19,8 +19,10 @@ export const theme = {
 
 export const nav = {
   header: [
-    { label: 'Blog', href: '/blog' },
-    { label: 'Work', href: '/work' }, // pro-only
+    { label: 'Study', href: '/blog' }, // rab: the blog, labeled Study; its URLs stay /blog/
+    // rab: Work hidden (no use for it yet); /work/ is also left out of builds, see src/custom/theme-demo.ts
+    { label: 'Pulpit', href: '/pulpit' }, // rab: sermons (src/custom/speaking)
+    { label: 'Lectern', href: '/lectern' }, // rab: lessons, talks, devotionals, presentations
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
   ],
