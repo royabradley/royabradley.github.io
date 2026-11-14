@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 import { features, nav, site } from '../../config';
 import { useT } from '../../i18n/t';
 import LanguagePicker from './LanguagePicker.astro';
+import { PHRASES, season } from '../../custom/utils/church-year'; // rab: place and season line
 
 const t = useT(Astro.currentLocale);
 
@@ -15,6 +16,8 @@ const year = new Date().getFullYear();
       <p>
         © {year} {site.author}
       </p>
+      {/* rab: place and the season of the church year on the day the site was built */}
+      <p class="mt-1">{site.place}, {PHRASES[season()]}.</p>
       {/* rab: list and RSS icon shown only when there's something to show (features.footerRss) */}
       {(nav.social.length > 0 || features.footerRss) && (
       <ul class="mt-3 -ml-2.5 flex gap-1">

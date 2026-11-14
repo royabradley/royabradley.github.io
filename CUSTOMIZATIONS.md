@@ -21,7 +21,9 @@ update.
 | File                              | Change                                                   | Why                                                      | Since   |
 | --------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | ------- |
 | `src/config.ts`                   | Site identity, `seo.titleTemplate`                       | The theme's intended place for site values               | 2026-10 |
-| `src/components/common/Footer.astro` | RSS icon and the social list render only when there is something to show (`features.footerRss`, `nav.social`) | Hide GitHub and RSS in the footer for now; GitHub is commented out in `nav.social` | 2026-11 |
+| `src/config.ts`                   | `site.place`; footer group 'Legal' renamed 'This site', with Colophon first | Footer place line and the colophon page (`src/pages/colophon.mdx`) | 2026-11 |
+| `src/components/common/Footer.astro` | RSS icon and the social list render only when there is something to show (`features.footerRss`, `nav.social`) | GitHub hidden for now (commented out in `nav.social`); RSS icon restored 2026-11-14, `features.footerRss: true` | 2026-11 |
+| `src/components/common/Footer.astro` | One line under the copyright: `site.place` and the church-year season (`src/custom/utils/church-year.ts`) | A place and a season, not a timestamp | 2026-11 |
 | `src/config.ts`                   | `i18n.locales` English only; `features.i18nRouting: false` | Korean support disabled. Theme demo posts in `src/content/blog/ko/` deleted; a theme update may re-add them, so delete them again on merge | 2026-11 |
 | `src/content.config.ts`           | One import; `blog` and `work` loaders use `contentPattern()` from `src/custom/theme-demo.ts` | Theme demo posts stay in the repo, untouched, and show in dev, but production builds leave them out. `theme-status.sh` lists new upstream demo posts not yet in the list | 2026-11 |
 | `astro.config.mjs`                | Two imports; sitemap filter skips theme demo pages; `themeDemoPagesIntegration()` before pagefind | Theme demo pages stay in `src/pages`, untouched, and work in dev; production builds remove them (list in `src/custom/theme-demo.ts`) | 2026-11 |
@@ -35,22 +37,24 @@ update.
 | `src/content.config.ts`           | One import; `...provenanceFields` spread into the `blog` schema | Optional essay provenance fields (`written`, `course`, `instructor`, `institution`, `revision`, `partial`), kept as a record and not shown on the site; defined in `src/custom/utils/provenance.ts` | 2026-11 |
 | `src/pages/privacy.mdx`, `terms.mdx`, `cookies.mdx`, `accessibility.mdx` | Rewritten for this site | The theme's placeholders replaced with my own statements (no tracking beyond cookieless Umami visit counts; Web3Forms; sermon reuse terms) | 2026-11 |
 | `src/i18n/en.ts`                  | `formNotConfigured` → 'Not open yet.' | Shown under the Monthly Letter until it launches | 2026-11 |
-| `src/pages/index.astro`           | Hero copy; Monthly Letter marked as in development                                                | The theme's intended place for home-page content         | 2026-10 |
+| `src/pages/index.astro`           | Hero copy: the forked Hero, with the Aurora Leigh verse as the heading; Monthly Letter marked as in development                                                | The theme's intended place for home-page content         | 2026-10 |
 | `src/styles/global.css`           | One `@import` of `src/custom/styles/custom.css` (line 2) | Loads overlay styles with access to Tailwind and the theme tokens | 2026-11 |
 | `tsconfig.json`                   | `@custom/*` path alias                                   | Stable import paths for overlay components from any depth | 2026-11 |
 | `.gitignore`                      | `.pnpm-store/`                                           | Keep the local pnpm store out of git                     | 2026-10 |
 | `.github/workflows/deploy.yml`    | Added: GitHub Pages deploy                               | Publishing                                               | 2026-10 |
+| `.github/workflows/deploy.yml`    | Daily scheduled build at 06:17 UTC | Keeps the footer's church-year season current on a static site | 2026-11 |
 | `.devcontainer/devcontainer.json` | Added: Node dev container; Node feature installs newest 22.x and pnpm 10.34.5 | Local tooling; the base image's Node is older than Astro 7.4 requires | 2026-10, 2026-11 |
 | `.devcontainer/devcontainer-lock.json` | Added by the dev container rebuild                  | Pins the Node feature's version, the way `pnpm-lock.yaml` pins packages | 2026-11 |
 | `package.json`, `pnpm-lock.yaml`  | Dependency bumps (Astro 7.4.8, `@astrojs/mdx` 8.1.3, `@astrojs/markdown-satteri` 0.4.7, KaTeX from Pilcrow v1.4); committed 2026-11-10 | Patch updates                               | 2026-11 |
 
 ### Forked theme components
 
-None yet. When a theme component has to behave differently, copy it into `src/custom/components/`,
+When a theme component has to behave differently, copy it into `src/custom/components/`,
 change the copy, point the one place that uses it at the copy, and add a row here.
 
 | Fork | Copied from | Theme version | What changed |
 | ---- | ----------- | ------------- | ------------ |
+| `src/custom/components/Hero.astro` | `src/components/sections/Hero.astro` | v1.5.0 | Optional `verse` prop with attribution: set as the page heading when there's no title (with an optional `continuation` in the lede's style), or as a smaller epigraph under a title. `title` and `lede` are optional. Verse turnovers indent 0.5em; the eyebrow's ¶ hangs in the left margin. Used only by `src/pages/index.astro` |
 
 ## Rules
 

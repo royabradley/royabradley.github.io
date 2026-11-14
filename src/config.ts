@@ -7,6 +7,7 @@ export const site = {
   url: 'https://royabradley.github.io',
   locale: 'en', // 'en' | 'ko' | 'hu', or any language with a src/i18n/<locale>.ts
   author: 'Roy A. Bradley', // Fictional demo author. Replace with your name
+  place: 'From a small study in East Texas', // rab: footer line, followed by the church-year season (src/custom/utils/church-year.ts)
   defaultOgImage, // 1200×630. A post's heroImage takes precedence
 } as const;
 
@@ -29,8 +30,9 @@ export const nav = {
   footer: [
     // rab: the theme's 'Theme demo' link group removed; those pages are left out of builds
     {
-      title: 'Legal',
+      title: 'This site', // rab: was 'Legal'; holds the colophon too
       links: [
+        { label: 'Colophon', href: '/colophon/' }, // rab: how the site is made
         { label: 'Privacy', href: '/privacy' },
         { label: 'Terms', href: '/terms' },
         { label: 'Cookies', href: '/cookies/' }, // pro-only
@@ -72,7 +74,7 @@ export const features = {
   search: true, // pro-only. Build a Pagefind index and enable the /search page
   i18nRouting: false, // rab: off with one language (hides the language picker). pro-only. Languages other than site.locale are served under /<locale>/blog/…
   comments: false, // pro-only. Giscus comments under posts (requires the giscus values below)
-  footerRss: false, // rab: RSS icon in the footer. The feed itself (/rss.xml) is still built
+  footerRss: true, // rab: RSS icon in the footer (/rss.xml)
   styleguide: false, // rab: dev only. pro-only. Build /styleguide (token and preset preview, noindex). It is always on in dev
 };
 

@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # rab: rebuild daily just after midnight in Texas (06:17 UTC), so the footer's church-year season stays current
+  schedule:
+    - cron: '17 6 * * *'
 
 permissions:
   contents: read
