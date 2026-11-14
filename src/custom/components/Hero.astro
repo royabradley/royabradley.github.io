@@ -1,0 +1,71 @@
+---
+// rab: forked from src/components/sections/Hero.astro at Pilcrow v1.5.0. One change: an optional
+// `verse` prop, a short passage of poetry with its attribution.
+//   With a title: the verse sits under it as a smaller epigraph.
+//   Without a title: the verse's `lines` are the page heading, and its `continuation` (optional)
+//   follows in the lede's style, so a longer passage reads as one quotation. Lines keep their breaks;
+//   a line too long for the screen wraps with its overflow indented (a turnover), as poetry is set in print.
+// The attribution comes after the whole passage, set like Pilcrow's figure captions. `lede` is optional.
+// The eyebrow's ¶ hangs in the left margin, so a wrapped eyebrow and the heading share one left edge.
+import Button from '../../components/ui/Button.astro';
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  verse?: { lines: string[]; continuation?: string[]; author: string; work?: string };
+  lede?: string;
+  actions?: { label: string; href: string; variant?: 'primary' | 'secondary' }[];
+}
+const { eyebrow, title, verse, lede, actions = [] } = Astro.props;
+---
+
+<section class="mx-auto max-w-5xl px-4 pt-14 pb-12 sm:pt-24 sm:pb-16">
+  {eyebrow && (
+    <p class="section-label relative">
+      <span class="text-primary absolute right-full mr-[0.2em] not-italic" aria-hidden="true">
+        ¶
+      </span>
+      {eyebrow}
+    </p>
+  )}
+  {title && <h1 class="mt-3 max-w-3xl text-5xl font-light tracking-tight sm:text-6xl">{title}</h1>}
+  {verse && (
+    <figure class={title ? 'mt-6 max-w-3xl' : 'mt-3'}>
+      {title ? (
+        <blockquote class="text-muted font-serif text-lg italic sm:text-xl">
+          {[...verse.lines, ...(verse.continuation ?? [])].map((line) => (
+            <span class="block pl-[0.5em] -indent-[0.5em]">{line}</span>
+          ))}
+        </blockquote>
+      ) : (
+        <>
+          <h1 class="text-4xl font-light tracking-tight sm:text-5xl">
+            {verse.lines.map((line) => (
+              <span class="block pl-[0.5em] -indent-[0.5em]">{line}</span>
+            ))}
+          </h1>
+          {verse.continuation && (
+            <p class="text-muted mt-6 max-w-prose text-xl">
+              {verse.continuation.map((line) => (
+                <span class="block pl-[0.5em] -indent-[0.5em]">{line}</span>
+              ))}
+            </p>
+          )}
+        </>
+      )}
+      <figcaption class:list={['text-muted font-sans text-sm', title ? 'mt-2' : 'mt-4']}>
+        — {verse.author}{verse.work && <>, <cite class="italic">{verse.work}</cite></>}
+      </figcaption>
+    </figure>
+  )}
+  {lede && <p class:list={['text-muted max-w-prose text-xl', verse ? 'mt-8' : 'mt-6']}>{lede}</p>}
+  {actions.length > 0 && (
+    <div class="mt-8 flex flex-wrap gap-3">
+      {actions.map(({ label, href, variant }) => (
+        <Button href={href} variant={variant}>
+          {label}
+        </Button>
+      ))}
+    </div>
+  )}
+</section>

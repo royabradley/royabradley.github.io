@@ -3,7 +3,7 @@
 // A writer's home page: the newest essay large, then the ones before it. Theme marketing lives in /features.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FeaturedPost from '../components/sections/FeaturedPost.astro';
-import Hero from '../components/sections/Hero.astro';
+import Hero from '@custom/components/Hero.astro'; // rab: fork with an epigraph verse, see CUSTOMIZATIONS.md
 import Newsletter from '../components/sections/Newsletter.astro';
 import RecentPosts from '../components/sections/RecentPosts.astro';
 import { useT } from '../i18n/t';
@@ -17,9 +17,13 @@ const [latest, ...earlier] = await getPosts();
 
 <BaseLayout>
   <Hero
-    eyebrow="Roy's notebook"
-    title={`“Earth’s crammed with heaven.”`}
-    lede="Reading slowly, thinking deeply, and attending to the sacramental life in a world full of distractions."
+    eyebrow="Reading slowly, thinking deeply, and attending to the sacramental life"
+    verse={{
+      lines: ['Earth’s crammed with heaven,', 'And every common bush afire with God:'],
+      continuation: ['But only he who sees, takes off his shoes,', 'The rest sit round it, and pluck blackberries.'],
+      author: 'Elizabeth Barrett Browning',
+      work: 'Aurora Leigh',
+    }}
   />
   {/* pro-only */}
   {latest && <FeaturedPost title="Latest" post={latest} />}
