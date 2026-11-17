@@ -3,7 +3,7 @@ import defaultOgImage from './assets/og-default.png';
 
 export const site = {
   name: 'Roy A. Bradley',
-  description: 'My personal notebook.',
+  description: 'Essays, sermons, and lessons from a small study in East Texas: reading slowly, thinking deeply, and attending to the sacramental life.',
   url: 'https://royabradley.github.io',
   locale: 'en', // 'en' | 'ko' | 'hu', or any language with a src/i18n/<locale>.ts
   author: 'Roy A. Bradley', // Fictional demo author. Replace with your name

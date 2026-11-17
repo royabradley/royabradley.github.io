@@ -50,6 +50,10 @@ const pagefind = {
 export default defineConfig({
   // SITE_URL overrides config.ts at build time (used by the demo deploys)
   site: process.env.SITE_URL ?? site.url,
+  // rab: old URL of the Bavinck reading brief, renamed 2026-11-17; keeps feed readers' links working
+  redirects: {
+    '/blog/bavinck_christian-family-reading-brief/': '/blog/bavinck-on-the-christian-family/',
+  },
   markdown: {
     processor: satteri({
       features: { math: true },
