@@ -64,16 +64,70 @@
    1. Safari supports only the prefixed -webkit-initial-letter, so the theme's
       @supports (initial-letter: 2) rule never applies there; this block adds the prefixed form.
    2. The theme's rule only matches a post whose first block is a paragraph. The seminary essays
-      open with "## Introduction", so the initial also goes on the paragraph after that heading. */
+      open with "## Introduction", so the initial also goes on the paragraph after that heading.
+   3. A post may open with a headnote, a blockquote naming its source (the reading briefs). The
+      initial skips it and goes on the first paragraph after it, or after the heading that follows. */
 @layer components {
   @supports (initial-letter: 2) or (-webkit-initial-letter: 2) {
     .prose.drop-cap:not(:lang(ko)) > p:first-child::first-letter,
-    .prose.drop-cap:not(:lang(ko)) > h2:first-child + p::first-letter {
+    .prose.drop-cap:not(:lang(ko)) > h2:first-child + p::first-letter,
+    .prose.drop-cap:not(:lang(ko)) > blockquote:first-child + p::first-letter,
+    .prose.drop-cap:not(:lang(ko)) > blockquote:first-child + h2 + p::first-letter {
       -webkit-initial-letter: 2;
       initial-letter: 2;
       margin-right: 0.12em;
       color: var(--color-primary);
       font-weight: 500;
+    }
+  }
+}
+
+/* rab: Headnote, set like the theme's Bookshelf (src/components/sections/Bookshelf.astro). A blockquote
+   that opens a post is the book it's about, not a quotation. In the note it's plain Markdown, one
+   paragraph per line, separated by a bare `>`:
+     > *The Christian Family*
+     >
+     > Herman Bavinck
+     >
+     > Translated by … Grand Rapids: Christian's Library Press, 2012.
+   Title, author, then the rest, styled with Bookshelf's own utilities, under the same section label.
+   The drop cap skips it (rule above). */
+@layer components {
+  .prose > blockquote:first-child:not(:where(.not-prose, .not-prose *)) {
+    @apply hang;
+    row-gap: 0;
+    font-style: normal;
+    color: var(--color-foreground);
+    border-left: 0;
+    padding: 0 0 1.5rem;
+    margin: 0 0 3em;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .prose > blockquote:first-child:not(:where(.not-prose, .not-prose *))::before {
+    @apply section-label;
+    content: 'Bibliographic details';
+    margin-bottom: 0.75rem;
+  }
+  .prose > blockquote:first-child:not(:where(.not-prose, .not-prose *)) > p {
+    margin: 0;
+  }
+  .prose > blockquote:first-child:not(:where(.not-prose, .not-prose *)) > p:nth-of-type(1) {
+    @apply text-xl font-medium italic;
+  }
+  .prose > blockquote:first-child:not(:where(.not-prose, .not-prose *)) > p:nth-of-type(2) {
+    @apply text-muted font-sans text-sm;
+  }
+  .prose > blockquote:first-child:not(:where(.not-prose, .not-prose *)) > p:nth-of-type(n + 3) {
+    margin-top: 0.5rem;
+  }
+  @media (width >= 64rem) {
+    .prose > blockquote:first-child:not(:where(.not-prose, .not-prose *))::before {
+      grid-column: 1;
+      grid-row: 1 / span 4;
+      margin-bottom: 0;
+    }
+    .prose > blockquote:first-child:not(:where(.not-prose, .not-prose *)) > p {
+      grid-column: 2;
     }
   }
 }
